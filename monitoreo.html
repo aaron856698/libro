@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capítulo 3: Monitoreo</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="print-helper.js"></script>
 </head>
 <body>
     <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+            </div>
+        </section>
+
         <section>
             <h1>Capítulo 3: Monitoreo (Empresa Tercerizada)</h1>
             <p class="subtitle">Funciones, Obligaciones y Régimen de Sanciones</p>
@@ -102,5 +116,78 @@
             <a href="index.html">Volver al índice</a>
         </section>
     </div>
+
+    <script>
+        function printDocument() {
+            // Función mejorada de impresión con múltiples fallbacks
+            if (window.enhancedPrint) {
+                // Usar la función mejorada si está disponible
+                window.enhancedPrint()
+                    .then(result => {
+                        console.log('Impresión exitosa:', result);
+                    })
+                    .catch(error => {
+                        console.error('Error con enhancedPrint:', error);
+                        fallbackPrint();
+                    });
+            } else {
+                // Fallback a la función básica
+                try {
+                    // Forzar la aplicación de estilos de impresión
+                    document.body.style.background = 'white';
+                    document.body.style.color = 'black';
+                    
+                    // Esperar un momento para que los estilos se apliquen
+                    setTimeout(function() {
+                        // Intentar imprimir
+                        if (window.print) {
+                            window.print();
+                        } else {
+                            // Fallback para navegadores que no soportan window.print
+                            alert('La función de impresión no está disponible en este navegador. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir.');
+                        }
+                    }, 100);
+                } catch (error) {
+                    console.error('Error al imprimir:', error);
+                    alert('Error al imprimir. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir manualmente.');
+                }
+            }
+        }
+        
+        function fallbackPrint() {
+            alert('Para imprimir este documento:\n\n1. Presione Ctrl+P (Windows) o Cmd+P (Mac)\n2. Configure las opciones de impresión\n3. Seleccione "Imprimir"\n\nO use la función "Descargar PDF" como alternativa.');
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'UPSRA_Monitoreo.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+        
+        // Agregar evento para detectar si la impresión fue cancelada
+        window.addEventListener('afterprint', function() {
+            console.log('Impresión completada');
+        });
+        
+        // Agregar evento para detectar errores de impresión
+        window.addEventListener('error', function(e) {
+            console.error('Error en la página:', e);
+        });
+        
+        // Agregar atajo de teclado para impresión
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printDocument();
+            }
+        });
+    </script>
 </body>
 </html> 
