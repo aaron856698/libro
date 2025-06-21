@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro Completo - Reglamento SUTERH & UPSRA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .book-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+            }
+            .action-buttons {
+                display: none !important;
+            }
+            .cover {
+                page-break-after: always;
+            }
+            .index {
+                page-break-after: always;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Portada Profesional -->
+        <section class="cover">
+            <div class="cover-header">
+                <div class="logo-section">
+                    <div class="logo-placeholder">🏢</div>
+                </div>
+                <h1>REGLAMENTO INTERNO</h1>
+                <h2>Convenios Colectivos de Trabajo</h2>
+                <div class="unions">
+                    <span class="union-badge">SUTERH</span>
+                    <span class="union-badge">UPSRA</span>
+                </div>
+            </div>
+            
+            <div class="cover-content">
+                <h3>Procedimientos, Protocolos y Sanciones</h3>
+                <p class="description">
+                    Manual completo de reglamentación laboral para personal de edificios, 
+                    incluyendo conserjes, mantenimiento, valet parking, vigiladores y supervisores.
+                </p>
+                
+                <div class="cover-details">
+                    <div class="detail-item">
+                        <strong>Versión:</strong> 1.0
+                    </div>
+                    <div class="detail-item">
+                        <strong>Fecha:</strong> Diciembre 2024
+                    </div>
+                    <div class="detail-item">
+                        <strong>Distribución:</strong> Gratuita
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cover-footer">
+                <p class="disclaimer">
+                    Este documento es de distribución gratuita y contiene información 
+                    basada en los convenios colectivos oficiales vigentes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento Completo
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF Completo
+                </button>
+            </div>
+        </section>
+
+        <!-- Índice -->
+        <section class="index">
+            <h2>Índice del Reglamento</h2>
+            <ol>
+                <li>📋 Guía para Gerentes y Coordinadores</li>
+                <li>Convenio SUTERH
+                    <ol>
+                        <li>📖 Introducción SUTERH</li>
+                        <li>🔧 Capítulo 1: Personal de Mantenimiento</li>
+                        <li>🏢 Capítulo 2: Conserjes</li>
+                        <li>👥 Capítulo 3: Coordinador de Conserjería</li>
+                        <li>🚗 Capítulo 4: Valet Parking</li>
+                    </ol>
+                </li>
+                <li>Convenio UPSRA
+                    <ol>
+                        <li>📖 Introducción UPSRA</li>
+                        <li>👮 Capítulo 1: Vigiladores</li>
+                        <li>👨‍💼 Capítulo 2: Supervisores</li>
+                        <li>📹 Capítulo 3: Personal de Monitoreo</li>
+                    </ol>
+                </li>
+                <li>📎 Anexos y Material Complementario</li>
+            </ol>
+        </section>
+
+        <section class="welcome">
+            <h2>Bienvenido al Reglamento</h2>
+            <p>Este documento digital reúne y organiza los convenios colectivos de trabajo de SUTERH y UPSRA, 
+            estructurados por roles y funciones específicas. Incluye procedimientos detallados, protocolos 
+            de seguridad, y el régimen completo de sanciones para cada puesto.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>📋 Información Completa</h4>
+                    <p>Todos los artículos relevantes de los convenios oficiales</p>
+                </div>
+                <div class="feature">
+                    <h4>⚖️ Sanciones Detalladas</h4>
+                    <p>Fundamentos legales y consecuencias específicas</p>
+                </div>
+                <div class="feature">
+                    <h4>🔄 Procedimientos</h4>
+                    <p>Protocolos claros para cada situación laboral</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO 1: GERENTE DEL EDIFICIO -->
+        <section>
+            <h2>📋 Guía para Gerentes y Coordinadores</h2>
+            
+            <h3>¿Cómo usar este libro?</h3>
+            <ul>
+                <li><strong>Consulta rápida:</strong> Utiliza el índice para acceder a cada convenio y rol específico.</li>
+                <li><strong>Fundamentos legales:</strong> Cada sanción tiene su fundamento en la LCT y convenios.</li>
+                <li><strong>Procedimientos:</strong> Sigue los pasos establecidos para aplicar sanciones correctamente.</li>
+                <li><strong>Documentación:</strong> Mantén registro de todas las acciones disciplinarias.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Estructura de Mando y Coordinación</h3>
+            
+            <h4>Cadena de Mando Establecida</h4>
+            <p><strong>IMPORTANTE:</strong> Los empleados NO se comunican directamente con el gerente. La comunicación debe seguir la cadena de mando establecida:</p>
+            
+            <ul>
+                <li><strong>Coordinador de Conserjería:</strong> Lisa Ríos - Recibe novedades de conserjes y las comunica al gerente</li>
+                <li><strong>Coordinador de Mantenimiento:</strong> Leonel Babibino - Recibe novedades del personal de mantenimiento y las comunica al gerente</li>
+                <li><strong>Coordinador de Seguridad:</strong> Leal Christian - Recibe novedades del personal de seguridad y las comunica al gerente</li>
+            </ul>
+
+            <h4>Horarios de Trabajo</h4>
+            <p><strong>IMPORTANTE:</strong> Todos los puestos son rotativos 24 horas. Los empleados deben estar en su puesto durante toda la jornada asignada según el turno que les corresponda.</p>
+            
+            <ul>
+                <li><strong>Turnos rotativos:</strong> Mañana (6:00-14:00), Tarde (14:00-22:00), Noche (22:00-6:00)</li>
+                <li><strong>Cobertura 24/7:</strong> Siempre debe haber personal en cada área durante las 24 horas</li>
+                <li><strong>Rotación equitativa:</strong> Los turnos se rotan entre todos los empleados del área</li>
+                <li><strong>Cambios de turno:</strong> Solo se permiten con autorización previa del coordinador</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Gestión del Personal SUTERH (Directo)</h3>
+            
+            <h4>1. Conserjes - Cómo deben responderle</h4>
+            <ul>
+                <li><strong>Reporte a coordinador:</strong> Deben reportar diariamente al Coordinador Lisa Ríos sobre novedades, incidentes y quejas de residentes.</li>
+                <li><strong>Horarios rotativos:</strong> Deben estar en su puesto durante toda la jornada asignada según el turno (24 horas).</li>
+                <li><strong>Emergencias:</strong> Deben contactar inmediatamente al coordinador de conserjería ante cualquier emergencia.</li>
+                <li><strong>Informes:</strong> Deben presentar reportes escritos cuando se les solicite.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar con otros empleados del edificio.</li>
+                <li><strong>Presentación:</strong> Deben mantener una presentación impecable con uniforme completo.</li>
+                <li><strong>Atención al público:</strong> Deben brindar atención cordial y profesional a todos los residentes.</li>
+            </ul>
+
+            <h4>2. Personal de Mantenimiento - Cómo deben responderle</h4>
+            <ul>
+                <li><strong>Reporte a coordinador:</strong> Deben informar inmediatamente al Coordinador Leonel Babibino cualquier desperfecto o situación irregular.</li>
+                <li><strong>Tareas asignadas:</strong> Deben cumplir con las tareas de mantenimiento preventivo y correctivo.</li>
+                <li><strong>Emergencias técnicas:</strong> Deben actuar inmediatamente ante fallas técnicas o situaciones de urgencia.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar horarios y tareas con otros empleados.</li>
+                <li><strong>Seguridad:</strong> Deben usar correctamente elementos de protección personal.</li>
+                <li><strong>Herramientas:</strong> Deben mantener en buen estado las herramientas asignadas.</li>
+                <li><strong>Inventario:</strong> Deben reportar inmediatamente la pérdida o daño de herramientas.</li>
+            </ul>
+
+            <h4>3. Valet Parking - Cómo deben responderle</h4>
+            <ul>
+                <li><strong>Reporte vehicular:</strong> Deben informar inmediatamente al coordinador incidentes, daños o situaciones irregulares.</li>
+                <li><strong>Servicio al cliente:</strong> Deben brindar atención cordial y profesional a propietarios de vehículos.</li>
+                <li><strong>Registro preciso:</strong> Deben documentar correctamente todos los movimientos de vehículos.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar con conserje y personal de mantenimiento.</li>
+                <li><strong>Responsabilidad:</strong> Son responsables por daños causados durante el manejo.</li>
+                <li><strong>Licencia vigente:</strong> Deben mantener su licencia de conducir vigente.</li>
+                <li><strong>Llaves seguras:</strong> Deben mantener las llaves de los vehículos en lugar seguro.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Gestión de Empresas Tercerizadas</h3>
+            
+            <h4>1. Empresa de Seguridad (UPSRA) - Cómo deben responderle</h4>
+            <ul>
+                <li><strong>Supervisor asignado:</strong> Debe reportar diariamente al Coordinador Leal Christian sobre el estado del servicio.</li>
+                <li><strong>Comunicación constante:</strong> Debe mantener contacto regular sobre novedades y calidad del servicio.</li>
+                <li><strong>Informes ejecutivos:</strong> Debe presentar reportes detallados de gestión y calidad.</li>
+                <li><strong>Emergencias:</strong> Debe contactar inmediatamente al coordinador de seguridad en caso de emergencia.</li>
+                <li><strong>Capacitación:</strong> Debe garantizar que el personal esté capacitado y actualizado.</li>
+                <li><strong>Auditorías:</strong> Debe realizar controles sorpresa y evaluaciones de calidad.</li>
+                <li><strong>Equipamiento:</strong> Debe garantizar que el personal tenga el equipamiento necesario.</li>
+            </ul>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <p><strong>IMPORTANTE:</strong> Leal Christian es el Coordinador de Seguridad de la empresa tercerizada, actuando como intermediario entre la empresa de seguridad y el edificio. Los empleados conserjes y demás personal deben respetar la cadena de mando. Solo en casos muy urgentes y cuando no puedan comunicarse con sus coordinadores, podrán contactar directamente al gerente.</p>
+            </div>
+
+            <h4>2. Empresa de Limpieza - Cómo deben responderle</h4>
+            <ul>
+                <li><strong>Encargado de limpieza:</strong> Fermina Arebalos debe coordinar con el gerente sobre horarios y estándares de calidad.</li>
+                <li><strong>Estándares de calidad:</strong> Debe garantizar que la limpieza cumpla con los estándares establecidos.</li>
+                <li><strong>Horarios:</strong> Debe respetar los horarios acordados sin interrumpir a los residentes.</li>
+                <li><strong>Materiales:</strong> Debe usar productos aprobados y no dañinos.</li>
+                <li><strong>Reportes:</strong> Debe informar sobre problemas o necesidades de mantenimiento.</li>
+                <li><strong>Equipamiento:</strong> Debe mantener en buen estado los equipos de limpieza.</li>
+            </ul>
+
+            <h4>3. Operador de Monitoreo (Empresa Tercerizada) - Cómo debe responderle</h4>
+            <ul>
+                <li><strong>Supervisor de monitoreo:</strong> Debe reportar diariamente al Coordinador Leal Christian sobre el estado del sistema de cámaras.</li>
+                <li><strong>Vigilancia constante:</strong> Debe monitorear las cámaras durante todo su turno sin interrupciones.</li>
+                <li><strong>Reportes de incidentes:</strong> Debe informar inmediatamente cualquier situación sospechosa o irregular.</li>
+                <li><strong>Mantenimiento del sistema:</strong> Debe reportar fallas técnicas en el sistema de monitoreo.</li>
+                <li><strong>Confidencialidad:</strong> Debe mantener absoluta confidencialidad sobre lo observado.</li>
+                <li><strong>Coordinación:</strong> Debe coordinar con el personal de seguridad ante emergencias.</li>
+            </ul>
+            <div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 10px 0;">
+                <p><strong>ADVERTENCIA CRÍTICA:</strong> El Operador de Monitoreo tiene acceso a información sensible y debe actuar con máxima profesionalidad. Cualquier conducta inapropiada será sancionada severamente.</p>
+            </div>
+        </section>
+
+        <!-- CAPÍTULO 2: INTRODUCCIÓN SUTERH -->
+        <section>
+            <h2>📖 Introducción SUTERH</h2>
+            <p>El Sindicato Único de Trabajadores de Edificios de Renta y Horizontal (SUTERH) representa a los trabajadores del sector de edificios de renta y propiedad horizontal en la Ciudad Autónoma de Buenos Aires.</p>
+            
+            <h3>Ámbito de Aplicación</h3>
+            <p>Este convenio se aplica a todos los trabajadores que prestan servicios en edificios de renta y propiedad horizontal, incluyendo:</p>
+            <ul>
+                <li>Conserjes</li>
+                <li>Personal de mantenimiento</li>
+                <li>Valet parking</li>
+                <li>Coordinadores</li>
+            </ul>
+            
+            <h3>Principios Fundamentales</h3>
+            <ul>
+                <li>Respeto mutuo entre empleador y trabajador</li>
+                <li>Cumplimiento de las obligaciones laborales</li>
+                <li>Procedimientos disciplinarios justos</li>
+                <li>Derecho de defensa del trabajador</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 3: MANTENIMIENTO SUTERH -->
+        <section>
+            <h2>🔧 Capítulo 1: Personal de Mantenimiento</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Mantenimiento preventivo y correctivo de instalaciones</li>
+                <li>Reparación de desperfectos técnicos</li>
+                <li>Control de sistemas de seguridad</li>
+                <li>Mantenimiento de áreas comunes</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> Abandono del puesto de trabajo</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No realizar mantenimiento preventivo programado</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No mantener orden en el área de trabajo</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 4: CONSERJES SUTERH -->
+        <section>
+            <h2>🏢 Capítulo 2: Conserjes</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Atención al público y residentes</li>
+                <li>Control de acceso al edificio</li>
+                <li>Recepción de correspondencia</li>
+                <li>Coordinación con otros servicios</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> Abandono del puesto de trabajo</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> Mala atención al público</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No saludar a residentes</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 5: COORDINADOR CONSERJERÍA -->
+        <section>
+            <h2>👥 Capítulo 3: Coordinador de Conserjería</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Supervisión del personal de conserjería</li>
+                <li>Coordinación con el gerente</li>
+                <li>Gestión de novedades e incidentes</li>
+                <li>Capacitación del personal</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> No reportar incidentes graves</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No supervisar adecuadamente al personal</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No presentar informes en tiempo</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 6: VALET PARKING -->
+        <section>
+            <h2>🚗 Capítulo 4: Valet Parking</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Manejo seguro de vehículos</li>
+                <li>Atención al cliente</li>
+                <li>Control de acceso vehicular</li>
+                <li>Mantenimiento del orden en el estacionamiento</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> Daño a vehículos por negligencia</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No reportar daños a vehículos</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No saludar a propietarios</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 7: INTRODUCCIÓN UPSRA -->
+        <section>
+            <h2>📖 Introducción UPSRA</h2>
+            <p>La Unión del Personal de Seguridad de la República Argentina (UPSRA) representa a los trabajadores del sector de seguridad privada.</p>
+            
+            <h3>Ámbito de Aplicación</h3>
+            <p>Este convenio se aplica a todos los trabajadores que prestan servicios de seguridad privada, incluyendo:</p>
+            <ul>
+                <li>Vigiladores</li>
+                <li>Supervisores</li>
+                <li>Personal de monitoreo</li>
+            </ul>
+            
+            <h3>Principios Fundamentales</h3>
+            <ul>
+                <li>Protección de la seguridad de las personas y bienes</li>
+                <li>Cumplimiento estricto de protocolos de seguridad</li>
+                <li>Confidencialidad en el ejercicio de las funciones</li>
+                <li>Profesionalismo en el trato con el público</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 8: VIGILADORES UPSRA -->
+        <section>
+            <h2>👮 Capítulo 1: Vigiladores</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Control de acceso al edificio</li>
+                <li>Vigilancia de áreas comunes</li>
+                <li>Prevención de incidentes de seguridad</li>
+                <li>Coordinación con autoridades</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> Dormir durante el servicio</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No controlar acceso de personas</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No saludar a residentes</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 9: SUPERVISORES UPSRA -->
+        <section>
+            <h2>👨‍💼 Capítulo 2: Supervisores</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Supervisión del personal de seguridad</li>
+                <li>Coordinación con el gerente</li>
+                <li>Gestión de incidentes de seguridad</li>
+                <li>Capacitación del personal</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> No reportar incidentes graves</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No supervisar adecuadamente al personal</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No presentar informes en tiempo</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 10: MONITOREO -->
+        <section>
+            <h2>📹 Capítulo 3: Personal de Monitoreo</h2>
+            
+            <h3>Responsabilidades Principales</h3>
+            <ul>
+                <li>Monitoreo de sistemas de seguridad</li>
+                <li>Control de cámaras de vigilancia</li>
+                <li>Reporte de incidentes</li>
+                <li>Mantenimiento de registros</li>
+            </ul>
+
+            <h3>Faltas y Sanciones</h3>
+            
+            <h4>Faltas Gravísimas</h4>
+            <ul>
+                <li><strong>Falta:</strong> Dormir durante el monitoreo</li>
+                <li><strong>Sanción:</strong> Suspensión de 10 a 30 días o despido</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Graves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No reportar incidentes observados</li>
+                <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+
+            <h4>Faltas Leves</h4>
+            <ul>
+                <li><strong>Falta:</strong> No mantener orden en el puesto</li>
+                <li><strong>Sanción:</strong> Llamado de atención</li>
+                <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+            </ul>
+        </section>
+
+        <!-- CAPÍTULO 11: ANEXOS -->
+        <section>
+            <h2>📎 Anexos y Material Complementario</h2>
+            
+            <h3>Documentos de Referencia</h3>
+            <ul>
+                <li>Ley de Contrato de Trabajo (LCT)</li>
+                <li>Convenio Colectivo SUTERH</li>
+                <li>Convenio Colectivo UPSRA</li>
+                <li>Reglamento Interno del Edificio</li>
+            </ul>
+
+            <h3>Formularios</h3>
+            <ul>
+                <li>Acta de infracción</li>
+                <li>Descargo del trabajador</li>
+                <li>Resolución de sanción</li>
+                <li>Registro de incidentes</li>
+            </ul>
+
+            <h3>Contactos de Emergencia</h3>
+            <ul>
+                <li><strong>Gerente:</strong> [Contacto del gerente]</li>
+                <li><strong>Coordinador Conserjería:</strong> Lisa Ríos</li>
+                <li><strong>Coordinador Mantenimiento:</strong> Leonel Babibino</li>
+                <li><strong>Coordinador Seguridad:</strong> Leal Christian</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Libro_Completo_Reglamento_SUTERH_UPSRA.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>

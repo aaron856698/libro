@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamento de Convenios Colectivos - SUTERH & UPSRA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Portada Profesional -->
+        <section class="cover">
+            <div class="cover-header">
+                <div class="logo-section">
+                    <div class="logo-placeholder">🏢</div>
+                </div>
+                <h1>REGLAMENTO INTERNO</h1>
+                <h2>Convenios Colectivos de Trabajo</h2>
+                <div class="unions">
+                    <span class="union-badge">SUTERH</span>
+                    <span class="union-badge">UPSRA</span>
+                </div>
+            </div>
+            
+            <div class="cover-content">
+                <h3>Procedimientos, Protocolos y Sanciones</h3>
+                <p class="description">
+                    Manual completo de reglamentación laboral para personal de edificios, 
+                    incluyendo conserjes, mantenimiento, valet parking, vigiladores y supervisores.
+                </p>
+                
+                <div class="cover-details">
+                    <div class="detail-item">
+                        <strong>Versión:</strong> 1.0
+                    </div>
+                    <div class="detail-item">
+                        <strong>Fecha:</strong> Diciembre 2024
+                    </div>
+                    <div class="detail-item">
+                        <strong>Distribución:</strong> Gratuita
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cover-footer">
+                <p class="disclaimer">
+                    Este documento es de distribución gratuita y contiene información 
+                    basada en los convenios colectivos oficiales vigentes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF Completo
+                </button>
+                <button onclick="downloadSectionPDF()" class="btn btn-outline">
+                    📋 Descargar por Secciones
+                </button>
+            </div>
+        </section>
+
+        <!-- Índice -->
+        <section class="index">
+            <h2>Índice del Reglamento</h2>
+            <ol>
+                <li><a href="gerente-del-edificio.html">📋 Guía para Gerentes y Coordinadores</a></li>
+                <li>Convenio SUTERH
+                    <ol>
+                        <li><a href="suterh-intro.html">📖 Introducción SUTERH</a></li>
+                        <li><a href="suterh-mantenimiento.html">🔧 Capítulo 1: Personal de Mantenimiento</a></li>
+                        <li><a href="suterh-conserje.html">🏢 Capítulo 2: Conserjes</a></li>
+                        <li><a href="coordinador-conserjeria.html">👥 Capítulo 3: Coordinador de Conserjería</a></li>
+                        <li><a href="suterh-valet.html">🚗 Capítulo 4: Valet Parking</a></li>
+                    </ol>
+                </li>
+                <li>Convenio UPSRA
+                    <ol>
+                        <li><a href="upsra-intro.html">📖 Introducción UPSRA</a></li>
+                        <li><a href="upsra-vigilador.html">👮 Capítulo 1: Vigiladores</a></li>
+                        <li><a href="upsra-supervisor.html">👨‍💼 Capítulo 2: Supervisores</a></li>
+                        <li><a href="monitoreo.html">📹 Capítulo 3: Personal de Monitoreo</a></li>
+                    </ol>
+                </li>
+                <li><a href="anexos.html">📎 Anexos y Material Complementario</a></li>
+            </ol>
+        </section>
+
+        <section class="welcome">
+            <h2>Bienvenido al Reglamento</h2>
+            <p>Este documento digital reúne y organiza los convenios colectivos de trabajo de SUTERH y UPSRA, 
+            estructurados por roles y funciones específicas. Incluye procedimientos detallados, protocolos 
+            de seguridad, y el régimen completo de sanciones para cada puesto.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h4>📋 Información Completa</h4>
+                    <p>Todos los artículos relevantes de los convenios oficiales</p>
+                </div>
+                <div class="feature">
+                    <h4>⚖️ Sanciones Detalladas</h4>
+                    <p>Fundamentos legales y consecuencias específicas</p>
+                </div>
+                <div class="feature">
+                    <h4>🔄 Procedimientos</h4>
+                    <p>Protocolos claros para cada situación laboral</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Reglamento_Convenios_SUTERH_UPSRA.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+
+        function downloadSectionPDF() {
+            const sections = [
+                { name: 'Guia_Gerentes', url: 'gerente-del-edificio.html' },
+                { name: 'SUTERH_Mantenimiento', url: 'suterh-mantenimiento.html' },
+                { name: 'SUTERH_Conserjes', url: 'suterh-conserje.html' },
+                { name: 'SUTERH_Coordinador', url: 'coordinador-conserjeria.html' },
+                { name: 'SUTERH_Valet', url: 'suterh-valet.html' },
+                { name: 'UPSRA_Vigiladores', url: 'upsra-vigilador.html' },
+                { name: 'UPSRA_Supervisores', url: 'upsra-supervisor.html' },
+                { name: 'UPSRA_Monitoreo', url: 'monitoreo.html' }
+            ];
+
+            alert('Función de descarga por secciones en desarrollo. Por favor use "Descargar PDF Completo" para obtener todo el documento.');
+        }
+    </script>
+</body>
+</html> 

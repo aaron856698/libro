@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUTERH - Mantenimiento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .book-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+            }
+            .action-buttons {
+                display: none !important;
+            }
+            .cover {
+                page-break-after: always;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+                <a href="index.html" class="btn btn-outline">
+                    🏠 Volver al Índice
+                </a>
+            </div>
+        </section>
+
+        <section class="cover">
+            <h1>SUTERH</h1>
+            <h2>Capítulo 1: Mantenimiento</h2>
+        </section>
+        
+        <section>
+            <h2>Funciones principales (Art. 15-20)</h2>
+            <ul>
+                <li><strong>Mantenimiento preventivo:</strong> Revisión periódica de instalaciones comunes, ascensores, bombas de agua, sistemas de calefacción y aire acondicionado.</li>
+                <li><strong>Reparaciones menores:</strong> Arreglos en electricidad, plomería, carpintería y pintura de áreas comunes.</li>
+                <li><strong>Supervisión técnica:</strong> Control del estado de equipos e instalaciones, reportando anomalías al administrador.</li>
+                <li><strong>Colaboración general:</strong> Apoyo en tareas de limpieza, orden y seguridad del edificio.</li>
+                <li><strong>Emergencias:</strong> Actuación inmediata ante fallas técnicas o situaciones de urgencia.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Jornada laboral y descansos (Art. 25-30)</h2>
+            <ul>
+                <li><strong>Jornada:</strong> 8 horas diarias, 48 horas semanales máximo.</li>
+                <li><strong>Descanso semanal:</strong> 36 horas continuas (generalmente domingo).</li>
+                <li><strong>Descanso diario:</strong> 12 horas entre jornadas.</li>
+                <li><strong>Horarios especiales:</strong> Para mantenimiento nocturno o de emergencias.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Derechos específicos (Art. 35-45)</h2>
+            <ul>
+                <li><strong>Remuneración:</strong> Salario básico + adicionales por antigüedad y zona.</li>
+                <li><strong>Elementos de trabajo:</strong> Herramientas, uniformes y elementos de seguridad.</li>
+                <li><strong>Capacitación:</strong> Cursos de seguridad e higiene obligatorios.</li>
+                <li><strong>Licencias:</strong> Anuales, por enfermedad, maternidad/paternidad.</li>
+                <li><strong>Aguinaldo:</strong> Dos pagos anuales (junio y diciembre).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Obligaciones y responsabilidades (Art. 50-60)</h2>
+            <ul>
+                <li><strong>Cumplimiento de tareas:</strong> Realizar todas las tareas asignadas con eficiencia y seguridad.</li>
+                <li><strong>Reportes:</strong> Informar inmediatamente cualquier desperfecto o situación irregular.</li>
+                <li><strong>Convivencia:</strong> Respetar normas de convivencia y reglamento interno.</li>
+                <li><strong>Seguridad:</strong> Usar correctamente elementos de protección personal.</li>
+                <li><strong>Confidencialidad:</strong> Mantener reserva sobre información del edificio y residentes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Régimen disciplinario y sanciones</h2>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #28a745; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No realizar tareas de mantenimiento críticas que pongan en riesgo la seguridad</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 52</li>
+                    
+                    <li><strong>Falta:</strong> Daño intencional a instalaciones, equipos o herramientas del edificio</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 183 CP - Daños</li>
+                    
+                    <li><strong>Falta:</strong> No actuar ante emergencias técnicas que pongan en riesgo a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 53</li>
+                    
+                    <li><strong>Falta:</strong> Robo de herramientas, materiales o equipos del edificio</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 54</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No usar elementos de protección personal obligatorios</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 75 LCT - Seguridad e higiene, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 55</li>
+                    
+                    <li><strong>Falta:</strong> No reportar desperfectos o fallas al coordinador Leonel Babibino</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 56</li>
+                    
+                    <li><strong>Falta:</strong> No realizar mantenimiento preventivo programado</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 57</li>
+                    
+                    <li><strong>Falta:</strong> Pérdida o daño por negligencia de herramientas asignadas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 58</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar horarios y tareas con otros empleados</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 59</li>
+                    
+                    <li><strong>Falta:</strong> Realizar trabajos sin autorización previa</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 60</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No mantener ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 61</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme de trabajo completo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 62 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante tareas críticas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Procedimiento disciplinario (Art. 100-110)</h2>
+            <ol>
+                <li><strong>Notificación:</strong> El empleador debe notificar por escrito la falta cometida</li>
+                <li><strong>Descargo:</strong> El trabajador tiene derecho a presentar su descargo en 48 horas</li>
+                <li><strong>Decisión:</strong> El empleador debe resolver en un plazo máximo de 5 días</li>
+                <li><strong>Recurso:</strong> El trabajador puede apelar ante el sindicato o autoridad laboral</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Relación con el gerente/administrador</h2>
+            <ul>
+                <li><strong>Reporte directo:</strong> Debe reportar al gerente o administrador del edificio</li>
+                <li><strong>Comunicación:</strong> Mantener comunicación clara sobre tareas y problemas</li>
+                <li><strong>Coordinación:</strong> Coordinar horarios y tareas con otros empleados</li>
+                <li><strong>Emergencias:</strong> Contactar inmediatamente al gerente en caso de emergencia</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'SUTERH_Mantenimiento.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html> 

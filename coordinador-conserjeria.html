@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinador de Conserjería - SUTERH</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .book-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+            }
+            .action-buttons {
+                display: none !important;
+            }
+            .cover {
+                page-break-after: always;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+                <a href="index.html" class="btn btn-outline">
+                    🏠 Volver al Índice
+                </a>
+            </div>
+        </section>
+
+        <section class="cover">
+            <h1>Coordinador de Conserjería</h1>
+            <h2>Lisa Ríos</h2>
+            <p class="subtitle">Gestión y Sanciones para Conserjes y Valet Parking</p>
+        </section>
+
+        <section>
+            <h2>Responsabilidades del Coordinador</h2>
+            <ul>
+                <li><strong>Supervisión directa:</strong> Control y coordinación del personal de conserjería y valet parking</li>
+                <li><strong>Reporte al gerente:</strong> Comunicación diaria con el gerente sobre novedades e incidentes</li>
+                <li><strong>Capacitación:</strong> Entrenamiento y evaluación del personal a cargo</li>
+                <li><strong>Resolución de conflictos:</strong> Mediar en disputas entre empleados o con residentes</li>
+                <li><strong>Control de calidad:</strong> Verificar cumplimiento de estándares de servicio</li>
+                <li><strong>Documentación:</strong> Mantener registros de incidentes y sanciones aplicadas</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Respeto a la Cadena de Mando y Superiores</h2>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <p><strong>IMPORTANTE:</strong> Los conserjes y valet parking deben reportar directamente a la Coordinadora Lisa Ríos. Solo en casos muy urgentes y cuando no puedan comunicarse con ella, podrán contactar directamente al gerente.</p>
+            </div>
+            
+            <h3>Obligaciones de Respeto y Obediencia</h3>
+            <ul>
+                <li><strong>Respeto absoluto:</strong> Los conserjes y valet parking deben respetar y obedecer las órdenes de la Coordinadora Lisa Ríos</li>
+                <li><strong>Cadena de mando:</strong> No se permite saltar la cadena de mando sin autorización previa</li>
+                <li><strong>Comunicación respetuosa:</strong> Toda comunicación debe ser profesional y respetuosa</li>
+                <li><strong>No difamación:</strong> Está prohibido hablar mal de superiores o compañeros</li>
+                <li><strong>Confidencialidad:</strong> No divulgar información interna o confidencial del edificio</li>
+            </ul>
+
+            <h3>Sanciones por Falta de Respeto y Desobediencia</h3>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #dc3545; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Agresión verbal o física hacia la Coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 45</li>
+                    
+                    <li><strong>Falta:</strong> Desobediencia flagrante a órdenes directas de la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 47</li>
+                    
+                    <li><strong>Falta:</strong> Difamación o calumnia contra la coordinadora o superiores</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 109 CP - Calumnias</li>
+                    
+                    <li><strong>Falta:</strong> Amenazas verbales o escritas a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Art. 149 bis CP - Amenazas</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Saltar la cadena de mando sin autorización previa</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 10 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 44</li>
+                    
+                    <li><strong>Falta:</strong> Falta de respeto o insolencia hacia la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 46</li>
+                    
+                    <li><strong>Falta:</strong> Hablar mal de la coordinadora o superiores con residentes o visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 12 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 48</li>
+                    
+                    <li><strong>Falta:</strong> Negarse a cumplir órdenes legítimas de la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 49</li>
+                    
+                    <li><strong>Falta:</strong> Divulgar información confidencial del edificio o personal</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 50</li>
+                    
+                    <li><strong>Falta:</strong> Crear conflictos o generar mal ambiente laboral</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 51</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Tono de voz inadecuado al dirigirse a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Convenio SUTERH Art. 52</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Convenio SUTERH Art. 53</li>
+                    
+                    <li><strong>Falta:</strong> Comentarios inapropiados sobre decisiones de la coordinadora</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Convenio SUTERH Art. 54</li>
+                    
+                    <li><strong>Falta:</strong> No informar a la coordinadora sobre cambios en el turno</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 55</li>
+                </ul>
+            </div>
+
+            <h3>Procedimiento para Casos de Falta de Respeto</h3>
+            <ol>
+                <li><strong>Inmediato:</strong> La coordinadora documenta el incidente con fecha, hora y testigos</li>
+                <li><strong>Notificación:</strong> Se informa al empleado sobre la falta cometida</li>
+                <li><strong>Descargo:</strong> Se da oportunidad al empleado de presentar su versión por escrito</li>
+                <li><strong>Evaluación:</strong> Se evalúa la gravedad según el historial del empleado</li>
+                <li><strong>Sanción:</strong> Se aplica la sanción correspondiente</li>
+                <li><strong>Comunicación al gerente:</strong> Se informa inmediatamente al gerente sobre el incidente</li>
+                <li><strong>Registro:</strong> Se documenta en el legajo del empleado</li>
+                <li><strong>Seguimiento:</strong> Se monitorea el comportamiento posterior del empleado</li>
+            </ol>
+
+            <h3>Consecuencias de Reincidencia</h3>
+            <ul>
+                <li><strong>Primera reincidencia:</strong> Sanción duplicada</li>
+                <li><strong>Segunda reincidencia:</strong> Suspensión de 15 a 30 días</li>
+                <li><strong>Tercera reincidencia:</strong> Despido por causas disciplinarias</li>
+                <li><strong>Faltas gravísimas:</strong> Despido inmediato sin previo aviso</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Cadena de Mando</h2>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <p><strong>IMPORTANTE:</strong> Los conserjes y valet parking deben reportar directamente a la Coordinadora Lisa Ríos. Solo en casos muy urgentes y cuando no puedan comunicarse con ella, podrán contactar directamente al gerente.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Régimen de Sanciones para Conserjes</h2>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Abandono del puesto de trabajo durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 45</li>
+                    
+                    <li><strong>Falta:</strong> Agresión verbal o física a residentes o visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 47</li>
+                    
+                    <li><strong>Falta:</strong> Robo o apropiación de bienes de residentes o del edificio</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Permitir acceso a personas no autorizadas o sin identificación</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 43 - Control de acceso</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 48</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No reportar novedades o incidentes a la coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 44</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 46 - Atención al público</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme completo o presentación inadecuada</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 49 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Dormir o estar distraído durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con otros empleados del edificio</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 50</li>
+                    
+                    <li><strong>Falta:</strong> No registrar entrada y salida de visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 43 - Control de acceso</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 51</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el puesto de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el turno sin justificación</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Régimen de Sanciones para Valet Parking</h2>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Daño grave a vehículo durante el manejo por negligencia o imprudencia</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 63</li>
+                    
+                    <li><strong>Falta:</strong> Robo de objetos del interior de vehículos</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Usar vehículos de residentes para fines personales</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 173 CP - Usurpación</li>
+                    
+                    <li><strong>Falta:</strong> Conducir bajo efectos del alcohol o drogas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 48 CP - Conducción peligrosa</li>
+                    
+                    <li><strong>Falta:</strong> Pérdida de llaves de vehículos por negligencia</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 64</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No registrar movimiento de vehículos en el sistema</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 65</li>
+                    
+                    <li><strong>Falta:</strong> Licencia de conducir vencida o sin vigencia</li>
+                    <li><strong>Sanción:</strong> Suspensión hasta regularizar</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 66 - Requisitos del puesto</li>
+                    
+                    <li><strong>Falta:</strong> No reportar incidentes vehiculares a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 67</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a propietarios de vehículos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 68 - Atención al cliente</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con conserje y personal de mantenimiento</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 69</li>
+                    
+                    <li><strong>Falta:</strong> Estacionar vehículos en lugares no autorizados</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 70</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No usar uniforme completo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 71 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 72</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el manejo de vehículos</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Procedimiento de Aplicación de Sanciones</h2>
+            <ol>
+                <li><strong>Identificación:</strong> Observar o recibir reporte de la falta cometida</li>
+                <li><strong>Documentación:</strong> Registrar la falta con fecha, hora y detalles</li>
+                <li><strong>Notificación:</strong> Informar al empleado sobre la falta y la sanción aplicable</li>
+                <li><strong>Descargo:</strong> Dar oportunidad al empleado de presentar su versión</li>
+                <li><strong>Decisión:</strong> Aplicar la sanción correspondiente según la gravedad</li>
+                <li><strong>Comunicación al gerente:</strong> Informar al gerente sobre la sanción aplicada</li>
+                <li><strong>Registro:</strong> Documentar la sanción en el legajo del empleado</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Modelo de Acta de Sanción</h2>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2a5d9f; margin: 10px 0;">
+                <p><strong>ACTA DE SANCIÓN - COORDINADORA DE CONSERJERÍA</strong></p>
+                <p><strong>Fecha:</strong> [Fecha actual]</p>
+                <p><strong>Empleado:</strong> [Nombre completo]</p>
+                <p><strong>Cargo:</strong> [Conserje/Valet Parking]</p>
+                <p><strong>Coordinadora:</strong> Lisa Ríos</p>
+                <p><strong>Falta cometida:</strong> [Descripción detallada]</p>
+                <p><strong>Artículo del convenio:</strong> [Referencia específica]</p>
+                <p><strong>Sanción aplicada:</strong> [Tipo de sanción]</li>
+                <p><strong>Fundamento legal:</strong> [Artículos de LCT y convenio]</p>
+                <p><strong>Firma del empleado:</strong> _________________</p>
+                <p><strong>Firma de la coordinadora:</strong> _________________</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Comunicación con el Gerente</h2>
+            <ul>
+                <li><strong>Reportes diarios:</strong> Informar novedades y incidentes relevantes</li>
+                <li><strong>Sanciones aplicadas:</strong> Comunicar todas las sanciones impuestas</li>
+                <li><strong>Problemas recurrentes:</strong> Alertar sobre patrones de comportamiento problemático</li>
+                <li><strong>Necesidades del personal:</strong> Solicitar equipamiento o capacitación adicional</li>
+                <li><strong>Mejoras sugeridas:</strong> Proponer cambios en procedimientos o políticas</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Coordinador_Conserjeria.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html> 

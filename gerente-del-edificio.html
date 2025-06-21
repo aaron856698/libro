@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerente del Edificio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .book-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+            }
+            .action-buttons {
+                display: none !important;
+            }
+            .cover {
+                page-break-after: always;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+                <a href="index.html" class="btn btn-outline">
+                    🏠 Volver al Índice
+                </a>
+            </div>
+        </section>
+
+        <section class="cover">
+            <h1>Gerente del Edificio</h1>
+            <p class="subtitle">Gestión de Personal, Sanciones y Relación con Empresas Tercerizadas</p>
+        </section>
+
+        <section>
+            <h2>¿Cómo usar este libro?</h2>
+            <ul>
+                <li><strong>Consulta rápida:</strong> Utiliza el índice para acceder a cada convenio y rol específico.</li>
+                <li><strong>Fundamentos legales:</strong> Cada sanción tiene su fundamento en la LCT y convenios.</li>
+                <li><strong>Procedimientos:</strong> Sigue los pasos establecidos para aplicar sanciones correctamente.</li>
+                <li><strong>Documentación:</strong> Mantén registro de todas las acciones disciplinarias.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estructura de Mando y Coordinación</h2>
+            
+            <h3>Cadena de Mando Establecida</h3>
+            <p><strong>IMPORTANTE:</strong> Los empleados NO se comunican directamente con el gerente. La comunicación debe seguir la cadena de mando establecida:</p>
+            
+            <ul>
+                <li><strong>Coordinador de Conserjería:</strong> Lisa Ríos - Recibe novedades de conserjes y las comunica al gerente</li>
+                <li><strong>Coordinador de Mantenimiento:</strong> Leonel Babibino - Recibe novedades del personal de mantenimiento y las comunica al gerente</li>
+                <li><strong>Coordinador de Seguridad:</strong> Leal Christian - Recibe novedades del personal de seguridad y las comunica al gerente</li>
+            </ul>
+
+            <h3>Horarios de Trabajo</h3>
+            <p><strong>IMPORTANTE:</strong> Todos los puestos son rotativos 24 horas. Los empleados deben estar en su puesto durante toda la jornada asignada según el turno que les corresponda.</p>
+            
+            <ul>
+                <li><strong>Turnos rotativos:</strong> Mañana (6:00-14:00), Tarde (14:00-22:00), Noche (22:00-6:00)</li>
+                <li><strong>Cobertura 24/7:</strong> Siempre debe haber personal en cada área durante las 24 horas</li>
+                <li><strong>Rotación equitativa:</strong> Los turnos se rotan entre todos los empleados del área</li>
+                <li><strong>Cambios de turno:</strong> Solo se permiten con autorización previa del coordinador</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gestión del Personal SUTERH (Directo)</h2>
+            
+            <h3>1. Conserjes - Cómo deben responderle</h3>
+            <ul>
+                <li><strong>Reporte a coordinador:</strong> Deben reportar diariamente al Coordinador Lisa Ríos sobre novedades, incidentes y quejas de residentes.</li>
+                <li><strong>Horarios rotativos:</strong> Deben estar en su puesto durante toda la jornada asignada según el turno (24 horas).</li>
+                <li><strong>Emergencias:</strong> Deben contactar inmediatamente al coordinador de conserjería ante cualquier emergencia.</li>
+                <li><strong>Informes:</strong> Deben presentar reportes escritos cuando se les solicite.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar con otros empleados del edificio.</li>
+                <li><strong>Presentación:</strong> Deben mantener una presentación impecable con uniforme completo.</li>
+                <li><strong>Atención al público:</strong> Deben brindar atención cordial y profesional a todos los residentes.</li>
+            </ul>
+
+            <h3>2. Personal de Mantenimiento - Cómo deben responderle</h3>
+            <ul>
+                <li><strong>Reporte a coordinador:</strong> Deben informar inmediatamente al Coordinador Leonel Babibino cualquier desperfecto o situación irregular.</li>
+                <li><strong>Tareas asignadas:</strong> Deben cumplir con las tareas de mantenimiento preventivo y correctivo.</li>
+                <li><strong>Emergencias técnicas:</strong> Deben actuar inmediatamente ante fallas técnicas o situaciones de urgencia.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar horarios y tareas con otros empleados.</li>
+                <li><strong>Seguridad:</strong> Deben usar correctamente elementos de protección personal.</li>
+                <li><strong>Herramientas:</strong> Deben mantener en buen estado las herramientas asignadas.</li>
+                <li><strong>Inventario:</strong> Deben reportar inmediatamente la pérdida o daño de herramientas.</li>
+            </ul>
+
+            <h3>3. Valet Parking - Cómo deben responderle</h3>
+            <ul>
+                <li><strong>Reporte vehicular:</strong> Deben informar inmediatamente al coordinador incidentes, daños o situaciones irregulares.</li>
+                <li><strong>Servicio al cliente:</strong> Deben brindar atención cordial y profesional a propietarios de vehículos.</li>
+                <li><strong>Registro preciso:</strong> Deben documentar correctamente todos los movimientos de vehículos.</li>
+                <li><strong>Coordinación:</strong> Deben coordinar con conserje y personal de mantenimiento.</li>
+                <li><strong>Responsabilidad:</strong> Son responsables por daños causados durante el manejo.</li>
+                <li><strong>Licencia vigente:</strong> Deben mantener su licencia de conducir vigente.</li>
+                <li><strong>Llaves seguras:</strong> Deben mantener las llaves de los vehículos en lugar seguro.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gestión de Empresas Tercerizadas</h2>
+            
+            <h3>1. Empresa de Seguridad (UPSRA) - Cómo deben responderle</h3>
+            <ul>
+                <li><strong>Supervisor asignado:</strong> Debe reportar diariamente al Coordinador Leal Christian sobre el estado del servicio.</li>
+                <li><strong>Comunicación constante:</strong> Debe mantener contacto regular sobre novedades y calidad del servicio.</li>
+                <li><strong>Informes ejecutivos:</strong> Debe presentar reportes detallados de gestión y calidad.</li>
+                <li><strong>Emergencias:</strong> Debe contactar inmediatamente al coordinador de seguridad en caso de emergencia.</li>
+                <li><strong>Capacitación:</strong> Debe garantizar que el personal esté capacitado y actualizado.</li>
+                <li><strong>Auditorías:</strong> Debe realizar controles sorpresa y evaluaciones de calidad.</li>
+                <li><strong>Equipamiento:</strong> Debe garantizar que el personal tenga el equipamiento necesario.</li>
+            </ul>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <p><strong>IMPORTANTE:</strong> Leal Christian es el Coordinador de Seguridad de la empresa tercerizada, actuando como intermediario entre la empresa de seguridad y el edificio. Los empleados conserjes y demás personal deben respetar la cadena de mando. Solo en casos muy urgentes y cuando no puedan comunicarse con sus coordinadores, podrán contactar directamente al gerente.</p>
+            </div>
+
+            <h3>2. Empresa de Limpieza - Cómo deben responderle</h3>
+            <ul>
+                <li><strong>Encargado de limpieza:</strong> Fermina Arebalos debe coordinar con el gerente sobre horarios y estándares de calidad.</li>
+                <li><strong>Estándares de calidad:</strong> Debe garantizar que la limpieza cumpla con los estándares establecidos.</li>
+                <li><strong>Horarios:</strong> Debe respetar los horarios acordados sin interrumpir a los residentes.</li>
+                <li><strong>Materiales:</strong> Debe usar productos aprobados y no dañinos.</li>
+                <li><strong>Reportes:</strong> Debe informar sobre problemas o necesidades de mantenimiento.</li>
+                <li><strong>Equipamiento:</strong> Debe mantener en buen estado los equipos de limpieza.</li>
+            </ul>
+
+            <h3>3. Operador de Monitoreo (Empresa Tercerizada) - Cómo debe responderle</h3>
+            <ul>
+                <li><strong>Supervisor de monitoreo:</strong> Debe reportar diariamente al Coordinador Leal Christian sobre el estado del sistema de cámaras.</li>
+                <li><strong>Vigilancia constante:</strong> Debe monitorear las cámaras durante todo su turno sin interrupciones.</li>
+                <li><strong>Reportes de incidentes:</strong> Debe informar inmediatamente cualquier situación sospechosa o irregular.</li>
+                <li><strong>Mantenimiento del sistema:</strong> Debe reportar fallas técnicas en el sistema de monitoreo.</li>
+                <li><strong>Confidencialidad:</strong> Debe mantener absoluta confidencialidad sobre lo observado.</li>
+                <li><strong>Coordinación:</strong> Debe coordinar con el personal de seguridad ante emergencias.</li>
+            </ul>
+            <div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 10px 0;">
+                <p><strong>ADVERTENCIA CRÍTICA:</strong> El Operador de Monitoreo tiene acceso a información sensible y debe actuar con máxima profesionalidad. Cualquier conducta inapropiada será sancionada severamente.</p>
+            </div>
+
+            <h4>Operador de Monitoreo (Empresa Tercerizada)</h4>
+            <div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Espiar o seguir a empleados o residentes por cámaras sin justificación de seguridad</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 1071 CC - Violación de privacidad</li>
+                    
+                    <li><strong>Falta:</strong> Mentir sobre incidentes observados o inventar situaciones falsas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 275 CP - Falso testimonio</li>
+                    
+                    <li><strong>Falta:</strong> Crear discordia entre empleados o difundir rumores sobre lo observado</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 1071 CC - Daño moral</li>
+                    
+                    <li><strong>Falta:</strong> Compartir grabaciones o información confidencial con personas no autorizadas</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 117 CP - Violación de secretos</li>
+                    
+                    <li><strong>Falta:</strong> Usar el sistema de monitoreo para fines personales o de acoso</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 119 CP - Acoso</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No reportar incidentes de seguridad observados en las cámaras</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> Dormir o distraerse durante el monitoreo de cámaras</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 10 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> No realizar el registro de incidentes en el libro de novedades</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> Manipular o alterar grabaciones del sistema de monitoreo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Art. 77 CP - Falsificación</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con el personal de seguridad ante emergencias</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera al personal del edificio</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el puesto de monitoreo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No reportar fallas técnicas menores en el sistema</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el turno sin justificación</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+
+            <h4>Conserjería</h4>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Abandono del puesto de trabajo durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 45</li>
+                    
+                    <li><strong>Falta:</strong> Agresión verbal o física a residentes o visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 47</li>
+                    
+                    <li><strong>Falta:</strong> Robo o apropiación de bienes de residentes o del edificio</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Permitir acceso a personas no autorizadas o sin identificación</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 43 - Control de acceso</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 48</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No reportar novedades o incidentes al coordinador Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 44</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 46 - Atención al público</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme completo o presentación inadecuada</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 49 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Dormir o estar distraído durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con otros empleados del edificio</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 50</li>
+                    
+                    <li><strong>Falta:</strong> No registrar entrada y salida de visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 43 - Control de acceso</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 51</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el puesto de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el turno sin justificación</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                </ul>
+            </div>
+
+            <h4>Mantenimiento</h4>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #28a745; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No realizar tareas de mantenimiento críticas que pongan en riesgo la seguridad</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 52</li>
+                    
+                    <li><strong>Falta:</strong> Daño intencional a instalaciones, equipos o herramientas del edificio</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 183 CP - Daños</li>
+                    
+                    <li><strong>Falta:</strong> No actuar ante emergencias técnicas que pongan en riesgo a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 53</li>
+                    
+                    <li><strong>Falta:</strong> Robo de herramientas, materiales o equipos del edificio</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 54</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No usar elementos de protección personal obligatorios</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 75 LCT - Seguridad e higiene, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 55</li>
+                    
+                    <li><strong>Falta:</strong> No reportar desperfectos o fallas al coordinador Leonel Babibino</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 56</li>
+                    
+                    <li><strong>Falta:</strong> No realizar mantenimiento preventivo programado</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 57</li>
+                    
+                    <li><strong>Falta:</strong> Pérdida o daño por negligencia de herramientas asignadas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 58</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar horarios y tareas con otros empleados</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 59</li>
+                    
+                    <li><strong>Falta:</strong> Realizar trabajos sin autorización previa</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 60</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No mantener ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 61</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme de trabajo completo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 62 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante tareas críticas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+
+            <h4>Valet Parking</h4>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Daño grave a vehículo durante el manejo por negligencia o imprudencia</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 63</li>
+                    
+                    <li><strong>Falta:</strong> Robo de objetos del interior de vehículos</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Usar vehículos de residentes para fines personales</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 173 CP - Usurpación</li>
+                    
+                    <li><strong>Falta:</strong> Conducir bajo efectos del alcohol o drogas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 48 CP - Conducción peligrosa</li>
+                    
+                    <li><strong>Falta:</strong> Pérdida de llaves de vehículos por negligencia</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 64</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No registrar movimiento de vehículos en el sistema</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 65</li>
+                    
+                    <li><strong>Falta:</strong> Licencia de conducir vencida o sin vigencia</li>
+                    <li><strong>Sanción:</strong> Suspensión hasta regularizar</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 66 - Requisitos del puesto</li>
+                    
+                    <li><strong>Falta:</strong> No reportar incidentes vehiculares al coordinador</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 67</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a propietarios de vehículos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 68 - Atención al cliente</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con conserje y personal de mantenimiento</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 69</li>
+                    
+                    <li><strong>Falta:</strong> Estacionar vehículos en lugares no autorizados</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 70</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No usar uniforme completo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 71 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 72</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el manejo de vehículos</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+
+            <h4>Limpieza (Empresa Tercerizada)</h4>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #6f42c1; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Robo de objetos de residentes o del edificio durante la limpieza</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Daño intencional a instalaciones o mobiliario durante la limpieza</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 183 CP - Daños</li>
+                    
+                    <li><strong>Falta:</strong> Usar productos de limpieza no autorizados que dañen superficies</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio Limpieza Art. 73</li>
+                    
+                    <li><strong>Falta:</strong> Acceso a áreas privadas sin autorización</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 149 CP - Violación de domicilio</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio Limpieza Art. 74</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No cumplir con estándares de calidad de limpieza establecidos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio Limpieza Art. 75</li>
+                    
+                    <li><strong>Falta:</strong> No respetar horarios acordados sin interrumpir a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio Limpieza Art. 76</li>
+                    
+                    <li><strong>Falta:</strong> No reportar problemas o necesidades de mantenimiento a Fermina Arebalos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio Limpieza Art. 77</li>
+                    
+                    <li><strong>Falta:</strong> No mantener en buen estado los equipos de limpieza</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio Limpieza Art. 78</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio Limpieza Art. 79 - Atención al público</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme reglamentario</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Convenio Limpieza Art. 80 - Presentación personal</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio Limpieza Art. 81</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                </ul>
+            </div>
+
+            <h4>Seguridad (UPSRA)</h4>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #dc3545; margin: 10px 0;">
+                <h5>FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Dormir durante el turno de vigilancia</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio UPSRA Art. 82</li>
+                    
+                    <li><strong>Falta:</strong> Abandono del puesto de vigilancia sin justificación</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio UPSRA Art. 83</li>
+                    
+                    <li><strong>Falta:</strong> Agresión verbal o física a residentes, visitantes o personal</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio UPSRA Art. 84</li>
+                    
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio UPSRA Art. 85</li>
+                    
+                    <li><strong>Falta:</strong> Permitir acceso a personas no autorizadas o sin identificación</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio UPSRA Art. 86 - Control de acceso</li>
+                </ul>
+
+                <h5>FALTAS GRAVES - SANCIÓN SEVERA</h5>
+                <ul>
+                    <li><strong>Falta:</strong> No realizar rondas de seguridad programadas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio UPSRA Art. 87</li>
+                    
+                    <li><strong>Falta:</strong> No reportar incidentes al coordinador Leal Christian</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio UPSRA Art. 88</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme reglamentario completo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Convenio UPSRA Art. 89 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con el operador de monitoreo ante emergencias</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio UPSRA Art. 90</li>
+                    
+                    <li><strong>Falta:</strong> No registrar incidentes en el libro de novedades</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio UPSRA Art. 91</li>
+                    
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada</li>
+                    <li><strong>Sanción:</strong> Suspensión de 1 a 3 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio UPSRA Art. 92 - Atención al público</li>
+                </ul>
+
+                <h5>FALTAS LEVES - ADVERTENCIAS</h5>
+                <ul>
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio UPSRA Art. 93</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el puesto de trabajo</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el turno sin justificación</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Aplicación de Sanciones - Procedimiento Completo</h2>
+            
+            <h3>Paso 1: Identificación de la falta</h3>
+            <ul>
+                <li><strong>Observación directa:</strong> Usted como gerente observa la falta.</li>
+                <li><strong>Reporte de coordinadores:</strong> Los coordinadores informan faltas de su personal.</li>
+                <li><strong>Reporte de residentes:</strong> Recibe quejas documentadas de residentes.</li>
+                <li><strong>Reporte de otros empleados:</strong> Otros empleados informan la falta.</li>
+                <li><strong>Evidencia documental:</strong> Registros, cámaras, o documentación que pruebe la falta.</li>
+            </ul>
+
+            <h3>Paso 2: Clasificación de la falta</h3>
+            <ul>
+                <li><strong>Falta leve:</strong> Llegadas tardes, falta de cortesía, no usar uniforme.</li>
+                <li><strong>Falta grave:</strong> Insubordinación, abandono del puesto, faltas injustificadas reiteradas.</li>
+                <li><strong>Falta gravísima:</strong> Robo, violencia, faltas por más de 3 días consecutivos.</li>
+            </ul>
+
+            <h3>Paso 3: Notificación por escrito</h3>
+            <ul>
+                <li><strong>Acta de sanción:</strong> Redactar documento detallando la falta cometida.</li>
+                <li><strong>Fecha y hora:</strong> Especificar cuándo ocurrió la falta.</li>
+                <li><strong>Testigos:</strong> Incluir nombres de testigos si los hay.</li>
+                <li><strong>Evidencia:</strong> Adjuntar cualquier evidencia disponible.</li>
+                <li><strong>Entrega:</strong> Entregar personalmente al empleado y que firme recibido.</li>
+            </ul>
+
+            <h3>Paso 4: Derecho de descargo</h3>
+            <ul>
+                <li><strong>Plazo:</strong> El empleado tiene 48 horas para presentar su descargo.</li>
+                <li><strong>Formato:</strong> Puede ser verbal o por escrito.</li>
+                <li><strong>Documentación:</strong> Registrar el descargo en el expediente.</li>
+                <li><strong>Consideración:</strong> Evaluar las explicaciones del empleado.</li>
+            </ul>
+
+            <h3>Paso 5: Decisión y aplicación</h3>
+            <ul>
+                <li><strong>Plazo:</strong> Resolver en máximo 5 días hábiles.</li>
+                <li><strong>Progresividad:</strong> Aplicar sanciones progresivas según la gravedad.</li>
+                <li><strong>Comunicación:</strong> Notificar la decisión por escrito al empleado.</li>
+                <li><strong>Registro:</strong> Documentar la sanción en el legajo del empleado.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Modelos de Documentos</h2>
+            
+            <h3>Modelo de Acta de Sanción</h3>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2a5d9f; margin: 10px 0;">
+                <p><strong>ACTA DE SANCIÓN</strong></p>
+                <p><strong>Fecha:</strong> [Fecha actual]</p>
+                <p><strong>Empleado:</strong> [Nombre completo]</p>
+                <p><strong>Cargo:</strong> [Puesto]</p>
+                <p><strong>Coordinador:</strong> [Nombre del coordinador correspondiente]</p>
+                <p><strong>Falta cometida:</strong> [Descripción detallada]</p>
+                <p><strong>Artículo del convenio:</strong> [Referencia específica]</p>
+                <p><strong>Sanción aplicada:</strong> [Tipo de sanción]</p>
+                <p><strong>Fundamento legal:</strong> [Artículos de LCT y convenio]</p>
+                <p><strong>Firma del empleado:</strong> _________________</p>
+                <p><strong>Firma del coordinador:</strong> _________________</p>
+                <p><strong>Firma del gerente:</strong> _________________</p>
+            </div>
+
+            <h3>Modelo de Notificación de Falta</h3>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2a5d9f; margin: 10px 0;">
+                <p><strong>NOTIFICACIÓN DE FALTA</strong></p>
+                <p><strong>Para:</strong> [Nombre del empleado]</p>
+                <p><strong>Asunto:</strong> Notificación de falta disciplinaria</p>
+                <p>Se le notifica que ha cometido la siguiente falta: [Descripción]</p>
+                <p>Fundamento: [Artículos de LCT y convenio]</p>
+                <p>Tiene 48 horas para presentar su descargo.</p>
+                <p>Fecha: [Fecha]</p>
+                <p>Firma: _________________</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Manejo de Situaciones Específicas</h2>
+            
+            <h3>Cuando un empleado no obedece órdenes</h3>
+            <ol>
+                <li><strong>Conversación privada:</strong> Hablar en privado para entender las razones.</li>
+                <li><strong>Explicación clara:</strong> Explicar por qué es importante cumplir la orden.</li>
+                <li><strong>Documentación:</strong> Registrar la conversación y la negativa.</li>
+                <li><strong>Advertencia:</strong> Dar una advertencia verbal clara.</li>
+                <li><strong>Si persiste:</strong> Aplicar sanción según el convenio (suspensión).</li>
+            </ol>
+
+            <h3>Cuando hay conflictos entre empleados</h3>
+            <ol>
+                <li><strong>Separación inmediata:</strong> Separar a las partes en conflicto.</li>
+                <li><strong>Entrevistas individuales:</strong> Escuchar a cada parte por separado.</li>
+                <li><strong>Mediación:</strong> Intentar resolver el conflicto mediante diálogo.</li>
+                <li><strong>Documentación:</strong> Registrar el incidente y la resolución.</li>
+                <li><strong>Seguimiento:</strong> Monitorear que no se repita el conflicto.</li>
+            </ol>
+
+            <h3>Cuando una empresa tercerizada no cumple</h3>
+            <ol>
+                <li><strong>Comunicación directa:</strong> Contactar al supervisor de la empresa.</li>
+                <li><strong>Documentación:</strong> Registrar las fallas y comunicaciones.</li>
+                <li><strong>Reunión formal:</strong> Solicitar reunión con representantes de la empresa.</li>
+                <li><strong>Plan de mejora:</strong> Exigir un plan de corrección con plazos.</li>
+                <li><strong>Evaluación:</strong> Evaluar si la empresa mejora o considerar cambio.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Prevención y Mantenimiento de Buenas Relaciones</h2>
+            
+            <h3>Comunicación efectiva</h3>
+            <ul>
+                <li><strong>Reuniones regulares:</strong> Mantener reuniones semanales con coordinadores.</li>
+                <li><strong>Feedback constructivo:</strong> Dar retroalimentación positiva y constructiva.</li>
+                <li><strong>Escucha activa:</strong> Escuchar las preocupaciones del personal.</li>
+                <li><strong>Reconocimiento:</strong> Reconocer el buen trabajo públicamente.</li>
+            </ul>
+
+            <h3>Capacitación continua</h3>
+            <ul>
+                <li><strong>Entrenamientos:</strong> Organizar capacitaciones sobre procedimientos.</li>
+                <li><strong>Actualizaciones:</strong> Mantener al personal informado sobre cambios.</li>
+                <li><strong>Evaluaciones:</strong> Realizar evaluaciones periódicas de desempeño.</li>
+                <li><strong>Mejora continua:</strong> Identificar áreas de mejora y actuar.</li>
+            </ul>
+
+            <h3>Ambiente de trabajo</h3>
+            <ul>
+                <li><strong>Respeto mutuo:</strong> Fomentar el respeto entre todos los empleados.</li>
+                <li><strong>Condiciones adecuadas:</strong> Garantizar buenas condiciones de trabajo.</li>
+                <li><strong>Equipamiento:</strong> Proporcionar herramientas y equipos necesarios.</li>
+                <li><strong>Seguridad:</strong> Mantener un ambiente de trabajo seguro.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Recursos y Documentación Importante</h2>
+            
+            <h3>Documentación importante</h3>
+            <ul>
+                <li><strong>Convenios completos:</strong> Mantener copias actualizadas de todos los convenios</li>
+                <li><strong>Legajos:</strong> Mantener legajos actualizados de cada empleado</li>
+                <li><strong>Contratos:</strong> Tener copias de contratos con empresas tercerizadas</li>
+                <li><strong>Reglamentos:</strong> Mantener reglamentos internos actualizados</li>
+                <li><strong>Actas de reunión:</strong> Documentar todas las reuniones con coordinadores</li>
+                <li><strong>Reportes de incidentes:</strong> Mantener registro de todos los incidentes</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Consejos Finales para el Gerente</h2>
+            <ul>
+                <li><strong>Sea consistente:</strong> Aplique las mismas reglas para todos los empleados.</li>
+                <li><strong>Documente todo:</strong> Mantenga registros de todas las acciones y decisiones.</li>
+                <li><strong>Mantenga la calma:</strong> En situaciones conflictivas, mantenga la profesionalidad.</li>
+                <li><strong>Consulte cuando tenga dudas:</strong> No dude en consultar con asesores legales.</li>
+                <li><strong>Fomente el diálogo:</strong> Mantenga canales de comunicación abiertos.</li>
+                <li><strong>Sea justo:</strong> Trate a todos con equidad y respeto.</li>
+                <li><strong>Respete la cadena de mando:</strong> No se comunique directamente con empleados, use a los coordinadores.</li>
+                <li><strong>Monitoree turnos:</strong> Verifique que los turnos rotativos se cumplan correctamente.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Gerente_del_Edificio.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html> 
