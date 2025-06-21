@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="print-helper.js"></script>
+    <script>
+        // Verificar carga de scripts
+        window.addEventListener('load', function() {
+            console.log('=== VERIFICACIÓN DE SCRIPTS ===');
+            
+            if (typeof html2pdf !== 'undefined') {
+                console.log('✅ html2pdf.js cargado correctamente');
+            } else {
+                console.error('❌ html2pdf.js NO está cargado');
+            }
+            
+            if (typeof window.enhancedPrint === 'function') {
+                console.log('✅ print-helper.js cargado correctamente');
+            } else {
+                console.error('❌ print-helper.js NO está cargado');
+            }
+            
+            if (typeof window.print === 'function') {
+                console.log('✅ Función de impresión nativa disponible');
+            } else {
+                console.error('❌ Función de impresión nativa NO disponible');
+            }
+            
+            console.log('=== FIN VERIFICACIÓN ===');
+        });
+    </script>
     <style>
         @media print {
             body {
@@ -44,7 +70,7 @@
         <!-- Botones de Acción -->
         <section class="action-buttons">
             <div class="button-group">
-                <button onclick="printDocument()" class="btn btn-primary">
+                <button onclick="simplePrint()" class="btn btn-primary">
                     🖨️ Imprimir Documento
                 </button>
                 <button onclick="downloadPDF()" class="btn btn-secondary">
@@ -378,76 +404,217 @@
     </div>
 
     <script>
-        function printDocument() {
-            // Función mejorada de impresión con múltiples fallbacks
-            if (window.enhancedPrint) {
-                // Usar la función mejorada si está disponible
-                window.enhancedPrint()
-                    .then(result => {
-                        console.log('Impresión exitosa:', result);
-                    })
-                    .catch(error => {
-                        console.error('Error con enhancedPrint:', error);
-                        fallbackPrint();
-                    });
-            } else {
-                // Fallback a la función básica
-                try {
-                    // Forzar la aplicación de estilos de impresión
-                    document.body.style.background = 'white';
-                    document.body.style.color = 'black';
-                    
-                    // Esperar un momento para que los estilos se apliquen
-                    setTimeout(function() {
-                        // Intentar imprimir
-                        if (window.print) {
-                            window.print();
-                        } else {
-                            // Fallback para navegadores que no soportan window.print
-                            alert('La función de impresión no está disponible en este navegador. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir.');
-                        }
-                    }, 100);
-                } catch (error) {
-                    console.error('Error al imprimir:', error);
-                    alert('Error al imprimir. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir manualmente.');
+        // Función de impresión simple y directa
+        function simplePrint() {
+            console.log('Iniciando impresión simple...');
+            
+            try {
+                // Aplicar estilos de impresión básicos
+                const style = document.createElement('style');
+                style.id = 'simple-print-style';
+                style.textContent = `
+                    @media print {
+                        body { background: white !important; color: black !important; }
+                        .action-buttons { display: none !important; }
+                        .btn { display: none !important; }
+                        .book-container { box-shadow: none !important; margin: 0 !important; }
+                    }
+                `;
+                
+                // Remover estilos anteriores
+                const existingStyle = document.getElementById('simple-print-style');
+                if (existingStyle) {
+                    existingStyle.remove();
                 }
+                
+                document.head.appendChild(style);
+                
+                // Imprimir directamente
+                setTimeout(function() {
+                    if (typeof window.print === 'function') {
+                        window.print();
+                    } else {
+                        alert('Función de impresión no disponible. Use Ctrl+P (Windows) o Cmd+P (Mac)');
+                    }
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error en simplePrint:', error);
+                alert('Error al imprimir. Use Ctrl+P (Windows) o Cmd+P (Mac)');
+            }
+        }
+        
+        // Función de impresión mejorada y más robusta
+        function printDocument() {
+            console.log('Iniciando proceso de impresión...');
+            
+            try {
+                // Verificar si estamos en un entorno web
+                if (typeof window === 'undefined') {
+                    alert('No se puede imprimir en este entorno');
+                    return;
+                }
+                
+                // Preparar la página para impresión
+                prepareForPrint();
+                
+                // Intentar imprimir con múltiples métodos
+                setTimeout(function() {
+                    if (typeof window.print === 'function') {
+                        console.log('Usando window.print()');
+                        window.print();
+                    } else if (window.enhancedPrint && typeof window.enhancedPrint === 'function') {
+                        console.log('Usando enhancedPrint()');
+                        window.enhancedPrint()
+                            .then(result => {
+                                console.log('Impresión exitosa:', result);
+                            })
+                            .catch(error => {
+                                console.error('Error con enhancedPrint:', error);
+                                fallbackPrint();
+                            });
+                    } else {
+                        console.log('Fallback a método manual');
+                        fallbackPrint();
+                    }
+                }, 200);
+                
+            } catch (error) {
+                console.error('Error en printDocument:', error);
+                fallbackPrint();
+            }
+        }
+        
+        // Preparar la página para impresión
+        function prepareForPrint() {
+            try {
+                // Aplicar estilos de impresión
+                const style = document.createElement('style');
+                style.id = 'print-override';
+                style.textContent = `
+                    @media print {
+                        body { 
+                            background: white !important; 
+                            color: black !important; 
+                            margin: 0 !important;
+                            padding: 0 !important;
+                        }
+                        .book-container { 
+                            box-shadow: none !important; 
+                            margin: 0 !important; 
+                            padding: 20px !important;
+                            max-width: none !important;
+                            border-radius: 0 !important;
+                        }
+                        .action-buttons { display: none !important; }
+                        .btn { display: none !important; }
+                        * { -webkit-print-color-adjust: exact !important; }
+                        .cover { page-break-after: always; }
+                        section { page-break-inside: avoid; }
+                        h2 { page-break-after: avoid; }
+                        h3 { page-break-after: avoid; }
+                    }
+                `;
+                
+                // Remover estilos anteriores si existen
+                const existingStyle = document.getElementById('print-override');
+                if (existingStyle) {
+                    existingStyle.remove();
+                }
+                
+                document.head.appendChild(style);
+                console.log('Estilos de impresión aplicados');
+                
+            } catch (error) {
+                console.error('Error al preparar impresión:', error);
             }
         }
         
         function fallbackPrint() {
-            alert('Para imprimir este documento:\n\n1. Presione Ctrl+P (Windows) o Cmd+P (Mac)\n2. Configure las opciones de impresión\n3. Seleccione "Imprimir"\n\nO use la función "Descargar PDF" como alternativa.');
+            const message = 'Para imprimir este documento:\n\n' +
+                           '1. Presione Ctrl+P (Windows) o Cmd+P (Mac)\n' +
+                           '2. Configure las opciones de impresión\n' +
+                           '3. Seleccione "Imprimir"\n\n' +
+                           'O use la función "Descargar PDF" como alternativa.';
+            alert(message);
         }
 
         function downloadPDF() {
-            const element = document.querySelector('.book-container');
-            const opt = {
-                margin: 1,
-                filename: 'Bellboys_SUTERH.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-            };
-            
-            html2pdf().set(opt).from(element).save();
+            try {
+                console.log('Iniciando descarga PDF...');
+                const element = document.querySelector('.book-container');
+                if (!element) {
+                    alert('Error: No se pudo encontrar el contenido para generar el PDF');
+                    return;
+                }
+                
+                const opt = {
+                    margin: 1,
+                    filename: 'Bellboys_SUTERH.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                };
+                
+                if (typeof html2pdf !== 'undefined') {
+                    html2pdf().set(opt).from(element).save();
+                    console.log('PDF iniciado');
+                } else {
+                    alert('Error: La librería PDF no está disponible. Por favor use la función de impresión.');
+                }
+            } catch (error) {
+                console.error('Error al generar PDF:', error);
+                alert('Error al generar PDF. Por favor use la función de impresión.');
+            }
         }
         
-        // Agregar evento para detectar si la impresión fue cancelada
-        window.addEventListener('afterprint', function() {
-            console.log('Impresión completada');
+        // Verificar que todo esté cargado correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página cargada, verificando funcionalidad de impresión...');
+            
+            // Verificar si los scripts están cargados
+            if (typeof window.print === 'function') {
+                console.log('✅ Función de impresión disponible');
+            } else {
+                console.warn('⚠️ Función de impresión no disponible');
+            }
+            
+            if (typeof html2pdf !== 'undefined') {
+                console.log('✅ Librería PDF disponible');
+            } else {
+                console.warn('⚠️ Librería PDF no disponible');
+            }
+            
+            if (typeof window.enhancedPrint === 'function') {
+                console.log('✅ Enhanced Print disponible');
+            } else {
+                console.warn('⚠️ Enhanced Print no disponible');
+            }
         });
         
-        // Agregar evento para detectar errores de impresión
+        // Eventos para impresión
+        window.addEventListener('afterprint', function() {
+            console.log('Impresión completada');
+            // Limpiar estilos de impresión
+            const style = document.getElementById('print-override');
+            if (style) {
+                style.remove();
+            }
+        });
+        
         window.addEventListener('error', function(e) {
             console.error('Error en la página:', e);
         });
         
-        // Agregar atajo de teclado para impresión
+        // Atajo de teclado para impresión
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
                 e.preventDefault();
                 printDocument();
             }
         });
+        
+        console.log('Scripts de impresión cargados correctamente');
     </script>
 </body>
 </html> 
