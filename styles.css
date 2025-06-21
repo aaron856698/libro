@@ -252,22 +252,140 @@ section h2 {
     font-size: 1.6em;
 }
 @media print {
+    /* Reset completo para impresión */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
     body {
-        background: white;
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+        color: black !important;
     }
+    
     .book-container {
-        box-shadow: none;
-        margin: 0;
-        padding: 20px;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        background: white !important;
     }
+    
     .action-buttons {
-        display: none;
+        display: none !important;
     }
+    
     .cover {
-        page-break-after: always;
+        page-break-after: always !important;
+        background: white !important;
+        border: 1px solid #ccc !important;
+        margin-bottom: 20px !important;
     }
+    
+    .cover::before {
+        display: none !important;
+    }
+    
     .index {
-        page-break-after: always;
+        page-break-after: always !important;
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .welcome {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .features {
+        display: block !important;
+    }
+    
+    .feature {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        margin-bottom: 10px !important;
+        page-break-inside: avoid !important;
+    }
+    
+    section {
+        page-break-inside: avoid !important;
+        margin-bottom: 20px !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        color: black !important;
+    }
+    
+    h1 {
+        font-size: 18pt !important;
+    }
+    
+    h2 {
+        font-size: 16pt !important;
+    }
+    
+    h3 {
+        font-size: 14pt !important;
+    }
+    
+    p, li {
+        font-size: 11pt !important;
+        color: black !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: none !important;
+    }
+    
+    .btn {
+        display: none !important;
+    }
+    
+    .button-group {
+        display: none !important;
+    }
+    
+    /* Asegurar que las imágenes se impriman */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Evitar cortes en elementos importantes */
+    table {
+        page-break-inside: avoid !important;
+    }
+    
+    /* Estilos específicos para elementos con colores */
+    .union-badge {
+        background: #f0f0f0 !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .detail-item {
+        background: white !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    /* Ocultar elementos decorativos */
+    .logo-placeholder {
+        display: none !important;
+    }
+    
+    /* Asegurar márgenes de página */
+    @page {
+        margin: 1in;
+        size: A4;
     }
 }
 @media (max-width: 768px) {

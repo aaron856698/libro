@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellboys - SUTERH</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="print-helper.js"></script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .book-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+            }
+            .action-buttons {
+                display: none !important;
+            }
+            .cover {
+                page-break-after: always;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+                <a href="index.html" class="btn btn-outline">
+                    🏠 Volver al Índice
+                </a>
+            </div>
+        </section>
+
+        <section class="cover">
+            <h1>Bellboys - SUTERH</h1>
+            <h2>Martin Torres y Sebastian Galeano</h2>
+            <h3>Martin Coronado</h3>
+            <p class="subtitle">Reglamento Estricto - Respeto Absoluto a la Cadena de Mando</p>
+            <p class="date">Fecha: 21/06/2025</p>
+        </section>
+
+        <section>
+            <h2>⚠️ ADVERTENCIA CRÍTICA - LECTURA OBLIGATORIA</h2>
+            <div style="background: #ffebee; padding: 20px; border-left: 6px solid #f44336; margin: 15px 0; border-radius: 5px;">
+                <h3 style="color: #d32f2f; margin-top: 0;">🚨 REGLAS FUNDAMENTALES - NO NEGOCIABLES</h3>
+                <ul style="color: #d32f2f; font-weight: bold;">
+                    <li><strong>RESPETO ABSOLUTO:</strong> Los Bellboys DEBEN respetar y obedecer a la Coordinadora Lisa Ríos SIN EXCEPCIÓN</li>
+                    <li><strong>CADENA DE MANDO:</strong> PROHIBIDO saltar la cadena de mando establecida</li>
+                    <li><strong>PROHIBIDO:</strong> Armar disturbios, crear conflictos o generar mal ambiente laboral</li>
+                    <li><strong>PROHIBIDO:</strong> Faltar el respeto a superiores, compañeros o residentes</li>
+                    <li><strong>PROHIBIDO:</strong> Hablar mal de la Coordinadora Lisa Ríos o cualquier superior</li>
+                    <li><strong>OBLIGATORIO:</strong> Reportar directamente a la Coordinadora Lisa Ríos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Cadena de Mando Establecida - OBLIGATORIA</h2>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <h3>📋 JERARQUÍA DE MANDO - NO SE PUEDE SALTAR</h3>
+                <ol style="font-weight: bold;">
+                    <li><strong>Bellboys (Martin Torres y Sebastian Galeano)</strong> → Reportan a:</li>
+                    <li><strong>Coordinadora Lisa Ríos</strong> → Reporta a:</li>
+                    <li><strong>Gerente del Edificio (Administración)</strong></li>
+                </ol>
+                <p style="color: #856404; font-weight: bold; margin-top: 15px;">
+                    ⚠️ <strong>IMPORTANTE:</strong> Los Bellboys NO pueden comunicarse directamente con el gerente sin autorización previa de la Coordinadora Lisa Ríos. Solo en casos de emergencia extrema y cuando no puedan contactar a la coordinadora.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Responsabilidades Específicas de los Bellboys</h2>
+            <ul>
+                <li><strong>Atención al cliente:</strong> Servicio cordial y profesional a todos los residentes y visitantes</li>
+                <li><strong>Transporte de equipaje:</strong> Manejo seguro y cuidadoso de maletas y paquetes</li>
+                <li><strong>Control de acceso:</strong> Verificar identidad de visitantes y residentes</li>
+                <li><strong>Reporte a coordinadora:</strong> Informar TODAS las novedades a la Coordinadora Lisa Ríos</li>
+                <li><strong>Mantenimiento de uniforme:</strong> Presentación impecable en todo momento</li>
+                <li><strong>Coordinación:</strong> Trabajar en equipo con conserjes y personal de mantenimiento</li>
+                <li><strong>Emergencias:</strong> Actuar según protocolos establecidos y reportar inmediatamente</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🚨 FALTAS GRAVÍSIMAS - SANCIÓN INMEDIATA</h2>
+            <div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 10px 0;">
+                <h3>DESPIDO INMEDIATO O SUSPENSIÓN DE 15 A 30 DÍAS</h3>
+                
+                <h4>1. FALTAS DE RESPETO A LA COORDINADORA LISA RÍOS</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Agresión verbal o física hacia la Coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 45</li>
+                    
+                    <li><strong>Falta:</strong> Desobediencia flagrante a órdenes directas de la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 47</li>
+                    
+                    <li><strong>Falta:</strong> Difamación o calumnia contra la Coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 109 CP - Calumnias</li>
+                    
+                    <li><strong>Falta:</strong> Amenazas verbales o escritas a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Art. 149 bis CP - Amenazas</li>
+                </ul>
+
+                <h4>2. VIOLACIÓN DE LA CADENA DE MANDO</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Saltar la cadena de mando sin autorización previa</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 44</li>
+                    
+                    <li><strong>Falta:</strong> Comunicarse directamente con el gerente sin autorización de la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 46</li>
+                    
+                    <li><strong>Falta:</strong> Ignorar órdenes de la Coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 48</li>
+                </ul>
+
+                <h4>3. DISTURBIOS Y CONFLICTOS LABORALES</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Armar disturbios o crear conflictos en el lugar de trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 49</li>
+                    
+                    <li><strong>Falta:</strong> Agresión verbal o física a compañeros de trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 50</li>
+                    
+                    <li><strong>Falta:</strong> Generar mal ambiente laboral o crear divisiones entre empleados</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 51</li>
+                </ul>
+
+                <h4>4. FALTAS CONTRA RESIDENTES Y VISITANTES</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Agresión verbal o física a residentes o visitantes</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 52</li>
+                    
+                    <li><strong>Falta:</strong> Robo o apropiación de bienes de residentes o visitantes</li>
+                    <li><strong>Sanción:</strong> Despido inmediato</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 162 CP - Hurto</li>
+                    
+                    <li><strong>Falta:</strong> Daño intencional a equipaje o pertenencias de residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Art. 183 CP - Daños</li>
+                </ul>
+
+                <h4>5. FALTAS DE SEGURIDAD Y CONDUCTA</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Consumir alcohol o drogas durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 15 a 30 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 53</li>
+                    
+                    <li><strong>Falta:</strong> Abandono del puesto de trabajo durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 10 a 20 días o despido</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 242 LCT - Faltas gravísimas, Convenio SUTERH Art. 54</li>
+                    
+                    <li><strong>Falta:</strong> Permitir acceso a personas no autorizadas</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 15 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 55 - Control de acceso</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 FALTAS GRAVES - SANCIÓN SEVERA</h2>
+            <div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 10px 0;">
+                <h3>SUSPENSIÓN DE 3 A 15 DÍAS</h3>
+                
+                <h4>1. FALTAS DE RESPETO Y COMUNICACIÓN</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Falta de respeto o insolencia hacia la Coordinadora Lisa Ríos</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 10 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 56</li>
+                    
+                    <li><strong>Falta:</strong> No reportar novedades o incidentes a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 57</li>
+                    
+                    <li><strong>Falta:</strong> Hablar mal de la coordinadora o superiores con residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 5 a 12 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 58</li>
+                    
+                    <li><strong>Falta:</strong> Tono de voz inadecuado al dirigirse a la coordinadora</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Convenio SUTERH Art. 59</li>
+                </ul>
+
+                <h4>2. FALTAS EN EL SERVICIO</h4>
+                <ul>
+                    <li><strong>Falta:</strong> Falta de cortesía o atención inadecuada a residentes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 60 - Atención al público</li>
+                    
+                    <li><strong>Falta:</strong> No usar uniforme completo o presentación inadecuada</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 61 - Presentación personal</li>
+                    
+                    <li><strong>Falta:</strong> Dormir o estar distraído durante el turno</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves</li>
+                    
+                    <li><strong>Falta:</strong> No coordinar con conserjes y personal de mantenimiento</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 62</li>
+                </ul>
+
+                <h4>3. FALTAS DE SEGURIDAD</h4>
+                <ul>
+                    <li><strong>Falta:</strong> No registrar entrada y salida de visitantes</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 7 días</li>
+                    <li><strong>Fundamento:</strong> Convenio SUTERH Art. 63 - Control de acceso</li>
+                    
+                    <li><strong>Falta:</strong> No reportar incidentes de seguridad</li>
+                    <li><strong>Sanción:</strong> Suspensión de 3 a 8 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Art. 245 LCT - Faltas graves, Convenio SUTERH Art. 64</li>
+                    
+                    <li><strong>Falta:</strong> No mantener limpio y ordenado el área de trabajo</li>
+                    <li><strong>Sanción:</strong> Suspensión de 2 a 5 días</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚠️ FALTAS LEVES - ADVERTENCIAS</h2>
+            <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; margin: 10px 0;">
+                <h3>LLAMADOS DE ATENCIÓN</h3>
+                
+                <ul>
+                    <li><strong>Falta:</strong> Llegadas tardes injustificadas</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia, Convenio SUTERH Art. 65</li>
+                    
+                    <li><strong>Falta:</strong> Usar teléfono personal durante el turno sin justificación</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de diligencia</li>
+                    
+                    <li><strong>Falta:</strong> No saludar o responder de mala manera</li>
+                    <li><strong>Sanción:</strong> Llamado de atención verbal</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia</li>
+                    
+                    <li><strong>Falta:</strong> Comentarios inapropiados sobre decisiones de superiores</li>
+                    <li><strong>Sanción:</strong> Llamado de atención por escrito</li>
+                    <li><strong>Fundamento:</strong> Art. 67 LCT - Deber de obediencia, Convenio SUTERH Art. 66</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Procedimiento Disciplinario Estricto</h2>
+            <ol>
+                <li><strong>Inmediato:</strong> La Coordinadora Lisa Ríos documenta el incidente con fecha, hora y testigos</li>
+                <li><strong>Notificación:</strong> Se informa al Bellboy sobre la falta cometida</li>
+                <li><strong>Descargo:</strong> Se da oportunidad de presentar su versión por escrito en 48 horas</li>
+                <li><strong>Evaluación:</strong> Se evalúa la gravedad según el historial del empleado</li>
+                <li><strong>Sanción:</strong> Se aplica la sanción correspondiente según la gravedad</li>
+                <li><strong>Comunicación al gerente:</strong> Se informa inmediatamente al gerente sobre el incidente</li>
+                <li><strong>Registro:</strong> Se documenta en el legajo del empleado</li>
+                <li><strong>Seguimiento:</strong> Se monitorea el comportamiento posterior del empleado</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Consecuencias de Reincidencia</h2>
+            <div style="background: #ffebee; padding: 15px; border-left: 4px solid #f44336; margin: 10px 0;">
+                <h3>🚨 SISTEMA PROGRESIVO DE SANCIONES</h3>
+                <ul style="color: #d32f2f; font-weight: bold;">
+                    <li><strong>Primera reincidencia:</strong> Sanción duplicada</li>
+                    <li><strong>Segunda reincidencia:</strong> Suspensión de 15 a 30 días</li>
+                    <li><strong>Tercera reincidencia:</strong> Despido por causas disciplinarias</li>
+                    <li><strong>Faltas gravísimas:</strong> Despido inmediato sin previo aviso</li>
+                    <li><strong>Faltas de respeto a la coordinadora:</strong> Despido inmediato</li>
+                    <li><strong>Violación de cadena de mando:</strong> Suspensión inmediata de 10 días mínimo</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Modelo de Acta de Sanción - Bellboys</h2>
+            <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #2a5d9f; margin: 10px 0;">
+                <p><strong>ACTA DE SANCIÓN - BELLBOYS</strong></p>
+                <p><strong>Fecha:</strong> [Fecha actual]</p>
+                <p><strong>Empleado:</strong> [Martin Torres / Sebastian Galeano]</p>
+                <p><strong>Cargo:</strong> Bellboy</p>
+                <p><strong>Coordinadora:</strong> Lisa Ríos</p>
+                <p><strong>Falta cometida:</strong> [Descripción detallada]</p>
+                <p><strong>Artículo del convenio:</strong> [Referencia específica]</p>
+                <p><strong>Sanción aplicada:</strong> [Tipo de sanción]</p>
+                <p><strong>Fundamento legal:</strong> [Artículos de LCT y convenio SUTERH]</p>
+                <p><strong>Testigos:</strong> [Nombres de testigos si los hay]</p>
+                <p><strong>Firma del empleado:</strong> _________________</p>
+                <p><strong>Firma de la coordinadora:</strong> _________________</p>
+                <p><strong>Firma del gerente:</strong> _________________</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Comunicación con la Coordinadora Lisa Ríos</h2>
+            <ul>
+                <li><strong>Reportes diarios:</strong> Informar TODAS las novedades y incidentes</li>
+                <li><strong>Emergencias:</strong> Contactar inmediatamente a la coordinadora</li>
+                <li><strong>Problemas:</strong> Reportar cualquier problema o situación irregular</li>
+                <li><strong>Coordinación:</strong> Coordinar horarios y tareas con la coordinadora</li>
+                <li><strong>Capacitación:</strong> Solicitar capacitación adicional cuando sea necesario</li>
+                <li><strong>Mejoras:</strong> Proponer mejoras en procedimientos (solo a través de la coordinadora)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Protocolos Específicos para Bellboys</h2>
+            <ul>
+                <li><strong>Control de acceso:</strong> Verificar identidad de visitantes y registrar entrada/salida</li>
+                <li><strong>Transporte de equipaje:</strong> Manejo cuidadoso y registro de maletas</li>
+                <li><strong>Atención al cliente:</strong> Servicio cordial y profesional en todo momento</li>
+                <li><strong>Emergencias:</strong> Activar protocolo de emergencia y contactar a la coordinadora</li>
+                <li><strong>Quejas:</strong> Recibir quejas de residentes y derivar a la coordinadora</li>
+                <li><strong>Mantenimiento:</strong> Coordinar con personal de mantenimiento cuando sea necesario</li>
+                <li><strong>Uniforme:</strong> Mantener presentación impecable durante todo el turno</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📋 Resumen de Reglas Críticas</h2>
+            <div style="background: #e8f5e8; padding: 15px; border-left: 4px solid #4caf50; margin: 10px 0;">
+                <h3>✅ LO QUE SÍ DEBEN HACER:</h3>
+                <ul style="color: #2e7d32;">
+                    <li>✅ Respetar y obedecer a la Coordinadora Lisa Ríos</li>
+                    <li>✅ Reportar directamente a la coordinadora</li>
+                    <li>✅ Mantener presentación impecable</li>
+                    <li>✅ Brindar servicio cordial a residentes</li>
+                    <li>✅ Coordinar con otros empleados</li>
+                    <li>✅ Seguir protocolos de seguridad</li>
+                </ul>
+                
+                <h3>❌ LO QUE NUNCA DEBEN HACER:</h3>
+                <ul style="color: #d32f2f;">
+                    <li>❌ Faltar el respeto a la Coordinadora Lisa Ríos</li>
+                    <li>❌ Saltar la cadena de mando</li>
+                    <li>❌ Armar disturbios o crear conflictos</li>
+                    <li>❌ Hablar mal de superiores</li>
+                    <li>❌ Agredir a residentes o compañeros</li>
+                    <li>❌ Consumir alcohol o drogas en el trabajo</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            // Función mejorada de impresión con múltiples fallbacks
+            if (window.enhancedPrint) {
+                // Usar la función mejorada si está disponible
+                window.enhancedPrint()
+                    .then(result => {
+                        console.log('Impresión exitosa:', result);
+                    })
+                    .catch(error => {
+                        console.error('Error con enhancedPrint:', error);
+                        fallbackPrint();
+                    });
+            } else {
+                // Fallback a la función básica
+                try {
+                    // Forzar la aplicación de estilos de impresión
+                    document.body.style.background = 'white';
+                    document.body.style.color = 'black';
+                    
+                    // Esperar un momento para que los estilos se apliquen
+                    setTimeout(function() {
+                        // Intentar imprimir
+                        if (window.print) {
+                            window.print();
+                        } else {
+                            // Fallback para navegadores que no soportan window.print
+                            alert('La función de impresión no está disponible en este navegador. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir.');
+                        }
+                    }, 100);
+                } catch (error) {
+                    console.error('Error al imprimir:', error);
+                    alert('Error al imprimir. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir manualmente.');
+                }
+            }
+        }
+        
+        function fallbackPrint() {
+            alert('Para imprimir este documento:\n\n1. Presione Ctrl+P (Windows) o Cmd+P (Mac)\n2. Configure las opciones de impresión\n3. Seleccione "Imprimir"\n\nO use la función "Descargar PDF" como alternativa.');
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Bellboys_SUTERH.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+        
+        // Agregar evento para detectar si la impresión fue cancelada
+        window.addEventListener('afterprint', function() {
+            console.log('Impresión completada');
+        });
+        
+        // Agregar evento para detectar errores de impresión
+        window.addEventListener('error', function(e) {
+            console.error('Error en la página:', e);
+        });
+        
+        // Agregar atajo de teclado para impresión
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printDocument();
+            }
+        });
+    </script>
+</body>
+</html> 
