@@ -3,52 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglamento de Convenios Colectivos - SUTERH & UPSRA</title>
+    <title>Libro Completo - Convenios Laborales</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="print-helper.js"></script>
+    <style>
+        /* Estilos específicos para la portada */
+        .cover-page {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('public/coronado.jpg') center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .cover-logo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            backdrop-filter: blur(15px);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .cover-logo::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .cover-title {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #ffffff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cover-subtitle {
+            font-size: 2em;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #e6f3ff;
+        }
+
+        .cover-description {
+            font-size: 1.3em;
+            margin-bottom: 60px;
+            opacity: 0.9;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .section-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .section-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .section-card p {
+            font-size: 1em;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover-footer {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cover-footer p {
+            font-size: 1.1em;
+            opacity: 0.8;
+            margin: 8px 0;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .print-cover {
+            display: none;
+        }
+
+        @media print {
+            .cover-page {
+                page-break-after: always;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .cover-page::before {
+                display: none;
+            }
+
+            .cover-logo {
+                width: 120px;
+                height: 120px;
+                font-size: 3em;
+                background: rgba(255, 255, 255, 0.2);
+                border: 3px solid rgba(255, 255, 255, 0.4);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .cover-logo::after {
+                display: none;
+            }
+
+            .cover-title {
+                font-size: 3em;
+                -webkit-text-fill-color: white;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+
+            .cover-subtitle {
+                font-size: 1.6em;
+                color: white;
+            }
+
+            .cover-description {
+                font-size: 1.1em;
+                color: white;
+            }
+
+            .section-card {
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .section-card h3 {
+                color: #ffd700;
+                -webkit-text-fill-color: #ffd700;
+            }
+
+            .action-buttons {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .cover-logo {
+                width: 120px;
+                height: 120px;
+                font-size: 3em;
+            }
+
+            .cover-title {
+                font-size: 2.8em;
+            }
+
+            .cover-subtitle {
+                font-size: 1.5em;
+            }
+
+            .cover-sections {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="book-container">
-        <!-- Portada Profesional -->
-        <section class="cover">
-            <div class="cover-header">
-                <div class="logo-section">
-                    <div class="logo-placeholder">🏢</div>
-                </div>
-                <h1>REGLAMENTO INTERNO</h1>
-                <h2>Convenios Colectivos de Trabajo</h2>
-                <div class="unions">
-                    <span class="union-badge">SUTERH</span>
-                    <span class="union-badge">UPSRA</span>
-                </div>
-            </div>
-            
+        <!-- Portada Principal -->
+        <section class="cover-page">
             <div class="cover-content">
-                <h3>Procedimientos, Protocolos y Sanciones</h3>
-                <p class="description">
-                    Manual completo de reglamentación laboral para personal de edificios, 
-                    incluyendo conserjes, mantenimiento, valet parking, vigiladores y supervisores.
-                </p>
+                <div class="cover-logo">
+                    📚
+                </div>
                 
-                <div class="cover-details">
-                    <div class="detail-item">
-                        <strong>Versión:</strong> 1.0
+                <h1 class="cover-title">CONVENIOS LABORALES</h1>
+                <h2 class="cover-subtitle">Manual Completo de Gestión</h2>
+                
+                <p class="cover-description">
+                    Compilación integral de convenios laborales, reglamentos disciplinarios y procedimientos 
+                    para la gestión eficiente de personal en consorcios y edificios.
+                </p>
+
+                <div class="cover-sections">
+                    <div class="section-card">
+                        <h3>🏢 SUTERH</h3>
+                        <p>Convenio Sindicato Único de Trabajadores de Edificios de Renta y Horizontal</p>
                     </div>
-                    <div class="detail-item">
-                        <strong>Fecha:</strong> junio 2025
+                    
+                    <div class="section-card">
+                        <h3>🛡️ UPSRA</h3>
+                        <p>Unión del Personal de Seguridad de la República Argentina</p>
                     </div>
-                    <div class="detail-item">
-                        <strong>Distribución:</strong> Gratuita
+                    
+                    <div class="section-card">
+                        <h3>📋 Procedimientos</h3>
+                        <p>Reglamentos disciplinarios y protocolos de gestión</p>
+                    </div>
+                    
+                    <div class="section-card">
+                        <h3>⚖️ Marco Legal</h3>
+                        <p>Fundamentos legales y aplicación de sanciones</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="cover-footer">
-                <p class="disclaimer">
-                    Este documento es de distribución gratuita y contiene información 
-                    basada en los convenios colectivos oficiales vigentes.
-                </p>
+
+                <div class="cover-footer">
+                    <p><strong>Versión:</strong> 2024 - Edición Completa</p>
+                    <p><strong>Actualizado:</strong> Diciembre 2024</p>
+                    <p><strong>Uso:</strong> Gestión Interna - Documento Confidencial</p>
+                </div>
             </div>
         </section>
 
@@ -59,60 +292,255 @@
                     🖨️ Imprimir Documento
                 </button>
                 <button onclick="downloadPDF()" class="btn btn-secondary">
-                    📄 Descargar PDF Completo
-                </button>
-                <button onclick="downloadSectionPDF()" class="btn btn-outline">
-                    📋 Descargar por Secciones
+                    📄 Descargar PDF
                 </button>
             </div>
         </section>
 
-        <!-- Índice -->
-        <section class="index">
-            <h2>Índice del Reglamento</h2>
-            <ol>
-                <li><a href="gerente-del-edificio.html">📋 Guía para Gerentes y Coordinadores</a></li>
-                <li>Convenio SUTERH
-                    <ol>
-                        <li><a href="suterh-intro.html">📖 Introducción SUTERH</a></li>
-                        <li><a href="suterh-mantenimiento.html">🔧 Capítulo 1: Personal de Mantenimiento</a></li>
-                        <li><a href="suterh-conserje.html">🏢 Capítulo 2: Conserjes</a></li>
-                        <li><a href="coordinador-conserjeria.html">👥 Capítulo 3: Coordinador de Conserjería</a></li>
-                        <li><a href="bellboy.html">🛎️ Capítulo 4: Bellboys</a></li>
-                        <li><a href="suterh-valet.html">🚗 Capítulo 5: Valet Parking</a></li>
-                    </ol>
-                </li>
-                <li>Convenio UPSRA
-                    <ol>
-                        <li><a href="upsra-intro.html">📖 Introducción UPSRA</a></li>
-                        <li><a href="upsra-vigilador.html">👮 Capítulo 1: Vigiladores</a></li>
-                        <li><a href="upsra-supervisor.html">👨‍💼 Capítulo 2: Supervisores</a></li>
-                        <li><a href="monitoreo.html">📹 Capítulo 3: Personal de Monitoreo</a></li>
-                    </ol>
-                </li>
-                <li><a href="anexos.html">📎 Anexos y Material Complementario</a></li>
-            </ol>
-        </section>
+        <!-- Contenido del Índice -->
+        <section class="content">
+            <style>
+                .content {
+                    padding: 40px 20px;
+                    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                }
 
-        <section class="welcome">
-            <h2>Bienvenido al Reglamento</h2>
-            <p>Este documento digital reúne y organiza los convenios colectivos de trabajo de SUTERH y UPSRA, 
-            estructurados por roles y funciones específicas. Incluye procedimientos detallados, protocolos 
-            de seguridad, y el régimen completo de sanciones para cada puesto.</p>
+                .content h1 {
+                    text-align: center;
+                    font-size: 2.5em;
+                    color: #1e3c72;
+                    margin-bottom: 40px;
+                    font-weight: bold;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                }
+
+                .index-section {
+                    background: white;
+                    margin: 30px 0;
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    border-left: 5px solid #007bff;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .index-section:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+                }
+
+                .index-section h2 {
+                    color: #007bff;
+                    font-size: 1.8em;
+                    margin-bottom: 25px;
+                    padding-bottom: 15px;
+                    border-bottom: 3px solid #007bff;
+                    position: relative;
+                    font-weight: bold;
+                }
+
+                .index-section h2::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background: #ffd700;
+                }
+
+                .index-section ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 15px;
+                }
+
+                .index-section li {
+                    margin: 0;
+                }
+
+                .index-section a {
+                    display: block;
+                    padding: 20px;
+                    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: #495057;
+                    font-weight: 500;
+                    border: 2px solid transparent;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .index-section a::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.1), transparent);
+                    transition: left 0.5s ease;
+                }
+
+                .index-section a:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+                    border-color: #007bff;
+                    color: #007bff;
+                    background: linear-gradient(145deg, #e7f3ff 0%, #d1ecf1 100%);
+                }
+
+                .index-section a:hover::before {
+                    left: 100%;
+                }
+
+                .index-section a:active {
+                    transform: translateY(-1px);
+                }
+
+                /* Estilos específicos para cada sección */
+                .index-section:nth-child(1) {
+                    border-left-color: #28a745;
+                }
+
+                .index-section:nth-child(1) h2 {
+                    color: #28a745;
+                    border-bottom-color: #28a745;
+                }
+
+                .index-section:nth-child(1) h2::after {
+                    background: #ffc107;
+                }
+
+                .index-section:nth-child(2) {
+                    border-left-color: #dc3545;
+                }
+
+                .index-section:nth-child(2) h2 {
+                    color: #dc3545;
+                    border-bottom-color: #dc3545;
+                }
+
+                .index-section:nth-child(2) h2::after {
+                    background: #ffc107;
+                }
+
+                .index-section:nth-child(3) {
+                    border-left-color: #6f42c1;
+                }
+
+                .index-section:nth-child(3) h2 {
+                    color: #6f42c1;
+                    border-bottom-color: #6f42c1;
+                }
+
+                .index-section:nth-child(3) h2::after {
+                    background: #ffc107;
+                }
+
+                .index-section:nth-child(4) {
+                    border-left-color: #fd7e14;
+                }
+
+                .index-section:nth-child(4) h2 {
+                    color: #fd7e14;
+                    border-bottom-color: #fd7e14;
+                }
+
+                .index-section:nth-child(4) h2::after {
+                    background: #ffc107;
+                }
+
+                /* Responsive design */
+                @media (max-width: 768px) {
+                    .content {
+                        padding: 20px 10px;
+                    }
+
+                    .content h1 {
+                        font-size: 2em;
+                    }
+
+                    .index-section {
+                        padding: 20px;
+                        margin: 20px 0;
+                    }
+
+                    .index-section h2 {
+                        font-size: 1.5em;
+                    }
+
+                    .index-section ul {
+                        grid-template-columns: 1fr;
+                        gap: 10px;
+                    }
+
+                    .index-section a {
+                        padding: 15px;
+                        font-size: 0.9em;
+                    }
+                }
+
+                @media print {
+                    .index-section {
+                        box-shadow: none;
+                        border: 1px solid #dee2e6;
+                    }
+
+                    .index-section:hover {
+                        transform: none;
+                    }
+
+                    .index-section a:hover {
+                        transform: none;
+                        box-shadow: none;
+                    }
+                }
+            </style>
+
+            <h1>📚 Índice del Libro</h1>
             
-            <div class="features">
-                <div class="feature">
-                    <h4>📋 Información Completa</h4>
-                    <p>Todos los artículos relevantes de los convenios oficiales</p>
-                </div>
-                <div class="feature">
-                    <h4>⚖️ Sanciones Detalladas</h4>
-                    <p>Fundamentos legales y consecuencias específicas</p>
-                </div>
-                <div class="feature">
-                    <h4>🔄 Procedimientos</h4>
-                    <p>Protocolos claros para cada situación laboral</p>
-                </div>
+            <div class="index-section">
+                <h2>🏢 SUTERH - Conserjes y Personal de Edificios</h2>
+                <ul>
+                    <li><a href="suterh-intro.html">📖 Introducción al Convenio SUTERH</a></li>
+                    <li><a href="suterh-conserje.html">👤 Conserjes - Funciones y Sanciones</a></li>
+                    <li><a href="suterh-mantenimiento.html">🔧 Personal de Mantenimiento</a></li>
+                    <li><a href="suterh-valet.html">🚗 Valet Parking</a></li>
+                </ul>
+            </div>
+
+            <div class="index-section">
+                <h2>🛡️ UPSRA - Personal de Seguridad</h2>
+                <ul>
+                    <li><a href="upsra-intro.html">📖 Introducción al Convenio UPSRA</a></li>
+                    <li><a href="upsra-vigilador.html">👮 Vigiladores - Funciones y Sanciones</a></li>
+                    <li><a href="upsra-supervisor.html">👨‍💼 Supervisores de Seguridad</a></li>
+                </ul>
+            </div>
+
+            <div class="index-section">
+                <h2>⚙️ Gestión y Coordinación</h2>
+                <ul>
+                    <li><a href="gerente-del-edificio.html">🏢 Gerente del Edificio</a></li>
+                    <li><a href="coordinador-conserjeria.html">👥 Coordinador de Conserjería</a></li>
+                    <li><a href="bellboy.html">🛎️ Bellboys y Personal de Servicio</a></li>
+                    <li><a href="monitoreo.html">📹 Sistema de Monitoreo</a></li>
+                </ul>
+            </div>
+
+            <div class="index-section">
+                <h2>📋 Documentos Adicionales</h2>
+                <ul>
+                    <li><a href="libro-completo.html">📚 Libro Completo (Todas las Secciones)</a></li>
+                    <li><a href="procedimientos-seguridad.html">🚨 Procedimientos de Seguridad UPSRA</a></li>
+                    <li><a href="anexos.html">📎 Anexos y Documentación</a></li>
+                </ul>
             </div>
         </section>
     </div>
@@ -162,28 +590,13 @@
             const element = document.querySelector('.book-container');
             const opt = {
                 margin: 1,
-                filename: 'Reglamento_Convenios_SUTERH_UPSRA.pdf',
+                filename: 'Libro_Convenios_Laborales.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
             
             html2pdf().set(opt).from(element).save();
-        }
-
-        function downloadSectionPDF() {
-            const sections = [
-                { name: 'Guia_Gerentes', url: 'gerente-del-edificio.html' },
-                { name: 'SUTERH_Mantenimiento', url: 'suterh-mantenimiento.html' },
-                { name: 'SUTERH_Conserjes', url: 'suterh-conserje.html' },
-                { name: 'SUTERH_Coordinador', url: 'coordinador-conserjeria.html' },
-                { name: 'SUTERH_Valet', url: 'suterh-valet.html' },
-                { name: 'UPSRA_Vigiladores', url: 'upsra-vigilador.html' },
-                { name: 'UPSRA_Supervisores', url: 'upsra-supervisor.html' },
-                { name: 'UPSRA_Monitoreo', url: 'monitoreo.html' }
-            ];
-
-            alert('Función de descarga por secciones en desarrollo. Por favor use "Descargar PDF Completo" para obtener todo el documento.');
         }
         
         // Agregar evento para detectar si la impresión fue cancelada

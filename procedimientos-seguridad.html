@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedimientos de Seguridad - UPSRA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="print-helper.js"></script>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Botones de Acción -->
+        <section class="action-buttons">
+            <div class="button-group">
+                <button onclick="printDocument()" class="btn btn-primary">
+                    🖨️ Imprimir Documento
+                </button>
+                <button onclick="downloadPDF()" class="btn btn-secondary">
+                    📄 Descargar PDF
+                </button>
+            </div>
+        </section>
+
+        <section class="cover">
+            <h1>PROCEDIMIENTOS DE SEGURIDAD</h1>
+            <h2>Protocolos UPSRA - Situaciones Críticas</h2>
+        </section>
+        
+        <section>
+            <h2>PROCEDIMIENTOS CRÍTICOS DE SEGURIDAD - CONVENIO UPSRA</h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border: 1px solid #dee2e6; margin: 15px 0;">
+                <h4 style="text-align: center; margin-bottom: 20px;">PROCEDIMIENTOS OBLIGATORIOS SEGÚN CONVENIO UPSRA</h4>
+                <p style="text-align: center; font-weight: bold;">TODOS LOS VIGILADORES DEBEN CONOCER Y APLICAR ESTOS PROTOCOLOS</p>
+            </div>
+
+            <h3>ARTÍCULO 1: CONTROL DE ACCESO - PROPIETARIOS Y VISITAS</h3>
+            
+            <h4>1.1 PROPIETARIOS:</h4>
+            <ul>
+                <li><strong>LIBERTAD TOTAL:</strong> Los propietarios pueden salir a la hora que quieran sin restricciones. No es necesario registrar sus salidas.</li>
+                <li><strong>RECONOCIMIENTO FACIAL:</strong> Solo es válido si el propietario ingresa con vehículo. Si ingresa a pie, el vigilador en modo centinela debe estar alerta y abrir el portón manualmente.</li>
+                <li><strong>PROTOCOLO DE IDENTIFICACIÓN:</strong> El vigilador debe saludar y confirmar la identidad del propietario visualmente. En caso de duda, puede solicitar identificación.</li>
+                <li><strong>REGISTRO:</strong> No es necesario registrar las salidas de propietarios en ningún tipo de planilla.</li>
+            </ul>
+
+            <h4>1.2 VISITAS:</h4>
+            <ul>
+                <li><strong>IDENTIFICACIÓN OBLIGATORIA:</strong> El vigilador debe preguntar si la persona es visita y conoce al propietario que va a visitar.</li>
+                <li><strong>VERIFICACIÓN PREVIA:</strong> Antes de permitir el acceso, el vigilador debe confirmar con el propietario que la visita está autorizada.</li>
+                <li><strong>PROTOCOLO DE ACOMPAÑAMIENTO OBLIGATORIO:</strong> Según el convenio UPSRA, el vigilador debe acompañar a la visita hasta el departamento del propietario.</li>
+                <li><strong>REGISTRO COMPLETO:</strong> Todas las entradas y salidas de visitas deben registrarse en planillas Excel con los siguientes datos: nombre completo, DNI, departamento visitado, hora de entrada, hora de salida.</li>
+                <li><strong>CONTROL DE SALIDA:</strong> El vigilador debe verificar cuando la visita abandona el edificio y registrar la hora de salida.</li>
+            </ul>
+
+            <h4>1.3 PERSONAL TERCERO:</h4>
+            <ul>
+                <li><strong>REGISTRO OBLIGATORIO:</strong> Todo personal que entra a trabajar en el edificio debe registrarse en planillas Excel con los siguientes datos: nombre completo, DNI, empresa, función, horario de trabajo.</li>
+                <li><strong>VERIFICACIÓN DE IDENTIFICACIÓN:</strong> El vigilador debe verificar credenciales y autorización escrita antes de permitir el acceso.</li>
+                <li><strong>CONTROL DE ENTRADA Y SALIDA:</strong> Registrar hora de entrada y salida de todo el personal tercero.</li>
+                <li><strong>SUPERVISIÓN DURANTE LA PERMANENCIA:</strong> El vigilador debe monitorear las actividades del personal tercero durante su permanencia en el edificio.</li>
+            </ul>
+
+            <h3>ARTÍCULO 2: SISTEMA DE RONDAS - PUESTOS Y RESPONSABILIDADES</h3>
+            
+            <h4>2.1 RONDA DIURNA (PUESTO 1):</h4>
+            <ul>
+                <li><strong>RESPONSABLE:</strong> Vigilador de Puesto 1, según convenio UPSRA.</li>
+                <li><strong>JUSTIFICACIÓN:</strong> Durante el día hay mayor movimiento de personas y vehículos que durante la noche, por lo que se requiere un vigilador dedicado a realizar rondas de seguridad.</li>
+                <li><strong>FUNCIONES PRINCIPALES:</strong> Realizar rondas de seguridad programadas por todo el edificio, verificar el estado de las instalaciones, controlar el acceso de personal de mantenimiento, supervisar el trabajo de personal tercero.</li>
+                <li><strong>COORDINACIÓN CON PUESTO 0:</strong> El Puesto 1 debe coordinar con el Puesto 0 para situaciones de emergencia o cuando se requiera apoyo adicional.</li>
+                <li><strong>REGISTRO DE RONDAS:</strong> Cada ronda debe registrarse en el libro de novedades con hora de inicio, hora de finalización y observaciones realizadas.</li>
+            </ul>
+
+            <h4>2.2 RONDA NOCTURNA (PUESTO 0):</h4>
+            <ul>
+                <li><strong>RESPONSABLE:</strong> Vigilador de Puesto 0 en modo centinela.</li>
+                <li><strong>FUNCIONES PRINCIPALES:</strong> Control de acceso principal, vigilancia estática del perímetro, monitoreo de cámaras de seguridad, atención de emergencias nocturnas.</li>
+                <li><strong>PROTOCOLO DE CONTROL:</strong> El Puesto 0 debe preguntar a todas las personas si son visitas y si conocen al propietario antes de permitir el acceso.</li>
+                <li><strong>APOYO EN SITUACIONES CRÍTICAS:</strong> El Puesto 1 puede prestar apoyo al Puesto 0 solo si la situación es crítica y requiere intervención inmediata.</li>
+                <li><strong>IMPORTANTE:</strong> Durante la noche NO HAY PUESTO 1 realizando rondas. Solo existe el Puesto 0 en modo centinela.</li>
+            </ul>
+
+            <h3>ARTÍCULO 3: SITUACIONES CRÍTICAS - PROTOCOLOS DE EMERGENCIA</h3>
+            
+            <h4>3.1 INTRUSO ARMADO CON ARMA DE FUEGO - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. DETECCIÓN Y EVALUACIÓN INICIAL</h5>
+            <ul>
+                <li><strong>OBSERVACIÓN ACTIVA:</strong> El vigilador debe estar constantemente alerta a comportamientos sospechosos, movimientos erráticos o signos visibles de portar un arma de fuego. Esto incluye observar si la persona tiene las manos en los bolsillos de manera sospechosa, si lleva una mochila o bolso de manera extraña, o si muestra nerviosismo excesivo.</li>
+                <li><strong>EVALUACIÓN DE RIESGO INMEDIATO:</strong> Determinar si la persona representa una amenaza inmediata. Si el arma está visible o hay sospechas fundadas de que la persona está armada, se debe actuar con máxima precaución sin generar alarma visible.</li>
+                <li><strong>IDENTIFICACIÓN DE SEÑALES DE ALERTA:</strong> Buscar indicadores como ropa inapropiada para la estación (chaquetas largas en verano), movimientos repetitivos hacia la cintura, comportamiento evasivo o agresivo, y cualquier objeto que pueda ocultar un arma.</li>
+            </ul>
+
+            <h5>2. ACTIVACIÓN DEL PROTOCOLO DE EMERGENCIA</h5>
+            <ul>
+                <li><strong>ACTIVACIÓN SILENCIOSA DE ALARMA:</strong> Activar inmediatamente el botón de pánico o alarma silenciosa sin ser detectado por el intruso. Esto debe hacerse de manera discreta para no alertar al agresor sobre la activación del protocolo de seguridad.</li>
+                <li><strong>NOTIFICACIÓN INMEDIATA AL CENTRO DE MONITOREO:</strong> Comunicar la situación al supervisor o centro de monitoreo mediante radio o teléfono, usando códigos preestablecidos para no generar pánico en el agresor.</li>
+                <li><strong>LLAMADA INMEDIATA A FUERZAS DE SEGURIDAD:</strong> Contactar inmediatamente al 911, informando la ubicación exacta del edificio, descripción detallada del intruso, tipo de arma observada, y número aproximado de personas en el área.</li>
+            </ul>
+
+            <h5>3. PROTECCIÓN Y AISLAMIENTO</h5>
+            <ul>
+                <li><strong>BÚSQUEDA DE REFUGIO SEGURO:</strong> El vigilador debe buscar inmediatamente un lugar seguro donde pueda protegerse y desde donde pueda monitorear la situación sin ser visto por el agresor.</li>
+                <li><strong>PROTECCIÓN DE RESIDENTES:</strong> Coordinar la evacuación silenciosa de residentes hacia áreas seguras del edificio, evitando rutas que puedan cruzarse con el agresor.</li>
+                <li><strong>CIERRE DE ACCESOS CRÍTICOS:</strong> Si es posible sin ser detectado, cerrar puertas y accesos para limitar el movimiento del agresor y proteger áreas sensibles del edificio.</li>
+            </ul>
+
+            <h5>4. COMUNICACIÓN Y COORDINACIÓN</h5>
+            <ul>
+                <li><strong>COMUNICACIÓN CON AUTORIDADES:</strong> Mantener comunicación constante con las fuerzas de seguridad, proporcionando actualizaciones sobre la ubicación del agresor, movimientos observados, y cualquier cambio en la situación.</li>
+                <li><strong>COORDINACIÓN CON OTROS PUESTOS:</strong> Alertar a todos los puestos de vigilancia sobre la situación de emergencia, coordinando acciones para evitar que el agresor escape o cause daños adicionales.</li>
+                <li><strong>INFORMACIÓN A RESIDENTES:</strong> Si es seguro hacerlo, informar a los residentes sobre la situación sin generar pánico, indicándoles que permanezcan en sus departamentos con las puertas cerradas.</li>
+            </ul>
+
+            <h5>5. DOCUMENTACIÓN Y REGISTRO</h5>
+            <ul>
+                <li><strong>REGISTRO DETALLADO DEL INCIDENTE:</strong> Documentar hora exacta del incidente, descripción física detallada del intruso (altura, complexión, vestimenta, características distintivas), dirección de escape, tipo de arma observada, y comportamiento durante el incidente.</li>
+                <li><strong>REGISTRO DE ACCIONES TOMADAS:</strong> Anotar todas las medidas implementadas, comunicaciones realizadas, y coordinación con autoridades y otros puestos de vigilancia.</li>
+                <li><strong>TESTIMONIOS Y EVIDENCIAS:</strong> Recopilar testimonios de testigos si los hay, y preservar cualquier evidencia física que pueda ser útil para las investigaciones posteriores.</li>
+            </ul>
+
+            <h5>6. POST-INCIDENTE Y SEGUIMIENTO</h5>
+            <ul>
+                <li><strong>ASISTENCIA A AUTORIDADES:</strong> Proporcionar toda la información disponible a las fuerzas de seguridad cuando lleguen al lugar, incluyendo descripción del agresor, dirección de escape, y cualquier detalle relevante.</li>
+                <li><strong>EVALUACIÓN DE DAÑOS:</strong> Una vez controlada la situación, evaluar si hubo daños materiales, heridos, o cualquier consecuencia del incidente que requiera atención inmediata.</li>
+                <li><strong>INFORME FINAL DETALLADO:</strong> Redactar un informe completo para la empresa de seguridad, incluyendo cronología de eventos, acciones tomadas, coordinación con autoridades, y recomendaciones para mejorar la seguridad.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 120 - Protocolo de seguridad ante intrusos armados con armas de fuego.</li>
+            </ul>
+
+            <h4>3.2 INTRUSO CON ARMA BLANCA - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. DETECCIÓN Y EVALUACIÓN</h5>
+            <ul>
+                <li><strong>OBSERVACIÓN ACTIVA:</strong> El vigilador debe estar atento a comportamientos sospechosos, movimientos erráticos o visibles signos de portar un arma blanca (como cuchillos, navajas, machetes, destornilladores, o cualquier objeto punzocortante). Esto incluye observar si la persona tiene las manos ocultas, si lleva objetos metálicos visibles, o si muestra agresividad verbal o física.</li>
+                <li><strong>EVALUACIÓN DE RIESGO:</strong> Determinar si la persona representa una amenaza inmediata. Si el arma está visible o hay sospechas fundadas, se debe actuar con máxima precaución manteniendo siempre la distancia de seguridad establecida.</li>
+                <li><strong>IDENTIFICACIÓN DE SEÑALES DE ALERTA:</strong> Buscar indicadores como ropa que pueda ocultar armas, movimientos hacia bolsillos o cintura, comportamiento agresivo o amenazante, y cualquier objeto que pueda ser utilizado como arma blanca.</li>
+            </ul>
+
+            <h5>2. ACTIVACIÓN DEL PROTOCOLO DE EMERGENCIA</h5>
+            <ul>
+                <li><strong>NOTIFICACIÓN INMEDIATA:</strong> Comunicar la situación al centro de monitoreo o supervisor mediante radio o teléfono, usando códigos preestablecidos para no alertar al agresor sobre la activación del protocolo.</li>
+                <li><strong>LLAMADO A LA POLICÍA:</strong> Si la amenaza es real y presente, se debe contactar al 911 de inmediato, informando ubicación exacta del edificio, descripción detallada del individuo, tipo de arma blanca observada, y comportamiento del agresor.</li>
+                <li><strong>ALERTA A TODOS LOS PUESTOS:</strong> Notificar inmediatamente a todos los puestos de vigilancia sobre la situación de emergencia, coordinando acciones para contener la amenaza.</li>
+            </ul>
+
+            <h5>3. AISLAMIENTO DEL ÁREA</h5>
+            <ul>
+                <li><strong>EVITAR EL CONTACTO DIRECTO:</strong> El vigilador NO DEBE intentar desarmar al agresor salvo que tenga entrenamiento específico en defensa personal y no haya otra opción disponible. La prioridad es mantener la distancia de seguridad de 3 metros mínimo.</li>
+                <li><strong>CONTENCIÓN PASIVA:</strong> Si es posible sin riesgo, cerrar accesos al edificio o al área donde se encuentra el agresor para evitar que avance hacia zonas con mayor concentración de personas.</li>
+                <li><strong>EVACUACIÓN PREVENTIVA:</strong> Si hay personas en riesgo inmediato, guiarlas hacia zonas seguras del edificio sin generar pánico, usando rutas alternativas que eviten el contacto con el agresor.</li>
+            </ul>
+
+            <h5>4. COMUNICACIÓN CLARA Y CALMADA</h5>
+            <ul>
+                <li><strong>INTERVENCIÓN VERBAL:</strong> Si el vigilador debe interactuar con el agresor, debe hacerlo con voz firme pero tranquila, intentando disuadir sin provocar. Usar frases como "Por favor, mantenga la calma" o "Necesito que baje el arma".</li>
+                <li><strong>NO CONFRONTAR:</strong> Evitar gestos amenazantes, acercamientos bruscos, o movimientos que puedan ser interpretados como agresivos. La prioridad es ganar tiempo hasta que llegue la policía.</li>
+                <li><strong>MANTENER DISTANCIA DE SEGURIDAD:</strong> Conservar siempre una distancia mínima de 3 metros del agresor, moviéndose lentamente si es necesario para mantener esta separación.</li>
+            </ul>
+
+            <h5>5. CIERRE DE ACCESOS Y CONTROL</h5>
+            <ul>
+                <li><strong>CIERRE INMEDIATO DE PORTONES:</strong> Cerrar inmediatamente todos los portones de ingreso al edificio para evitar que el agresor escape o que entren más personas que puedan estar en riesgo.</li>
+                <li><strong>CONTROL DE ASCENSORES:</strong> Si es posible, desactivar temporalmente los ascensores para limitar el movimiento vertical del agresor dentro del edificio.</li>
+                <li><strong>BLOQUEO DE ESCALERAS:</strong> Coordinar con otros puestos para bloquear accesos a escaleras si es necesario para contener la amenaza.</li>
+            </ul>
+
+            <h5>6. EVACUACIÓN DE RESIDENTES</h5>
+            <ul>
+                <li><strong>COORDINACIÓN DE EVACUACIÓN:</strong> Coordinar la evacuación de residentes de las áreas afectadas si es necesario para su seguridad, usando rutas seguras que eviten el contacto con el agresor.</li>
+                <li><strong>ASISTENCIA A PERSONAS CON MOVILIDAD REDUCIDA:</strong> Priorizar la evacuación de residentes con movilidad reducida, ancianos, o niños, proporcionándoles asistencia especial si es necesario.</li>
+                <li><strong>PUNTO DE REUNIÓN SEGURO:</strong> Establecer un punto de reunión seguro fuera del edificio donde los residentes evacuados puedan congregarse hasta que la situación sea controlada.</li>
+            </ul>
+
+            <h5>7. REGISTRO DE LOS HECHOS</h5>
+            <ul>
+                <li><strong>ANOTAR DETALLES COMPLETOS:</strong> Registrar hora exacta del incidente, lugar específico donde ocurrió, descripción física detallada del agresor (altura, complexión, vestimenta, características distintivas), comportamiento observado, y tipo específico de arma blanca.</li>
+                <li><strong>REGISTRO DE ACCIONES TOMADAS:</strong> Documentar todas las medidas implementadas, comunicaciones realizadas con autoridades, coordinación con otros puestos, y evacuaciones realizadas.</li>
+                <li><strong>INFORME ESCRITO DETALLADO:</strong> Una vez controlada la situación, redactar un informe completo para la empresa de seguridad y, si corresponde, para las autoridades, incluyendo cronología de eventos y recomendaciones.</li>
+            </ul>
+
+            <h5>8. ASISTENCIA POST-INCIDENTE</h5>
+            <ul>
+                <li><strong>ATENCIÓN A VÍCTIMAS:</strong> Si alguien resultó herido durante el incidente, brindar primeros auxilios si el vigilador está capacitado, o esperar a los servicios médicos si la situación lo requiere.</li>
+                <li><strong>APOYO PSICOLÓGICO:</strong> En algunos casos, la empresa puede ofrecer contención emocional al personal afectado y a los residentes que hayan presenciado el incidente.</li>
+                <li><strong>EVALUACIÓN DE SEGURIDAD:</strong> Realizar una evaluación completa de las medidas de seguridad del edificio para identificar posibles mejoras y prevenir incidentes similares en el futuro.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 121 - Manejo de situaciones con armas blancas y objetos contundentes.</li>
+            </ul>
+
+            <h4>3.3 INGRESO NO AUTORIZADO A DEPARTAMENTO - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. VERIFICACIÓN PREVIA Y PREVENCIÓN</h5>
+            <ul>
+                <li><strong>VERIFICACIÓN DE IDENTIDAD OBLIGATORIA:</strong> El vigilador debe confirmar la identidad de la persona antes de permitir el acceso a cualquier departamento. Esto incluye solicitar documento de identidad, verificar que la persona sea quien dice ser, y confirmar que tiene autorización para ingresar al departamento específico.</li>
+                <li><strong>VERIFICACIÓN CON PROPIETARIO:</strong> Antes de permitir el acceso, confirmar con el propietario del departamento que la visita está autorizada. Esto debe hacerse mediante llamada telefónica o comunicación directa con el propietario.</li>
+                <li><strong>REGISTRO DE AUTORIZACIÓN:</strong> Documentar la autorización del propietario, incluyendo nombre de la visita, motivo de la visita, horario autorizado, y cualquier condición especial establecida por el propietario.</li>
+            </ul>
+
+            <h5>2. PROTOCOLO DE ACOMPAÑAMIENTO OBLIGATORIO</h5>
+            <ul>
+                <li><strong>ACOMPAÑAMIENTO HASTA EL DEPARTAMENTO:</strong> Según el convenio UPSRA, el vigilador debe acompañar a la visita hasta el departamento del propietario, no solo permitir el acceso. Esto incluye subir en el ascensor junto con la visita y caminar hasta la puerta del departamento.</li>
+                <li><strong>RUTA SEGURA:</strong> Usar ascensores y pasillos principales durante el acompañamiento, evitando áreas poco iluminadas o de difícil acceso. Mantener una distancia apropiada pero cercana a la visita.</li>
+                <li><strong>VERIFICACIÓN DE LLEGADA:</strong> Confirmar que la visita llega correctamente al departamento del propietario, esperando a que el propietario abra la puerta y confirme la identidad de la visita.</li>
+            </ul>
+
+            <h5>3. REGISTRO Y DOCUMENTACIÓN</h5>
+            <ul>
+                <li><strong>REGISTRO DE INGRESO COMPLETO:</strong> Documentar hora exacta de ingreso al edificio, hora de llegada al departamento, nombre completo de la visita, número de DNI, departamento visitado, y motivo de la visita.</li>
+                <li><strong>REGISTRO EN PLANILLAS EXCEL:</strong> Incluir toda la información en las planillas Excel correspondientes, asegurándose de que los datos sean completos y precisos para futuras referencias.</li>
+                <li><strong>FIRMA DE CONFORMIDAD:</strong> Si es posible, solicitar que la visita firme un registro de ingreso confirmando su identidad y autorización para ingresar al departamento.</li>
+            </ul>
+
+            <h5>4. MONITOREO DURANTE LA PERMANENCIA</h5>
+            <ul>
+                <li><strong>VIGILANCIA CONTINUA:</strong> Mantener vigilancia durante la permanencia de la visita en el edificio, realizando rondas adicionales en el piso donde se encuentra el departamento visitado.</li>
+                <li><strong>VERIFICACIÓN PERIÓDICA:</strong> Realizar verificaciones periódicas para confirmar que la visita permanece en el departamento autorizado y no se mueve por otras áreas del edificio.</li>
+                <li><strong>COMUNICACIÓN CON PROPIETARIO:</strong> Mantener comunicación con el propietario del departamento para confirmar que la visita se comporta apropiadamente y no causa molestias.</li>
+            </ul>
+
+            <h5>5. CONTROL DE SALIDA</h5>
+            <ul>
+                <li><strong>VERIFICACIÓN DE SALIDA:</strong> Verificar cuando la visita abandona el edificio, confirmando que sale por la puerta principal y no por otras salidas del edificio.</li>
+                <li><strong>REGISTRO DE SALIDA:</strong> Documentar hora exacta de salida del edificio, confirmando que la visita abandona el lugar correctamente y no permanece en áreas comunes.</li>
+                <li><strong>VERIFICACIÓN CON PROPIETARIO:</strong> Confirmar con el propietario que la visita abandonó el departamento de manera apropiada y que no hubo incidentes durante la visita.</li>
+            </ul>
+
+            <h5>6. SITUACIONES ESPECIALES Y EXCEPCIONES</h5>
+            <ul>
+                <li><strong>VISITAS FRECUENTES:</strong> Para visitas que ingresan regularmente al edificio, establecer un protocolo especial que incluya identificación rápida pero segura, manteniendo siempre el acompañamiento obligatorio.</li>
+                <li><strong>EMERGENCIAS MÉDICAS:</strong> En caso de emergencias médicas que requieran acceso inmediato a un departamento, el protocolo de acompañamiento puede ser modificado, pero siempre debe registrarse la situación.</li>
+                <li><strong>PERSONAL DE MANTENIMIENTO:</strong> Para personal de mantenimiento autorizado, verificar credenciales y autorización escrita antes del acompañamiento, manteniendo supervisión durante todo el trabajo.</li>
+            </ul>
+
+            <h5>7. INCIDENTES Y VIOLACIONES</h5>
+            <ul>
+                <li><strong>DETECCIÓN DE COMPORTAMIENTO SOSPECHOSO:</strong> Si durante el acompañamiento se detecta comportamiento sospechoso o inapropiado, documentar la situación y reportar inmediatamente al supervisor.</li>
+                <li><strong>VIOLACIÓN DE PROTOCOLO:</strong> Si la visita se niega a ser acompañada o intenta evadir el protocolo, no permitir el acceso y reportar la situación inmediatamente.</li>
+                <li><strong>INCIDENTES DURANTE LA VISITA:</strong> Si ocurre algún incidente durante la permanencia de la visita, documentar completamente y coordinar con el propietario y las autoridades si es necesario.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 122 - Control de acceso a departamentos y protocolo de acompañamiento obligatorio.</li>
+            </ul>
+
+            <h3>ARTÍCULO 4: EMERGENCIAS MÉDICAS - PRIMEROS AUXILIOS</h3>
+            
+            <h4>4.1 VISITA DESMAYADA O CON EMERGENCIA MÉDICA - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. EVALUACIÓN INMEDIATA Y DIAGNÓSTICO</h5>
+            <ul>
+                <li><strong>VERIFICACIÓN DE CONSCIENCIA:</strong> El vigilador debe verificar inmediatamente el estado de consciencia de la persona afectada. Esto incluye acercarse de manera segura, llamar a la persona por su nombre si la conoce, y verificar si responde a estímulos verbales o físicos.</li>
+                <li><strong>EVALUACIÓN DE RESPIRACIÓN:</strong> Verificar si la persona está respirando normalmente, observando el movimiento del pecho y escuchando si hay sonidos respiratorios. Si no respira o respira de manera anormal, activar inmediatamente el protocolo de RCP.</li>
+                <li><strong>VERIFICACIÓN DE PULSO:</strong> Si el vigilador está capacitado, verificar el pulso en la arteria carótida (cuello) o radial (muñeca) para determinar si hay circulación sanguínea.</li>
+                <li><strong>IDENTIFICACIÓN DE CAUSAS:</strong> Evaluar si hay signos de trauma, intoxicación, enfermedad preexistente, o cualquier factor que pueda haber causado la emergencia médica.</li>
+            </ul>
+
+            <h5>2. APLICACIÓN DE RCP SI ES NECESARIO</h5>
+            <ul>
+                <li><strong>ACTIVACIÓN INMEDIATA DE RCP:</strong> Si la persona no respira o no tiene pulso, el vigilador debe aplicar reanimación cardiopulmonar (RCP) inmediatamente. Todo el personal de seguridad debe estar capacitado en RCP antes de comenzar sus funciones.</li>
+                <li><strong>PROTOCOLO DE RCP BÁSICO:</strong> Seguir el protocolo estándar de 30 compresiones torácicas seguidas de 2 respiraciones de rescate, manteniendo un ritmo de 100-120 compresiones por minuto.</li>
+                <li><strong>POSICIÓN CORRECTA:</strong> Colocar a la persona en una superficie dura, arrodillarse al lado del tórax, y colocar las manos en el centro del pecho para realizar las compresiones de manera efectiva.</li>
+                <li><strong>CONTINUIDAD DEL RCP:</strong> Continuar con el RCP sin interrupciones hasta que llegue la ayuda médica profesional, rotando con otro vigilador capacitado si es necesario para evitar la fatiga.</li>
+            </ul>
+
+            <h5>3. LLAMADA DE EMERGENCIA MÉDICA</h5>
+            <ul>
+                <li><strong>CONTACTO INMEDIATO CON SERVICIOS MÉDICOS:</strong> Contactar inmediatamente al servicio médico de emergencia llamando al 107. Proporcionar información clara y concisa sobre la situación, incluyendo ubicación exacta del edificio, tipo de emergencia, y estado actual de la persona.</li>
+                <li><strong>INFORMACIÓN DETALLADA:</strong> Informar la edad aproximada de la persona, síntomas observados, tiempo transcurrido desde el inicio de la emergencia, y cualquier información médica relevante que se conozca.</li>
+                <li><strong>COORDINACIÓN CON AUTORIDADES:</strong> Coordinar con las fuerzas de seguridad si la emergencia médica está relacionada con un incidente de seguridad, asegurándose de que ambos servicios trabajen de manera coordinada.</li>
+                <li><strong>SEGUIMIENTO DE LA LLAMADA:</strong> Mantener comunicación con los servicios médicos hasta su llegada, proporcionando actualizaciones sobre el estado de la persona y cualquier cambio en la situación.</li>
+            </ul>
+
+            <h5>4. PROTECCIÓN DE LA VÍA AÉREA Y POSICIÓN DE SEGURIDAD</h5>
+            <ul>
+                <li><strong>LIBERACIÓN DE LA VÍA AÉREA:</strong> Si la persona está inconsciente pero respira, colocar la cabeza en posición de seguridad para mantener la vía aérea libre y evitar la aspiración de vómito o secreciones.</li>
+                <li><strong>POSICIÓN LATERAL DE SEGURIDAD:</strong> Colocar a la persona en posición lateral de seguridad, doblando una rodilla y un brazo para mantener la estabilidad, y girando la cabeza hacia un lado.</li>
+                <li><strong>MONITOREO CONTINUO:</strong> Mantener vigilancia constante sobre la respiración y el estado de consciencia de la persona mientras llega la ayuda médica profesional.</li>
+                <li><strong>PROTECCIÓN DEL ENTORNO:</strong> Asegurar que el área alrededor de la persona esté libre de objetos que puedan causar lesiones adicionales durante la emergencia.</li>
+            </ul>
+
+            <h5>5. ASISTENCIA A PERSONAS CON MOVILIDAD REDUCIDA</h5>
+            <ul>
+                <li><strong>IDENTIFICACIÓN DE NECESIDADES ESPECIALES:</strong> Si hay residentes con movilidad reducida que necesiten asistencia durante la emergencia, el vigilador debe priorizar su evacuación y asistencia.</li>
+                <li><strong>COORDINACIÓN DE EVACUACIÓN:</strong> Coordinar con otros vigiladores o personal disponible para asistir en la evacuación de personas con movilidad reducida, usando sillas de ruedas o dispositivos de asistencia si están disponibles.</li>
+                <li><strong>COMUNICACIÓN CON FAMILIARES:</strong> Si es posible, contactar a familiares o cuidadores de personas con movilidad reducida para informarles sobre la situación y coordinar la asistencia necesaria.</li>
+                <li><strong>PROTECCIÓN ADICIONAL:</strong> Proporcionar protección adicional a personas con movilidad reducida durante emergencias, asegurándose de que no queden desatendidas o en riesgo.</li>
+            </ul>
+
+            <h5>6. COORDINACIÓN CON SERVICIOS MÉDICOS</h5>
+            <ul>
+                <li><strong>PREPARACIÓN PARA LA LLEGADA:</strong> Preparar el área para la llegada de los servicios médicos, asegurando que haya acceso libre y que el personal médico pueda llegar rápidamente al lugar de la emergencia.</li>
+                <li><strong>INFORMACIÓN DE TRANSFERENCIA:</strong> Proporcionar toda la información relevante a los servicios médicos cuando lleguen, incluyendo cronología de eventos, síntomas observados, y acciones tomadas.</li>
+                <li><strong>ASISTENCIA AL PERSONAL MÉDICO:</strong> Asistir al personal médico en lo que sea necesario, incluyendo el transporte de la persona al vehículo médico o la provisión de información adicional sobre el incidente.</li>
+                <li><strong>SEGUIMIENTO POST-EMERGENCIA:</strong> Mantener comunicación con los servicios médicos para conocer el estado de la persona después de la emergencia, y documentar el resultado en el libro de novedades.</li>
+            </ul>
+
+            <h5>7. DOCUMENTACIÓN Y REGISTRO</h5>
+            <ul>
+                <li><strong>REGISTRO DETALLADO DEL INCIDENTE:</strong> Documentar completamente la emergencia médica en el libro de novedades, incluyendo hora exacta del incidente, síntomas observados, acciones tomadas, y coordinación con servicios médicos.</li>
+                <li><strong>REGISTRO DE TESTIGOS:</strong> Si hubo testigos del incidente, registrar sus nombres y declaraciones para futuras referencias o investigaciones.</li>
+                <li><strong>EVALUACIÓN DE PROCEDIMIENTOS:</strong> Evaluar la efectividad de los procedimientos implementados durante la emergencia, identificando áreas de mejora para futuras situaciones similares.</li>
+                <li><strong>CAPACITACIÓN OBLIGATORIA:</strong> Convenio UPSRA Artículo 125 - Capacitación en primeros auxilios obligatoria para todo el personal de seguridad.</li>
+            </ul>
+
+            <h4>4.2 CAPACITACIÓN MÉDICA OBLIGATORIA - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. RCP BÁSICO Y CERTIFICACIÓN</h5>
+            <ul>
+                <li><strong>CERTIFICACIÓN OBLIGATORIA:</strong> Todos los vigiladores deben estar certificados en reanimación cardiopulmonar básica antes de comenzar sus funciones. Esta certificación debe ser emitida por una institución reconocida y debe incluir tanto teoría como práctica.</li>
+                <li><strong>CONTENIDO DE LA CAPACITACIÓN:</strong> La capacitación en RCP debe incluir técnicas de compresión torácica, respiraciones de rescate, uso de desfibrilador externo automático (DEA) si está disponible, y manejo de obstrucciones de vía aérea.</li>
+                <li><strong>PRÁCTICAS REGULARES:</strong> Realizar prácticas regulares de RCP durante las capacitaciones para mantener las habilidades actualizadas y asegurar la competencia del personal.</li>
+                <li><strong>EVALUACIÓN DE COMPETENCIA:</strong> Evaluar regularmente la competencia del personal en RCP mediante simulacros y evaluaciones prácticas para asegurar que mantienen las habilidades necesarias.</li>
+            </ul>
+
+            <h5>2. PRIMEROS AUXILIOS COMPLETOS</h5>
+            <ul>
+                <li><strong>CAPACITACIÓN COMPREHENSIVA:</strong> Capacitación obligatoria en primeros auxilios que debe renovarse cada 6 meses según el convenio UPSRA. Esta capacitación debe cubrir todas las emergencias médicas comunes que pueden ocurrir en un edificio.</li>
+                <li><strong>MANEJO DE HERIDAS:</strong> Incluir técnicas para el manejo de heridas menores y mayores, control de hemorragias, limpieza y desinfección de heridas, y aplicación de vendajes y apósitos.</li>
+                <li><strong>MANEJO DE FRACTURAS:</strong> Capacitación en inmovilización de fracturas, manejo de esguinces y luxaciones, y técnicas de transporte seguro de personas lesionadas.</li>
+                <li><strong>MANEJO DE QUEMADURAS:</strong> Protocolos para el manejo de quemaduras de diferentes grados, incluyendo evaluación de la gravedad y técnicas de primeros auxilios específicas.</li>
+            </ul>
+
+            <h5>3. MANEJO DE EMERGENCIAS MÉDICAS ESPECÍFICAS</h5>
+            <ul>
+                <li><strong>DESMAYOS Y PÉRDIDA DE CONSCIENCIA:</strong> Protocolos específicos para desmayos, incluyendo evaluación de causas, posicionamiento seguro, y técnicas de reanimación si es necesario.</li>
+                <li><strong>CONVULSIONES Y EPILEPSIA:</strong> Manejo de convulsiones, incluyendo protección de la persona durante el episodio, posicionamiento seguro, y coordinación con servicios médicos.</li>
+                <li><strong>ATAQUES CARDÍACOS:</strong> Reconocimiento de síntomas de ataque cardíaco, activación inmediata de servicios médicos, y técnicas de soporte vital básico.</li>
+                <li><strong>ACCIDENTES CEREBROVASCULARES:</strong> Identificación de síntomas de ACV, activación del protocolo de emergencia, y coordinación con servicios médicos especializados.</li>
+                <li><strong>REACCIONES ALÉRGICAS:</strong> Manejo de reacciones alérgicas leves y severas, incluyendo reconocimiento de anafilaxia y uso de epinefrina si está disponible.</li>
+            </ul>
+
+            <h5>4. BOTIQUÍN DE PRIMEROS AUXILIOS</h5>
+            <ul>
+                <li><strong>CONTENIDO OBLIGATORIO:</strong> Mantener el botiquín de primeros auxilios actualizado con todos los elementos requeridos por normativa, incluyendo vendas, apósitos, antisépticos, guantes, y elementos de protección personal.</li>
+                <li><strong>CONOCIMIENTO DEL CONTENIDO:</strong> Conocer el contenido completo del botiquín y el uso correcto de cada elemento, incluyendo fechas de vencimiento y condiciones de almacenamiento.</li>
+                <li><strong>REPOSICIÓN REGULAR:</strong> Realizar inventario regular del botiquín y reponer elementos utilizados o vencidos para mantener la disponibilidad de todos los materiales necesarios.</li>
+                <li><strong>UBICACIÓN ESTRATÉGICA:</strong> Ubicar el botiquín en un lugar accesible y conocido por todo el personal, asegurando que pueda ser encontrado rápidamente en caso de emergencia.</li>
+            </ul>
+
+            <h5>5. PROTOCOLOS DE EMERGENCIA MÉDICA</h5>
+            <ul>
+                <li><strong>PROTOCOLOS ESPECÍFICOS:</strong> Conocer los procedimientos específicos para diferentes tipos de emergencias médicas, incluyendo activación de servicios médicos, coordinación con autoridades, y documentación de incidentes.</li>
+                <li><strong>COMUNICACIÓN CON SERVICIOS MÉDICOS:</strong> Protocolos de comunicación efectiva con servicios médicos, incluyendo información que debe proporcionarse y coordinación durante la emergencia.</li>
+                <li><strong>COORDINACIÓN CON AUTORIDADES:</strong> Protocolos para coordinar con fuerzas de seguridad cuando las emergencias médicas están relacionadas con incidentes de seguridad o delitos.</li>
+                <li><strong>DOCUMENTACIÓN POST-EMERGENCIA:</strong> Procedimientos para documentar completamente las emergencias médicas, incluyendo cronología de eventos, acciones tomadas, y resultados obtenidos.</li>
+            </ul>
+
+            <h5>6. CAPACITACIÓN CONTINUA Y ACTUALIZACIÓN</h5>
+            <ul>
+                <li><strong>RENOVACIÓN OBLIGATORIA:</strong> Renovar la capacitación médica cada 6 meses según el convenio UPSRA, incluyendo actualizaciones sobre nuevas técnicas y protocolos médicos.</li>
+                <li><strong>SIMULACROS REGULARES:</strong> Realizar simulacros regulares de emergencias médicas para mantener las habilidades actualizadas y evaluar la efectividad de los protocolos.</li>
+                <li><strong>EVALUACIÓN DE COMPETENCIA:</strong> Evaluar regularmente la competencia del personal en primeros auxilios mediante evaluaciones prácticas y teóricas.</li>
+                <li><strong>ACTUALIZACIÓN DE PROTOCOLOS:</strong> Mantener actualizados los protocolos de emergencia médica según las mejores prácticas y normativas vigentes.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 126 - Capacitación médica obligatoria y protocolos de emergencia médica.</li>
+            </ul>
+
+            <h3>ARTÍCULO 5: SITUACIONES EXTERNAS - PROTOCOLOS DE SEGURIDAD</h3>
+            
+            <h4>5.1 ROBOS EXTERNOS (MACETAS, PLANTAS, OBJETOS DEL EDIFICIO) - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. DETECCIÓN Y OBSERVACIÓN</h5>
+            <ul>
+                <li><strong>OBSERVACIÓN ACTIVA:</strong> El vigilador debe estar constantemente alerta a cualquier actividad sospechosa en el exterior del edificio, incluyendo personas que se acercan a macetas, plantas, o cualquier objeto del edificio con intenciones sospechosas.</li>
+                <li><strong>IDENTIFICACIÓN DE COMPORTAMIENTO SOSPECHOSO:</strong> Observar comportamientos como personas que se acercan repetidamente a objetos externos, que llevan herramientas o bolsas, o que actúan de manera evasiva cuando se les observa.</li>
+                <li><strong>DOCUMENTACIÓN VISUAL:</strong> Si es posible sin ser detectado, documentar visualmente la actividad sospechosa, incluyendo descripción de las personas, vehículos involucrados, y objetos que están siendo robados.</li>
+                <li><strong>EVALUACIÓN DE RIESGO:</strong> Evaluar si la actividad representa una amenaza directa para la seguridad del edificio o si es simplemente un robo de objetos externos.</li>
+            </ul>
+
+            <h5>2. PROHIBICIÓN ABSOLUTA DE INTERVENCIÓN</h5>
+            <ul>
+                <li><strong>NO SALIR DEL EDIFICIO:</strong> El vigilador NO DEBE SALIR del edificio para perseguir a personas que están robando objetos externos como macetas, plantas o cualquier elemento del edificio. Esta es una prohibición absoluta establecida en el convenio UPSRA.</li>
+                <li><strong>RIESGO DE SEGURIDAD CRÍTICO:</strong> Salir del edificio para perseguir robos externos pone en riesgo la seguridad del edificio y deja desprotegidos a los residentes. El vigilador debe mantener su posición de vigilancia en todo momento.</li>
+                <li><strong>DISTRACCIÓN ESTRATÉGICA:</strong> Los robos externos pueden ser una distracción estratégica para que otros intrusos ingresen al edificio mientras el vigilador está fuera de su puesto. Esta es una técnica común utilizada por delincuentes.</li>
+                <li><strong>PROTECCIÓN PRIMARIA DEL EDIFICIO:</strong> La prioridad absoluta del vigilador es proteger el edificio y sus residentes, no los objetos externos. Los objetos pueden ser reemplazados, pero la seguridad de las personas no.</li>
+            </ul>
+
+            <h5>3. PROTOCOLO CORRECTO DE ACTUACIÓN</h5>
+            <ul>
+                <li><strong>DOCUMENTACIÓN DEL INCIDENTE:</strong> El vigilador debe documentar el incidente en el libro de novedades, incluyendo hora exacta, descripción detallada de los objetos robados, y características de los ladrones si fueron observados.</li>
+                <li><strong>LLAMADA A LA POLICÍA:</strong> Llamar a la policía al 911 para reportar el robo, proporcionando toda la información disponible sobre el incidente, incluyendo descripción de los ladrones y dirección de escape si se conoce.</li>
+                <li><strong>MANTENIMIENTO DE LA POSICIÓN:</strong> Mantener la posición de vigilancia en el edificio, continuando con las funciones normales de seguridad y monitoreo de las instalaciones.</li>
+                <li><strong>ALERTA A OTROS PUESTOS:</strong> Informar a otros puestos de vigilancia sobre el incidente para que estén alertas a posibles intrusiones relacionadas con el robo externo.</li>
+            </ul>
+
+            <h5>4. REGISTRO DETALLADO DEL INCIDENTE</h5>
+            <ul>
+                <li><strong>INFORMACIÓN CRONOLÓGICA:</strong> Registrar la hora exacta del incidente, duración del robo, y secuencia de eventos observados desde el inicio hasta el final del incidente.</li>
+                <li><strong>DESCRIPCIÓN DE OBJETOS ROBADOS:</strong> Documentar detalladamente los objetos robados, incluyendo tipo, cantidad, ubicación original, y valor aproximado si se conoce.</li>
+                <li><strong>CARACTERÍSTICAS DE LOS LADRONES:</strong> Si los ladrones fueron observados, registrar descripción física detallada, vestimenta, edad aproximada, y cualquier característica distintiva.</li>
+                <li><strong>VEHÍCULOS INVOLUCRADOS:</strong> Si se utilizaron vehículos, registrar patente, marca, modelo, color, y dirección de escape del vehículo.</li>
+                <li><strong>TESTIGOS:</strong> Identificar y registrar información de cualquier testigo que haya presenciado el incidente, incluyendo nombre y declaración si es posible.</li>
+            </ul>
+
+            <h5>5. COORDINACIÓN CON AUTORIDADES</h5>
+            <ul>
+                <li><strong>REPORTE A LA POLICÍA:</strong> Proporcionar a la policía toda la información recopilada sobre el incidente, incluyendo descripción de los ladrones, objetos robados, y cualquier evidencia disponible.</li>
+                <li><strong>COOPERACIÓN CON INVESTIGACIÓN:</strong> Cooperar completamente con la investigación policial, proporcionando declaraciones detalladas y cualquier evidencia adicional que pueda ser útil.</li>
+                <li><strong>SEGUIMIENTO DEL CASO:</strong> Mantener comunicación con las autoridades para conocer el progreso de la investigación y cualquier resultado obtenido.</li>
+                <li><strong>DOCUMENTACIÓN OFICIAL:</strong> Solicitar copia del reporte policial para incluirlo en los registros del edificio y futuras referencias.</li>
+            </ul>
+
+            <h5>6. MEDIDAS PREVENTIVAS POST-INCIDENTE</h5>
+            <ul>
+                <li><strong>EVALUACIÓN DE SEGURIDAD:</strong> Realizar una evaluación completa de las medidas de seguridad externas para identificar vulnerabilidades y posibles mejoras.</li>
+                <li><strong>FORTALECIMIENTO DE VIGILANCIA:</strong> Aumentar la vigilancia en áreas externas del edificio, especialmente en horarios y días donde se han observado robos anteriores.</li>
+                <li><strong>COMUNICACIÓN CON RESIDENTES:</strong> Informar a los residentes sobre el incidente y las medidas de seguridad implementadas para prevenir futuros robos.</li>
+                <li><strong>COORDINACIÓN CON ADMINISTRACIÓN:</strong> Coordinar con la administración del edificio para implementar medidas adicionales de seguridad si es necesario.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 127 - Prohibición absoluta de abandonar puesto de vigilancia por cualquier motivo, incluyendo robos externos.</li>
+            </ul>
+
+            <h4>5.2 INCENDIOS EXTERNOS O EMERGENCIAS EN LA VÍA PÚBLICA - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. EVALUACIÓN DE RIESGO Y AMENAZA</h5>
+            <ul>
+                <li><strong>EVALUACIÓN INMEDIATA:</strong> El vigilador debe determinar rápidamente si el incendio externo o emergencia en la vía pública representa una amenaza directa para el edificio. Esto incluye evaluar la distancia del incidente, dirección del viento, tipo de emergencia, y posibles consecuencias.</li>
+                <li><strong>IDENTIFICACIÓN DE AMENAZAS:</strong> Identificar si el incendio externo puede propagarse hacia el edificio, si hay riesgo de explosiones, o si la emergencia puede afectar la seguridad de los residentes o la integridad estructural del edificio.</li>
+                <li><strong>ANÁLISIS DE FACTORES:</strong> Considerar factores como la velocidad del viento, tipo de materiales involucrados en el incendio, proximidad de otros edificios, y presencia de materiales inflamables en el área.</li>
+                <li><strong>CLASIFICACIÓN DE RIESGO:</strong> Clasificar el nivel de riesgo como bajo, medio, o alto, y actuar según el protocolo correspondiente para cada nivel de amenaza.</li>
+            </ul>
+
+            <h5>2. PROTECCIÓN PRIMARIA DEL EDIFICIO</h5>
+            <ul>
+                <li><strong>PRIORIDAD ABSOLUTA:</strong> La prioridad absoluta es mantener la vigilancia del edificio y proteger a los residentes, no intervenir en emergencias externas. El vigilador debe permanecer en su puesto de vigilancia en todo momento.</li>
+                <li><strong>MONITOREO DE AMENAZAS:</strong> Monitorear constantemente la evolución de la emergencia externa para determinar si representa una amenaza creciente para el edificio y sus residentes.</li>
+                <li><strong>PROTECCIÓN DE RESIDENTES:</strong> Asegurar que los residentes estén informados sobre la situación externa y las medidas de seguridad implementadas para protegerlos.</li>
+                <li><strong>PREPARACIÓN PARA EVACUACIÓN:</strong> Si la amenaza externa se vuelve crítica, preparar el protocolo de evacuación del edificio sin activarlo prematuramente.</li>
+            </ul>
+
+            <h5>3. COMUNICACIÓN CON AUTORIDADES</h5>
+            <ul>
+                <li><strong>ALERTA A BOMBEROS:</strong> Si el incendio externo amenaza al edificio, alertar inmediatamente a los bomberos llamando al 100, proporcionando información detallada sobre la ubicación del edificio y la amenaza.</li>
+                <li><strong>COORDINACIÓN CON POLICÍA:</strong> Coordinar con la policía si la emergencia externa requiere control de tráfico, evacuación de áreas públicas, o protección de la propiedad.</li>
+                <li><strong>INFORMACIÓN A RESIDENTES:</strong> Informar a los residentes sobre la emergencia externa y las medidas de seguridad implementadas, sin generar pánico innecesario.</li>
+                <li><strong>COMUNICACIÓN CON ADMINISTRACIÓN:</strong> Informar inmediatamente a la administración del edificio sobre la emergencia externa y las medidas tomadas para proteger el edificio.</li>
+            </ul>
+
+            <h5>4. NO ABANDONAR EL PUESTO DE VIGILANCIA</h5>
+            <ul>
+                <li><strong>PERMANENCIA OBLIGATORIA:</strong> El vigilador debe mantener su posición de vigilancia en el edificio, no salir a la calle para ayudar con emergencias externas. Esta es una prohibición absoluta establecida en el convenio UPSRA.</li>
+                <li><strong>PROTECCIÓN CONTINUA:</strong> Mantener la protección continua del edificio y sus residentes, asegurándose de que no se aproveche la emergencia externa para cometer delitos o intrusiones.</li>
+                <li><strong>VIGILANCIA REFORZADA:</strong> Aumentar la vigilancia durante emergencias externas, ya que estas situaciones pueden ser aprovechadas por delincuentes para cometer robos o intrusiones.</li>
+                <li><strong>COORDINACIÓN INTERNA:</strong> Coordinar con otros puestos de vigilancia para asegurar que toda la seguridad del edificio esté cubierta durante la emergencia externa.</li>
+            </ul>
+
+            <h5>5. COORDINACIÓN CON FUERZAS DE SEGURIDAD</h5>
+            <ul>
+                <li><strong>COLABORACIÓN ESPECÍFICA:</strong> Si las autoridades solicitan colaboración específica del personal de seguridad del edificio, coordinar sin abandonar la seguridad del edificio.</li>
+                <li><strong>PROVISIÓN DE INFORMACIÓN:</strong> Proporcionar información útil a las autoridades sobre el edificio, residentes, y cualquier detalle que pueda ser útil para el manejo de la emergencia externa.</li>
+                <li><strong>FACILITACIÓN DE ACCESO:</strong> Facilitar el acceso de las autoridades al edificio si es necesario para el manejo de la emergencia externa, manteniendo siempre la seguridad.</li>
+                <li><strong>COORDINACIÓN DE EVACUACIÓN:</strong> Si las autoridades ordenan evacuación del edificio debido a la emergencia externa, coordinar la evacuación de manera ordenada y segura.</li>
+            </ul>
+
+            <h5>6. DOCUMENTACIÓN Y SEGUIMIENTO</h5>
+            <ul>
+                <li><strong>REGISTRO DEL INCIDENTE:</strong> Documentar completamente la emergencia externa en el libro de novedades, incluyendo hora de inicio, evolución, medidas tomadas, y coordinación con autoridades.</li>
+                <li><strong>EVALUACIÓN DE IMPACTO:</strong> Evaluar el impacto de la emergencia externa en el edificio y sus residentes, incluyendo cualquier daño o consecuencia que haya resultado.</li>
+                <li><strong>ANÁLISIS DE PROCEDIMIENTOS:</strong> Analizar la efectividad de los procedimientos implementados durante la emergencia externa, identificando áreas de mejora.</li>
+                <li><strong>ACTUALIZACIÓN DE PROTOCOLOS:</strong> Actualizar los protocolos de emergencia basándose en las lecciones aprendidas durante el incidente.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 128 - Manejo de emergencias externas y coordinación con autoridades sin abandonar la seguridad del edificio.</li>
+            </ul>
+
+            <h3>ARTÍCULO 6: REGISTROS Y DOCUMENTACIÓN OBLIGATORIA</h3>
+            
+            <h4>6.1 PLANILLAS EXCEL - REGISTROS OBLIGATORIOS - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. ENTRADAS DE VISITAS - REGISTRO DETALLADO</h5>
+            <ul>
+                <li><strong>INFORMACIÓN PERSONAL COMPLETA:</strong> Registrar nombre completo de la visita, número de DNI (verificado visualmente), fecha de nacimiento, dirección de residencia, y número de teléfono de contacto para emergencias.</li>
+                <li><strong>INFORMACIÓN DE LA VISITA:</strong> Documentar departamento visitado (número exacto), nombre completo del propietario que autoriza la visita, motivo específico de la visita, y horario autorizado de permanencia.</li>
+                <li><strong>CONTROL DE ENTRADA:</strong> Registrar hora exacta de entrada al edificio (formato 24 horas), método de ingreso (a pie, vehículo), y vigilador responsable del registro y acompañamiento.</li>
+                <li><strong>VERIFICACIÓN DE AUTORIZACIÓN:</strong> Documentar confirmación de autorización del propietario, incluyendo método de verificación (llamada telefónica, mensaje, autorización previa), y nombre de la persona que autorizó.</li>
+                <li><strong>ACOMPAÑAMIENTO OBLIGATORIO:</strong> Registrar hora de inicio del acompañamiento, vigilador responsable del acompañamiento, ruta utilizada (ascensor, escalera), y hora de llegada al departamento.</li>
+            </ul>
+
+            <h5>2. SALIDAS DE VISITAS - CONTROL COMPLETO</h5>
+            <ul>
+                <li><strong>VERIFICACIÓN DE SALIDA:</strong> Registrar hora exacta de salida del edificio, método de salida (a pie, vehículo), y vigilador que verificó la salida y confirmó que la visita abandonó el edificio correctamente.</li>
+                <li><strong>CONFIRMACIÓN CON PROPIETARIO:</strong> Documentar confirmación con el propietario de que la visita abandonó el departamento de manera apropiada, incluyendo hora de salida del departamento y cualquier incidente durante la visita.</li>
+                <li><strong>VERIFICACIÓN DE ÁREAS COMUNES:</strong> Confirmar que la visita no permanece en áreas comunes del edificio después de la hora de salida registrada, y documentar cualquier irregularidad observada.</li>
+                <li><strong>DURACIÓN TOTAL DE LA VISITA:</strong> Calcular y registrar la duración total de la visita desde el ingreso hasta la salida del edificio, para verificar que no exceda el horario autorizado.</li>
+                <li><strong>OBSERVACIONES ESPECIALES:</strong> Documentar cualquier comportamiento inusual, incidente, o situación especial que haya ocurrido durante la permanencia de la visita en el edificio.</li>
+            </ul>
+
+            <h5>3. PERSONAL TERCERO - CONTROL EXHAUSTIVO</h5>
+            <ul>
+                <li><strong>INFORMACIÓN DE LA EMPRESA:</strong> Registrar nombre completo de la empresa, razón social, número de CUIT, dirección de la empresa, y número de teléfono de contacto para emergencias.</li>
+                <li><strong>INFORMACIÓN DEL PERSONAL:</strong> Documentar nombre completo de cada trabajador, número de DNI, función específica en el edificio, y credenciales de identificación de la empresa.</li>
+                <li><strong>HORARIO DE TRABAJO:</strong> Registrar horario autorizado de trabajo (hora de inicio y fin), días de la semana autorizados, y duración estimada de los trabajos a realizar.</li>
+                <li><strong>CONTROL DE ENTRADA Y SALIDA:</strong> Documentar hora exacta de entrada y salida de cada trabajador, verificación de credenciales, y vigilador responsable del control.</li>
+                <li><strong>SUPERVISIÓN DURANTE LA PERMANENCIA:</strong> Registrar rondas de supervisión realizadas durante la permanencia del personal tercero, observaciones sobre el trabajo realizado, y cualquier incidente o irregularidad.</li>
+            </ul>
+
+            <h5>4. VEHÍCULOS - REGISTRO COMPLETO</h5>
+            <ul>
+                <li><strong>INFORMACIÓN VEHICULAR:</strong> Registrar patente completa del vehículo, marca, modelo, año, color, y cualquier característica distintiva (calcomanías, daños, modificaciones).</li>
+                <li><strong>INFORMACIÓN DEL CONDUCTOR:</strong> Documentar nombre completo del conductor, número de DNI, relación con el edificio (propietario, visita, personal tercero), y autorización para ingresar con vehículo.</li>
+                <li><strong>CONTROL DE ENTRADA Y SALIDA:</strong> Registrar hora exacta de entrada y salida del vehículo, vigilador responsable del control, y verificación de que el vehículo no transporta objetos robados del edificio.</li>
+                <li><strong>ESTACIONAMIENTO:</strong> Documentar ubicación donde se estaciona el vehículo (cochera asignada, estacionamiento temporal, calle), y duración de la permanencia del vehículo en el edificio.</li>
+                <li><strong>VERIFICACIÓN DE AUTORIZACIÓN:</strong> Confirmar que el vehículo tiene autorización para ingresar al edificio, especialmente si se trata de vehículos de personal tercero o visitas.</li>
+            </ul>
+
+            <h5>5. INCIDENTES DE SEGURIDAD - DOCUMENTACIÓN DETALLADA</h5>
+            <ul>
+                <li><strong>DESCRIPCIÓN COMPLETA DEL INCIDENTE:</strong> Documentar descripción detallada de cada incidente de seguridad, incluyendo tipo de incidente, ubicación exacta, hora de ocurrencia, y personas involucradas.</li>
+                <li><strong>HORA EXACTA Y CRONOLOGÍA:</strong> Registrar hora exacta del incidente (formato 24 horas), duración del incidente, secuencia de eventos, y momento de activación de protocolos de emergencia.</li>
+                <li><strong>TESTIGOS Y DECLARACIONES:</strong> Identificar y registrar información de todos los testigos del incidente, incluyendo nombres, números de departamento, y declaraciones completas sobre lo observado.</li>
+                <li><strong>MEDIDAS TOMADAS:</strong> Documentar todas las medidas implementadas durante el incidente, incluyendo activación de alarmas, llamadas a autoridades, evacuaciones, y coordinación con otros puestos.</li>
+                <li><strong>RESULTADO Y CONSECUENCIAS:</strong> Registrar el resultado del incidente, consecuencias para el edificio y residentes, daños materiales si los hubo, y estado final de la situación.</li>
+            </ul>
+
+            <h5>6. RONDAS DE SEGURIDAD - CONTROL SISTEMÁTICO</h5>
+            <ul>
+                <li><strong>HORA DE INICIO Y FINALIZACIÓN:</strong> Registrar hora exacta de inicio y fin de cada ronda de seguridad, incluyendo vigilador responsable y duración total de la ronda.</li>
+                <li><strong>RUTA Y PUNTOS DE CONTROL:</strong> Documentar ruta específica de la ronda, puntos de control visitados, y tiempo dedicado a cada área del edificio durante la inspección.</li>
+                <li><strong>OBSERVACIONES REALIZADAS:</strong> Registrar todas las observaciones realizadas durante la ronda, incluyendo estado de las instalaciones, comportamientos sospechosos, y cualquier irregularidad detectada.</li>
+                <li><strong>PROBLEMAS DETECTADOS:</strong> Documentar problemas de seguridad identificados durante la ronda, incluyendo luces defectuosas, puertas que no cierran correctamente, cámaras de seguridad inoperativas, y otros problemas de mantenimiento.</li>
+                <li><strong>ACCIONES TOMADAS:</strong> Registrar todas las acciones tomadas durante la ronda, incluyendo correcciones inmediatas, reportes a mantenimiento, y coordinación con otros puestos de vigilancia.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 129 - Obligación de documentación completa y registro de todas las actividades de seguridad en planillas Excel.</li>
+            </ul>
+
+            <h4>6.2 LIBRO DE NOVEDADES - REGISTRO DETALLADO - PROTOCOLO COMPLETO</h4>
+            
+            <h5>1. PERSONAS SOSPECHOSAS - DOCUMENTACIÓN EXHAUSTIVA</h5>
+            <ul>
+                <li><strong>DESCRIPCIÓN FÍSICA DETALLADA:</strong> Documentar descripción física completa de la persona sospechosa, incluyendo altura, complexión, color de piel, color de pelo, estilo de peinado, y características faciales distintivas.</li>
+                <li><strong>VESTIMENTA Y ACCESORIOS:</strong> Registrar vestimenta completa de la persona, incluyendo tipo de ropa, colores, marcas visibles, calzado, y cualquier accesorio como gorras, gafas, o joyas.</li>
+                <li><strong>COMPORTAMIENTO OBSERVADO:</strong> Documentar comportamiento específico de la persona, incluyendo movimientos sospechosos, interacciones con otros, tiempo de permanencia en el área, y cualquier acción inusual.</li>
+                <li><strong>HORA EXACTA Y UBICACIÓN:</strong> Registrar hora exacta de la observación, ubicación específica donde fue observada la persona, dirección de movimiento, y tiempo total de permanencia en el área.</li>
+                <li><strong>ACCIONES TOMADAS:</strong> Documentar todas las acciones tomadas en respuesta a la observación, incluyendo seguimiento, alertas a otros puestos, llamadas a autoridades, y medidas de seguridad implementadas.</li>
+            </ul>
+
+            <h5>2. EMERGENCIAS - REGISTRO COMPLETO</h5>
+            <ul>
+                <li><strong>TIPO DE EMERGENCIA:</strong> Clasificar y documentar el tipo específico de emergencia (médica, seguridad, incendio, evacuación, etc.), incluyendo subtipo y gravedad de la situación.</li>
+                <li><strong>ACTUACIÓN ESPECÍFICA DEL VIGILADOR:</strong> Documentar detalladamente todas las acciones realizadas por el vigilador durante la emergencia, incluyendo protocolos activados, decisiones tomadas, y coordinación con otros servicios.</li>
+                <li><strong>MEDIDAS IMPLEMENTADAS:</strong> Registrar todas las medidas de seguridad implementadas durante la emergencia, incluyendo evacuaciones, cierre de accesos, activación de alarmas, y coordinación con autoridades.</li>
+                <li><strong>RESULTADO DE LAS ACCIONES:</strong> Documentar el resultado de todas las acciones tomadas, incluyendo efectividad de las medidas, tiempo de respuesta, y consecuencias para el edificio y residentes.</li>
+                <li><strong>COORDINACIÓN CON AUTORIDADES:</strong> Registrar todos los contactos con autoridades durante la emergencia, incluyendo servicios llamados, información proporcionada, tiempo de respuesta, y coordinación establecida.</li>
+            </ul>
+
+            <h5>3. COMUNICACIONES CON AUTORIDADES - REGISTRO SISTEMÁTICO</h5>
+            <ul>
+                <li><strong>CONTACTOS CON FUERZAS DE SEGURIDAD:</strong> Documentar todos los contactos con fuerzas de seguridad, incluyendo policía, bomberos, servicios médicos, y otras autoridades relevantes.</li>
+                <li><strong>HORA Y MOTIVO DE LA COMUNICACIÓN:</strong> Registrar hora exacta de cada comunicación, motivo específico del contacto, y persona con quien se estableció la comunicación.</li>
+                <li><strong>INFORMACIÓN PROPORCIONADA:</strong> Documentar toda la información proporcionada a las autoridades, incluyendo descripción de incidentes, ubicaciones, personas involucradas, y medidas tomadas.</li>
+                <li><strong>RESULTADO DE LA COMUNICACIÓN:</strong> Registrar el resultado de cada comunicación, incluyendo respuesta de las autoridades, tiempo de llegada, acciones realizadas, y seguimiento establecido.</li>
+                <li><strong>COORDINACIÓN CON COORDINADOR:</strong> Documentar todas las comunicaciones con el coordinador de seguridad, incluyendo reportes de incidentes, solicitudes de apoyo, y coordinación de acciones.</li>
+                <li><strong>COMUNICACIÓN CON GERENCIA:</strong> Registrar contactos con la gerencia del edificio, incluyendo reportes de situaciones críticas, solicitudes de autorización, y coordinación de medidas especiales.</li>
+            </ul>
+
+            <h5>4. PROBLEMAS DE MANTENIMIENTO - DOCUMENTACIÓN TÉCNICA</h5>
+            <ul>
+                <li><strong>PROBLEMAS DE SEGURIDAD IDENTIFICADOS:</strong> Documentar todos los problemas de seguridad detectados, incluyendo luces que no funcionan, cámaras de seguridad defectuosas, puertas que no cierran correctamente, y otros sistemas de seguridad inoperativos.</li>
+                <li><strong>UBICACIÓN Y GRAVEDAD:</strong> Registrar ubicación exacta de cada problema, gravedad de la situación, impacto en la seguridad del edificio, y urgencia de la reparación necesaria.</li>
+                <li><strong>REPORTE A MANTENIMIENTO:</strong> Documentar todos los reportes realizados al personal de mantenimiento, incluyendo hora del reporte, persona contactada, descripción del problema, y tiempo estimado de reparación.</li>
+                <li><strong>SEGUIMIENTO DE REPARACIONES:</strong> Registrar seguimiento de las reparaciones realizadas, incluyendo hora de inicio y fin de los trabajos, personal responsable, y verificación de que el problema fue resuelto correctamente.</li>
+                <li><strong>PROBLEMAS RECURRENTES:</strong> Identificar y documentar problemas que se repiten frecuentemente, incluyendo análisis de causas, medidas preventivas implementadas, y efectividad de las soluciones aplicadas.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 130 - Registro de novedades obligatorio en libro específico con documentación completa de todos los incidentes y situaciones de seguridad.</li>
+            </ul>
+
+            <h3>ARTÍCULO 7: FUNDAMENTOS LEGALES - CONVENIO UPSRA</h3>
+            
+            <h4>7.1 ARTÍCULOS APLICABLES - ANÁLISIS COMPLETO</h4>
+            
+            <h5>1. ARTÍCULOS DE SEGURIDAD Y PROTOCOLOS</h5>
+            <ul>
+                <li><strong>Artículo 120:</strong> Protocolo de seguridad ante intrusos armados con armas de fuego. Establece las obligaciones específicas del vigilador en situaciones de amenaza con armas de fuego, incluyendo prohibición de confrontación directa, activación de alarmas, y coordinación con fuerzas de seguridad.</li>
+                <li><strong>Artículo 121:</strong> Manejo de situaciones con armas blancas y objetos contundentes. Define los protocolos específicos para amenazas con armas blancas, incluyendo distancia de seguridad mínima, comunicación con autoridades, y medidas de contención pasiva.</li>
+                <li><strong>Artículo 122:</strong> Control de acceso a departamentos y protocolo de acompañamiento. Establece la obligación absoluta del vigilador de acompañar a todas las visitas hasta el departamento del propietario, incluyendo verificación previa de autorización.</li>
+                <li><strong>Artículo 123:</strong> Protocolos de evacuación y emergencias. Define los procedimientos obligatorios para evacuaciones de emergencia, incluyendo coordinación con autoridades, asistencia a personas con movilidad reducida, y puntos de reunión seguros.</li>
+                <li><strong>Artículo 124:</strong> Comunicación y coordinación entre puestos. Establece los protocolos de comunicación obligatorios entre diferentes puestos de vigilancia, incluyendo códigos de emergencia y verificación periódica de estado.</li>
+            </ul>
+
+            <h5>2. ARTÍCULOS DE CAPACITACIÓN MÉDICA</h5>
+            <ul>
+                <li><strong>Artículo 125:</strong> Capacitación obligatoria en primeros auxilios y RCP. Establece la obligación de todos los vigiladores de estar certificados en reanimación cardiopulmonar y primeros auxilios, con renovación cada 6 meses.</li>
+                <li><strong>Artículo 126:</strong> Protocolos de emergencia médica y manejo de crisis. Define los procedimientos específicos para diferentes tipos de emergencias médicas, incluyendo evaluación, activación de servicios médicos, y coordinación con autoridades.</li>
+                <li><strong>Artículo 127:</strong> Prohibición de abandonar puesto de vigilancia por cualquier motivo. Establece la prohibición absoluta de salir del edificio para perseguir robos externos o intervenir en emergencias externas.</li>
+                <li><strong>Artículo 128:</strong> Manejo de emergencias externas y coordinación con autoridades. Define los protocolos para situaciones externas que pueden afectar al edificio, incluyendo evaluación de riesgo y coordinación sin abandonar la seguridad.</li>
+                <li><strong>Artículo 129:</strong> Obligación de documentación y registro de todas las actividades. Establece la obligación de registrar todas las actividades de seguridad en planillas Excel y libro de novedades.</li>
+            </ul>
+
+            <h5>3. ARTÍCULOS DE REGISTRO Y DOCUMENTACIÓN</h5>
+            <ul>
+                <li><strong>Artículo 130:</strong> Registro de novedades obligatorio en libro específico. Establece la obligación de documentar todos los incidentes, emergencias, y situaciones de seguridad en el libro de novedades oficial.</li>
+                <li><strong>Artículo 131:</strong> Capacitación en seguridad y defensa personal. Define los requisitos de capacitación en seguridad, incluyendo protocolos de emergencia, manejo de conflictos, y técnicas de autoprotección.</li>
+                <li><strong>Artículo 132:</strong> Protocolos de comunicación entre puestos. Establece los sistemas de comunicación obligatorios entre diferentes puestos de vigilancia, incluyendo códigos de emergencia y verificación periódica.</li>
+                <li><strong>Artículo 133:</strong> Contactos obligatorios con autoridades. Define los contactos de emergencia obligatorios, incluyendo números de teléfono, protocolos de comunicación, y coordinación con fuerzas de seguridad.</li>
+                <li><strong>Artículo 134:</strong> Control vehicular obligatorio. Establece los protocolos para el control de vehículos que ingresan al edificio, incluyendo registro completo y verificación de autorización.</li>
+            </ul>
+
+            <h5>4. ARTÍCULOS DE PROTOCOLOS ESPECÍFICOS</h5>
+            <ul>
+                <li><strong>Artículo 135:</strong> Protocolo de acompañamiento obligatorio. Define en detalle el procedimiento obligatorio de acompañar visitas hasta el departamento del propietario, incluyendo verificación previa y registro completo.</li>
+                <li><strong>Artículo 136:</strong> Protocolo de secuestro y amenazas. Establece los procedimientos específicos para situaciones de secuestro o amenazas con armas, incluyendo activación silenciosa de alarmas y coordinación con autoridades.</li>
+                <li><strong>Artículo 137:</strong> Protocolo de evacuación obligatorio. Define los procedimientos completos para evacuaciones de emergencia, incluyendo coordinación con bomberos, asistencia a residentes, y puntos de reunión seguros.</li>
+                <li><strong>Artículo 138:</strong> Documentación obligatoria. Establece los requisitos específicos de documentación para todas las actividades de seguridad, incluyendo formatos, contenido, y archivo de registros.</li>
+                <li><strong>Artículo 139:</strong> Registro de novedades obligatorio. Define el contenido obligatorio del libro de novedades, incluyendo tipos de incidentes que deben documentarse y formato requerido.</li>
+            </ul>
+
+            <h4>7.2 ADICIONALES Y COMPENSACIONES - ANÁLISIS DETALLADO</h4>
+            
+            <h5>1. ADICIONALES OBLIGATORIOS POR CONDICIONES DE TRABAJO</h5>
+            <ul>
+                <li><strong>ADICIONAL POR RIESGO:</strong> 15% sobre salario básico por trabajar en condiciones de riesgo. Este adicional se aplica debido a la exposición constante a situaciones de peligro, amenazas de seguridad, y responsabilidad por la protección de personas y bienes.</li>
+                <li><strong>ADICIONAL POR ZONA:</strong> 10% según la ubicación geográfica del edificio y nivel de peligrosidad de la zona. Se determina según índices de criminalidad, tipo de barrio, y nivel de riesgo específico de la ubicación.</li>
+                <li><strong>ADICIONAL POR ANTIGÜEDAD:</strong> 1% por cada año de servicio en la empresa, reconociendo la experiencia acumulada y la lealtad del personal de seguridad a la empresa.</li>
+                <li><strong>ADICIONAL NOCTURNO:</strong> 20% adicional para turnos que se desarrollen entre las 22:00 y las 06:00 horas, compensando las condiciones especiales del trabajo nocturno y la mayor responsabilidad durante estas horas.</li>
+                <li><strong>ADICIONAL POR DÍAS FESTIVOS:</strong> 100% adicional por trabajar en días festivos o feriados nacionales, reconociendo el sacrificio de trabajar en días de descanso obligatorio.</li>
+            </ul>
+
+            <h5>2. COMPENSACIONES POR SITUACIONES CRÍTICAS</h5>
+            <ul>
+                <li><strong>COMPENSACIÓN POR EMERGENCIAS:</strong> 50% adicional sobre el salario cuando se actúa en situaciones críticas o emergencias. Se aplica cuando el vigilador debe activar protocolos de emergencia, coordinar con autoridades, o manejar situaciones de alto riesgo.</li>
+                <li><strong>COMPENSACIÓN POR HORAS EXTRAORDINARIAS:</strong> 100% adicional por horas extras trabajadas en emergencias o situaciones críticas que requieren permanencia adicional en el puesto de trabajo.</li>
+                <li><strong>COMPENSACIÓN POR CAPACITACIÓN:</strong> Pago de horas de capacitación obligatoria según convenio UPSRA, incluyendo tiempo de viaje y materiales de estudio necesarios para mantener las certificaciones vigentes.</li>
+                <li><strong>COMPENSACIÓN POR EQUIPAMIENTO:</strong> Provisión de equipamiento de seguridad necesario para el cumplimiento de funciones, incluyendo uniformes, elementos de protección personal, y herramientas de trabajo.</li>
+                <li><strong>COMPENSACIÓN POR TRANSPORTE:</strong> Provisión de transporte o compensación por gastos de transporte cuando el trabajo se realiza en horarios nocturnos o en zonas de difícil acceso.</li>
+            </ul>
+
+            <h5>3. ADICIONALES ESPECIALES Y BONIFICACIONES</h5>
+            <ul>
+                <li><strong>BONIFICACIÓN POR DESEMPEÑO:</strong> Bonificación adicional por excelente desempeño en funciones de seguridad, incluyendo cumplimiento de protocolos, efectividad en emergencias, y reconocimiento de residentes.</li>
+                <li><strong>ADICIONAL POR FUNCIONES ESPECIALES:</strong> Compensación adicional cuando el vigilador debe realizar funciones especiales como coordinación de evacuaciones, manejo de situaciones de crisis, o capacitación de nuevo personal.</li>
+                <li><strong>COMPENSACIÓN POR RIESGOS ESPECÍFICOS:</strong> Adicionales especiales cuando el trabajo se realiza en condiciones de riesgo específico, como edificios en zonas de alta criminalidad o con residentes problemáticos.</li>
+                <li><strong>BONIFICACIÓN POR ANTIGÜEDAD ESPECIAL:</strong> Bonificación adicional para personal con más de 5 años de servicio continuo en la empresa, reconociendo la experiencia y lealtad.</li>
+                <li><strong>COMPENSACIÓN POR CONDICIONES CLIMÁTICAS:</strong> Adicionales por trabajar en condiciones climáticas extremas, como temperaturas muy altas o bajas, lluvia intensa, o condiciones meteorológicas adversas.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 140-145 - Adicionales y compensaciones obligatorios por condiciones de trabajo, situaciones críticas, y funciones especiales.</li>
+            </ul>
+
+            <h3>ARTÍCULO 8: SANCIONES ESPECÍFICAS POR INCUMPLIMIENTO</h3>
+            
+            <h4>8.1 FALTAS GRAVÍSIMAS - DESPIDO INMEDIATO - ANÁLISIS COMPLETO</h4>
+            
+            <h5>1. ABANDONO DE PUESTO DE VIGILANCIA</h5>
+            <ul>
+                <li><strong>PROHIBICIÓN ABSOLUTA:</strong> Salir del edificio para perseguir robos externos o por cualquier motivo no autorizado constituye una falta gravísima que resulta en despido inmediato. Esta prohibición está establecida en el convenio UPSRA para proteger la seguridad del edificio.</li>
+                <li><strong>RIESGO CRÍTICO DE SEGURIDAD:</strong> El abandono del puesto de vigilancia pone en riesgo crítico la seguridad del edificio y deja desprotegidos a los residentes, lo que justifica la sanción más severa disponible.</li>
+                <li><strong>VIOLACIÓN DE PROTOCOLO FUNDAMENTAL:</strong> Esta falta viola el protocolo fundamental de seguridad establecido en el convenio UPSRA, que establece que la prioridad absoluta es mantener la vigilancia del edificio.</li>
+                <li><strong>CONSECUENCIAS INMEDIATAS:</strong> El despido inmediato se aplica sin posibilidad de apelación, ya que esta falta compromete directamente la seguridad de las personas y bienes bajo protección del vigilador.</li>
+                <li><strong>DOCUMENTACIÓN OBLIGATORIA:</strong> El incidente debe documentarse completamente en el libro de novedades, incluyendo hora del abandono, motivo alegado, y consecuencias para la seguridad del edificio.</li>
+            </ul>
+
+            <h5>2. INCUMPLIMIENTO DEL PROTOCOLO DE ACOMPAÑAMIENTO</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DEL CONVENIO UPSRA:</strong> Incumplir el protocolo de acompañamiento obligatorio establecido en el convenio UPSRA constituye una falta gravísima que resulta en despido inmediato.</li>
+                <li><strong>OBLIGACIÓN FUNDAMENTAL:</strong> El acompañamiento de visitas hasta el departamento del propietario es una obligación fundamental establecida en el convenio, no una opción o recomendación.</li>
+                <li><strong>RIESGO DE SEGURIDAD:</strong> No acompañar a las visitas pone en riesgo la seguridad de los residentes y puede facilitar intrusiones no autorizadas a departamentos.</li>
+                <li><strong>VERIFICACIÓN DE CUMPLIMIENTO:</strong> El cumplimiento del protocolo de acompañamiento debe verificarse regularmente mediante supervisión y reportes de residentes.</li>
+                <li><strong>DOCUMENTACIÓN DE VIOLACIONES:</strong> Cada violación del protocolo de acompañamiento debe documentarse detalladamente, incluyendo fecha, hora, visita afectada, y vigilador responsable.</li>
+            </ul>
+
+            <h5>3. DORMIR DURANTE EL TURNO DE TRABAJO</h5>
+            <ul>
+                <li><strong>PROHIBICIÓN ABSOLUTA:</strong> Cualquier momento de sueño durante el horario de trabajo, incluso por un minuto, constituye una falta gravísima que resulta en despido inmediato.</li>
+                <li><strong>COMPROMISO DE SEGURIDAD:</strong> Dormir durante el turno compromete completamente la seguridad del edificio y deja desprotegidos a los residentes durante el período de sueño.</li>
+                <li><strong>VIOLACIÓN DE CONTRATO:</strong> Esta falta viola directamente el contrato de trabajo, que establece la obligación de mantener vigilancia constante durante todo el turno.</li>
+                <li><strong>DETECCIÓN Y VERIFICACIÓN:</strong> El sueño durante el turno puede detectarse mediante supervisión directa, reportes de residentes, o monitoreo de cámaras de seguridad.</li>
+                <li><strong>CONSECUENCIAS INMEDIATAS:</strong> El despido se aplica inmediatamente sin posibilidad de apelación, ya que esta falta compromete directamente la función fundamental del vigilador.</li>
+            </ul>
+
+            <h5>4. AGRESIÓN A RESIDENTES O PERSONAL</h5>
+            <ul>
+                <li><strong>VIOLACIÓN GRAVE DE DERECHOS:</strong> Agresión verbal o física a propietarios, visitas o personal del edificio constituye una falta gravísima que resulta en despido inmediato.</li>
+                <li><strong>INCOMPATIBILIDAD CON LA FUNCIÓN:</strong> La agresión es completamente incompatible con la función de seguridad, que requiere profesionalismo, calma, y capacidad de manejo de conflictos.</li>
+                <li><strong>RIESGO PARA LA CONVIVENCIA:</strong> Las agresiones crean un ambiente hostil en el edificio y pueden generar conflictos entre residentes y personal de seguridad.</li>
+                <li><strong>CONSECUENCIAS LEGALES:</strong> Además del despido, las agresiones pueden tener consecuencias legales adicionales, incluyendo denuncias penales y responsabilidad civil.</li>
+                <li><strong>DOCUMENTACIÓN OBLIGATORIA:</strong> Cada incidente de agresión debe documentarse completamente, incluyendo declaraciones de testigos y reportes a las autoridades correspondientes.</li>
+            </ul>
+
+            <h5>5. FALSIFICACIÓN DE REGISTROS OFICIALES</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DE INTEGRIDAD:</strong> Modificar, alterar o falsificar planillas Excel, libro de novedades o cualquier documentación oficial constituye una falta gravísima que resulta en despido inmediato.</li>
+                <li><strong>COMPROMISO DE TRANSPARENCIA:</strong> La falsificación de registros compromete la transparencia y confiabilidad del sistema de seguridad del edificio.</li>
+                <li><strong>RIESGO LEGAL:</strong> La falsificación de documentos oficiales puede tener consecuencias legales graves, incluyendo responsabilidad penal por falsificación de documentos.</li>
+                <li><strong>DETECCIÓN Y VERIFICACIÓN:</strong> La falsificación puede detectarse mediante auditorías regulares, verificación cruzada de información, y reportes de residentes.</li>
+                <li><strong>CONSECUENCIAS INMEDIATAS:</strong> El despido se aplica inmediatamente, y el incidente debe reportarse a las autoridades correspondientes para investigación adicional.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 151-155 - Faltas gravísimas que resultan en despido inmediato sin posibilidad de apelación.</li>
+            </ul>
+
+            <h4>8.2 FALTAS GRAVES - SUSPENSIÓN SEVERA - ANÁLISIS DETALLADO</h4>
+            
+            <h5>1. OMISIÓN EN REGISTRO DE VISITAS</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DE PROTOCOLO OBLIGATORIO:</strong> Omisión en el registro de entradas y salidas de visitas en planillas Excel constituye una falta grave que resulta en suspensión severa sin goce de haberes.</li>
+                <li><strong>COMPROMISO DE SEGURIDAD:</strong> No registrar visitas compromete el control de acceso al edificio y puede facilitar intrusiones no autorizadas o actividades delictivas.</li>
+                <li><strong>VIOLACIÓN DEL CONVENIO UPSRA:</strong> Esta falta viola directamente el convenio UPSRA, que establece la obligación absoluta de registrar todas las entradas y salidas de visitas.</li>
+                <li><strong>DURACIÓN DE LA SUSPENSIÓN:</strong> La suspensión puede durar entre 3 y 30 días, dependiendo de la gravedad de la omisión y si es una primera o reincidencia.</li>
+                <li><strong>REQUISITOS PARA REINTEGRO:</strong> Para el reintegro, el vigilador debe demostrar comprensión de los protocolos de registro y compromiso con su cumplimiento estricto.</li>
+            </ul>
+
+            <h5>2. INCUMPLIMIENTO DE RONDAS DE SEGURIDAD</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DE CRONOGRAMA OBLIGATORIO:</strong> Incumplir el cronograma de rondas de seguridad establecido constituye una falta grave que resulta en suspensión severa.</li>
+                <li><strong>COMPROMISO DE VIGILANCIA:</strong> No realizar rondas compromete la vigilancia del edificio y puede permitir que problemas de seguridad pasen desapercibidos.</li>
+                <li><strong>PROTOCOLO FUNDAMENTAL:</strong> Las rondas de seguridad son un protocolo fundamental establecido en el convenio UPSRA para mantener la seguridad del edificio.</li>
+                <li><strong>VERIFICACIÓN DE CUMPLIMIENTO:</strong> El cumplimiento de las rondas debe verificarse mediante supervisión directa, reportes de residentes, y verificación de registros en el libro de novedades.</li>
+                <li><strong>MEDIDAS CORRECTIVAS:</strong> Durante la suspensión, el vigilador debe recibir capacitación adicional sobre la importancia de las rondas de seguridad y los protocolos establecidos.</li>
+            </ul>
+
+            <h5>3. FALTA A CAPACITACIONES OBLIGATORIAS</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DE REQUISITO LEGAL:</strong> Falta a cursos obligatorios de primeros auxilios, RCP o seguridad constituye una falta grave que resulta en suspensión severa.</li>
+                <li><strong>COMPROMISO DE COMPETENCIA:</strong> No asistir a capacitaciones compromete la competencia del vigilador para manejar emergencias y situaciones de seguridad.</li>
+                <li><strong>REQUISITO DEL CONVENIO UPSRA:</strong> Las capacitaciones son un requisito obligatorio establecido en el convenio UPSRA para mantener las certificaciones vigentes.</li>
+                <li><strong>REPROGRAMACIÓN OBLIGATORIA:</strong> El vigilador debe reprogramar y asistir a las capacitaciones faltantes antes del reintegro al trabajo.</li>
+                <li><strong>VERIFICACIÓN DE CERTIFICACIONES:</strong> Se debe verificar que el vigilador mantenga todas las certificaciones vigentes antes del reintegro al trabajo.</li>
+            </ul>
+
+            <h5>4. NEGLIGENCIA EN EMERGENCIAS MÉDICAS</h5>
+            <ul>
+                <li><strong>VIOLACIÓN DE OBLIGACIÓN MÉDICA:</strong> No aplicar primeros auxilios o RCP cuando sea necesario y el vigilador esté capacitado constituye una falta grave que resulta en suspensión severa.</li>
+                <li><strong>COMPROMISO DE VIDA:</strong> La negligencia médica puede comprometer la vida o salud de las personas que requieren asistencia inmediata.</li>
+                <li><strong>OBLIGACIÓN LEGAL:</strong> Aplicar primeros auxilios cuando se está capacitado es una obligación legal establecida en el convenio UPSRA y en la legislación laboral.</li>
+                <li><strong>EVALUACIÓN DE CAPACITACIÓN:</strong> Durante la suspensión, se debe evaluar si el vigilador mantiene las habilidades necesarias para aplicar primeros auxilios correctamente.</li>
+                <li><strong>RECAPACITACIÓN OBLIGATORIA:</strong> Si es necesario, el vigilador debe recibir recapacitación en primeros auxilios antes del reintegro al trabajo.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 156-160 - Faltas graves que resultan en suspensión severa con posibilidad de reintegro tras cumplimiento de medidas correctivas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <a href="index.html">Volver al índice</a>
+        </section>
+    </div>
+
+    <script>
+        function printDocument() {
+            // Función mejorada de impresión con múltiples fallbacks
+            if (window.enhancedPrint) {
+                // Usar la función mejorada si está disponible
+                window.enhancedPrint()
+                    .then(result => {
+                        console.log('Impresión exitosa:', result);
+                    })
+                    .catch(error => {
+                        console.error('Error con enhancedPrint:', error);
+                        fallbackPrint();
+                    });
+            } else {
+                // Fallback a la función básica
+                try {
+                    // Forzar la aplicación de estilos de impresión
+                    document.body.style.background = 'white';
+                    document.body.style.color = 'black';
+                    
+                    // Esperar un momento para que los estilos se apliquen
+                    setTimeout(function() {
+                        // Intentar imprimir
+                        if (window.print) {
+                            window.print();
+                        } else {
+                            // Fallback para navegadores que no soportan window.print
+                            alert('La función de impresión no está disponible en este navegador. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir.');
+                        }
+                    }, 100);
+                } catch (error) {
+                    console.error('Error al imprimir:', error);
+                    alert('Error al imprimir. Por favor use Ctrl+P (Cmd+P en Mac) para imprimir manualmente.');
+                }
+            }
+        }
+        
+        function fallbackPrint() {
+            alert('Para imprimir este documento:\n\n1. Presione Ctrl+P (Windows) o Cmd+P (Mac)\n2. Configure las opciones de impresión\n3. Seleccione "Imprimir"\n\nO use la función "Descargar PDF" como alternativa.');
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('.book-container');
+            const opt = {
+                margin: 1,
+                filename: 'Procedimientos_Seguridad_UPSRA.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+        
+        // Agregar evento para detectar si la impresión fue cancelada
+        window.addEventListener('afterprint', function() {
+            console.log('Impresión completada');
+        });
+        
+        // Agregar evento para detectar errores de impresión
+        window.addEventListener('error', function(e) {
+            console.error('Error en la página:', e);
+        });
+        
+        // Agregar atajo de teclado para impresión
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printDocument();
+            }
+        });
+    </script>
+</body>
+</html> 

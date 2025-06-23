@@ -257,6 +257,709 @@
         </section>
 
         <section>
+            <h2>📋 MODELO DE INFORME DE QUEJA - VIGILADOR</h2>
+            <style>
+                .informe-container {
+                    background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+                    padding: 30px;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    border: 2px solid #007bff;
+                    margin: 20px 0;
+                }
+
+                .informe-header {
+                    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+                    color: white;
+                    padding: 25px;
+                    border-radius: 12px;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+                }
+
+                .informe-header h4 {
+                    margin: 0;
+                    font-size: 1.8em;
+                    font-weight: bold;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                }
+
+                .form-section {
+                    background: white;
+                    padding: 25px;
+                    border-radius: 12px;
+                    margin: 20px 0;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                    border-left: 5px solid #007bff;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .form-section:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                }
+
+                .form-section h5 {
+                    color: #007bff;
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    padding-bottom: 10px;
+                    border-bottom: 3px solid #007bff;
+                    position: relative;
+                }
+
+                .form-section h5::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    background: #ffd700;
+                }
+
+                .form-field {
+                    margin: 15px 0;
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    border: 1px solid #e9ecef;
+                }
+
+                .form-field strong {
+                    color: #495057;
+                    font-weight: 600;
+                    display: inline-block;
+                    min-width: 200px;
+                }
+
+                .form-field input, .form-field select {
+                    border: 2px solid #dee2e6;
+                    border-radius: 6px;
+                    padding: 8px 12px;
+                    font-size: 1em;
+                    transition: border-color 0.3s ease;
+                }
+
+                .form-field input:focus, .form-field select:focus {
+                    outline: none;
+                    border-color: #007bff;
+                    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+                }
+
+                .form-textarea {
+                    width: 100%;
+                    min-height: 120px;
+                    padding: 15px;
+                    border: 2px solid #dee2e6;
+                    border-radius: 8px;
+                    font-size: 1em;
+                    font-family: inherit;
+                    resize: vertical;
+                    transition: border-color 0.3s ease;
+                }
+
+                .form-textarea:focus {
+                    outline: none;
+                    border-color: #007bff;
+                    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+                }
+
+                .checkbox-group {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 10px;
+                    margin: 15px 0;
+                }
+
+                .checkbox-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px;
+                    background: #f8f9fa;
+                    border-radius: 6px;
+                    border: 1px solid #e9ecef;
+                    transition: background-color 0.3s ease;
+                }
+
+                .checkbox-item:hover {
+                    background: #e9ecef;
+                }
+
+                .checkbox-item input[type="checkbox"] {
+                    margin-right: 10px;
+                    transform: scale(1.2);
+                }
+
+                .signature-section {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin: 25px 0;
+                }
+
+                .signature-box {
+                    text-align: center;
+                    padding: 20px;
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                    border: 2px dashed #007bff;
+                }
+
+                .signature-line {
+                    border-bottom: 2px solid #007bff;
+                    height: 50px;
+                    margin: 15px 0;
+                    position: relative;
+                }
+
+                .signature-line::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, transparent 0%, #007bff 50%, transparent 100%);
+                }
+
+                .signature-label {
+                    font-size: 0.9em;
+                    color: #6c757d;
+                    margin-top: 10px;
+                }
+
+                .instructions-box {
+                    background: linear-gradient(135deg, #e7f3ff 0%, #d1ecf1 100%);
+                    padding: 25px;
+                    border-radius: 12px;
+                    border-left: 5px solid #007bff;
+                    margin: 25px 0;
+                }
+
+                .instructions-box h6 {
+                    color: #007bff;
+                    font-size: 1.2em;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+
+                .instructions-box ul {
+                    color: #495057;
+                    font-size: 1em;
+                    line-height: 1.6;
+                }
+
+                .instructions-box li {
+                    margin: 8px 0;
+                    padding-left: 10px;
+                }
+
+                .warning-box {
+                    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+                    padding: 25px;
+                    border-radius: 12px;
+                    border-left: 5px solid #ffc107;
+                    margin: 25px 0;
+                }
+
+                .warning-box h6 {
+                    color: #856404;
+                    font-size: 1.2em;
+                    margin-bottom: 15px;
+                    font-weight: bold;
+                }
+
+                .warning-box p {
+                    color: #856404;
+                    font-size: 1em;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                @media print {
+                    .informe-container {
+                        box-shadow: none;
+                        border: 2px solid #007bff;
+                    }
+
+                    .form-section {
+                        box-shadow: none;
+                        border: 1px solid #dee2e6;
+                    }
+
+                    .form-section:hover {
+                        transform: none;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .signature-section {
+                        grid-template-columns: 1fr;
+                        gap: 20px;
+                    }
+
+                    .checkbox-group {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
+            <div class="informe-container">
+                <div class="informe-header">
+                    <h4>📋 INFORME OFICIAL DE QUEJA - CONVENIO UPSRA</h4>
+                </div>
+                
+                <div class="form-section">
+                    <h5>📅 DATOS DEL INFORME</h5>
+                    <div class="form-field">
+                        <strong>Fecha:</strong> <input type="date" style="width: 200px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Hora:</strong> <input type="time" style="width: 150px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Lugar:</strong> <input type="text" placeholder="Ubicación del incidente" style="width: 300px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Informe N°:</strong> <input type="text" placeholder="Número de informe" style="width: 200px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>👤 DATOS DEL VIGILADOR</h5>
+                    <div class="form-field">
+                        <strong>Nombre y Apellido:</strong> <input type="text" placeholder="Nombre completo" style="width: 300px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>DNI:</strong> <input type="text" placeholder="Número de DNI" style="width: 200px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Legajo:</strong> <input type="text" placeholder="Número de legajo" style="width: 150px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Turno:</strong> 
+                        <select style="width: 150px;">
+                            <option value="">Seleccionar turno</option>
+                            <option value="mañana">Mañana</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noche">Noche</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <strong>Puesto asignado:</strong> <input type="text" placeholder="Ubicación del puesto" style="width: 300px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>📝 DATOS DEL DENUNCIANTE</h5>
+                    <div class="form-field">
+                        <strong>Nombre y Apellido:</strong> <input type="text" placeholder="Nombre completo" style="width: 300px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Cargo:</strong> <input type="text" placeholder="Cargo o función" style="width: 250px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Teléfono:</strong> <input type="tel" placeholder="Número de teléfono" style="width: 200px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Email:</strong> <input type="email" placeholder="Correo electrónico" style="width: 300px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>🚨 DESCRIPCIÓN DE LA FALTA</h5>
+                    <div class="form-field">
+                        <strong>Tipo de falta:</strong>
+                        <div style="margin-top: 10px;">
+                            <label style="margin-right: 20px;"><input type="radio" name="tipo_falta" value="gravísima"> Gravísima</label>
+                            <label style="margin-right: 20px;"><input type="radio" name="tipo_falta" value="grave"> Grave</label>
+                            <label><input type="radio" name="tipo_falta" value="leve"> Leve</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <strong>Artículos del Convenio UPSRA violados:</strong> <input type="text" placeholder="Ej: Art. 83, Art. 84" style="width: 300px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Artículos de la LCT violados:</strong> <input type="text" placeholder="Ej: Art. 67, Art. 242" style="width: 300px;">
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <strong>Descripción detallada de los hechos:</strong>
+                        <textarea class="form-textarea" placeholder="Describa detalladamente qué sucedió, cuándo, dónde y cómo..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>📸 PRUEBAS Y EVIDENCIAS</h5>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fotos"> <label for="fotos">Fotos del incidente</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="videos"> <label for="videos">Videos del incidente</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="testimonios"> <label for="testimonios">Testimonios de testigos</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="reportes"> <label for="reportes">Reportes de seguridad</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="camaras"> <label for="camaras">Registros de cámaras</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="documentacion"> <label for="documentacion">Documentación escrita</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <strong>Otros:</strong> <input type="text" placeholder="Especifique otras pruebas" style="width: 400px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>👥 TESTIGOS (si los hay)</h5>
+                    <div class="form-field">
+                        <strong>Nombre y Apellido:</strong> <input type="text" placeholder="Nombre completo del testigo" style="width: 300px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>DNI:</strong> <input type="text" placeholder="Número de DNI" style="width: 200px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Teléfono:</strong> <input type="tel" placeholder="Número de teléfono" style="width: 200px;">
+                    </div>
+                    <div style="margin: 20px 0;">
+                        <strong>Declaración:</strong>
+                        <textarea class="form-textarea" placeholder="Declaración del testigo..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>⚖️ SANCIÓN RECOMENDADA</h5>
+                    <div class="form-field">
+                        <strong>Sanción sugerida:</strong> 
+                        <select style="width: 250px;">
+                            <option value="">Seleccionar sanción</option>
+                            <option value="llamado_atencion">Llamado de atención</option>
+                            <option value="suspension_1">Suspensión 1 día</option>
+                            <option value="suspension_3">Suspensión 3 días</option>
+                            <option value="suspension_5">Suspensión 5 días</option>
+                            <option value="suspension_10">Suspensión 10 días</option>
+                            <option value="suspension_15">Suspensión 15 días</option>
+                            <option value="suspension_20">Suspensión 20 días</option>
+                            <option value="suspension_30">Suspensión 30 días</option>
+                            <option value="despido">Despido inmediato</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <strong>Fundamento legal:</strong> <input type="text" placeholder="Fundamento legal de la sanción" style="width: 400px;">
+                    </div>
+                    <div class="form-field">
+                        <strong>Artículos aplicables:</strong> <input type="text" placeholder="Artículos específicos" style="width: 400px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>✅ ACCIONES TOMADAS</h5>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="notificacion"> <label for="notificacion">Notificación inmediata al vigilador</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="coordinador"> <label for="coordinador">Contacto con coordinador Leal Christian</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="gerencia"> <label for="gerencia">Reporte a la gerencia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fotografica"> <label for="fotografica">Documentación fotográfica</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="novedades"> <label for="novedades">Registro en libro de novedades</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <strong>Otros:</strong> <input type="text" placeholder="Otras acciones tomadas" style="width: 400px;">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5>📝 OBSERVACIONES ADICIONALES</h5>
+                    <textarea class="form-textarea" placeholder="Observaciones adicionales, antecedentes del vigilador, reincidencias, etc..."></textarea>
+                </div>
+
+                <div class="form-section">
+                    <h5>✍️ FIRMAS</h5>
+                    <div class="signature-section">
+                        <div class="signature-box">
+                            <strong>Denunciante:</strong>
+                            <div class="signature-line"></div>
+                            <div class="signature-label">Nombre y Apellido</div>
+                            <div class="signature-label">DNI</div>
+                        </div>
+                        <div class="signature-box">
+                            <strong>Coordinador/Gerente:</strong>
+                            <div class="signature-line"></div>
+                            <div class="signature-label">Nombre y Apellido</div>
+                            <div class="signature-label">Cargo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructions-box">
+                    <h6>📋 INSTRUCCIONES PARA EL USO DE ESTE INFORME</h6>
+                    <ul>
+                        <li>Complete TODOS los campos obligatorios</li>
+                        <li>Adjunte TODAS las pruebas disponibles (fotos, videos, testimonios)</li>
+                        <li>Conserve una copia del informe</li>
+                        <li>Entregue el informe al coordinador Leal Christian dentro de las 24 horas</li>
+                        <li>Mantenga confidencialidad sobre el contenido del informe</li>
+                        <li>Este informe debe ser presentado a la empresa UPSRA para proceder con las sanciones</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h6>⚠️ RECORDATORIO IMPORTANTE</h6>
+                    <p>
+                        <strong>Este informe es un documento oficial que será utilizado para aplicar las sanciones correspondientes según el Convenio UPSRA y la Ley de Contrato de Trabajo. Asegúrese de que toda la información sea precisa y verificable.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>PROCEDIMIENTOS CRÍTICOS DE SEGURIDAD - CONVENIO UPSRA</h2>
+            
+            <div style="background: #f8f9fa; padding: 20px; border: 1px solid #dee2e6; margin: 15px 0;">
+                <h4 style="text-align: center; margin-bottom: 20px;">PROCEDIMIENTOS OBLIGATORIOS SEGÚN CONVENIO UPSRA</h4>
+                <p style="text-align: center; font-weight: bold;">TODOS LOS VIGILADORES DEBEN CONOCER Y APLICAR ESTOS PROTOCOLOS</p>
+            </div>
+
+            <h3>ARTÍCULO 1: CONTROL DE ACCESO - PROPIETARIOS Y VISITAS</h3>
+            
+            <h4>1.1 PROPIETARIOS:</h4>
+            <ul>
+                <li><strong>LIBERTAD TOTAL:</strong> Los propietarios pueden salir a la hora que quieran sin restricciones. No es necesario registrar sus salidas.</li>
+                <li><strong>RECONOCIMIENTO FACIAL:</strong> Solo es válido si el propietario ingresa con vehículo. Si ingresa a pie, el vigilador en modo centinela debe estar alerta y abrir el portón manualmente.</li>
+                <li><strong>PROTOCOLO DE IDENTIFICACIÓN:</strong> El vigilador debe saludar y confirmar la identidad del propietario visualmente. En caso de duda, puede solicitar identificación.</li>
+                <li><strong>REGISTRO:</strong> No es necesario registrar las salidas de propietarios en ningún tipo de planilla.</li>
+            </ul>
+
+            <h4>1.2 VISITAS:</h4>
+            <ul>
+                <li><strong>IDENTIFICACIÓN OBLIGATORIA:</strong> El vigilador debe preguntar si la persona es visita y conoce al propietario que va a visitar.</li>
+                <li><strong>VERIFICACIÓN PREVIA:</strong> Antes de permitir el acceso, el vigilador debe confirmar con el propietario que la visita está autorizada.</li>
+                <li><strong>PROTOCOLO DE ACOMPAÑAMIENTO OBLIGATORIO:</strong> Según el convenio UPSRA, el vigilador debe acompañar a la visita hasta el departamento del propietario.</li>
+                <li><strong>REGISTRO COMPLETO:</strong> Todas las entradas y salidas de visitas deben registrarse en planillas Excel con los siguientes datos: nombre completo, DNI, departamento visitado, hora de entrada, hora de salida.</li>
+                <li><strong>CONTROL DE SALIDA:</strong> El vigilador debe verificar cuando la visita abandona el edificio y registrar la hora de salida.</li>
+            </ul>
+
+            <h4>1.3 PERSONAL TERCERO:</h4>
+            <ul>
+                <li><strong>REGISTRO OBLIGATORIO:</strong> Todo personal que entra a trabajar en el edificio debe registrarse en planillas Excel con los siguientes datos: nombre completo, DNI, empresa, función, horario de trabajo.</li>
+                <li><strong>VERIFICACIÓN DE IDENTIFICACIÓN:</strong> El vigilador debe verificar credenciales y autorización escrita antes de permitir el acceso.</li>
+                <li><strong>CONTROL DE ENTRADA Y SALIDA:</strong> Registrar hora de entrada y salida de todo el personal tercero.</li>
+                <li><strong>SUPERVISIÓN DURANTE LA PERMANENCIA:</strong> El vigilador debe monitorear las actividades del personal tercero durante su permanencia en el edificio.</li>
+            </ul>
+
+            <h3>ARTÍCULO 2: SISTEMA DE RONDAS - PUESTOS Y RESPONSABILIDADES</h3>
+            
+            <h4>2.1 RONDA DIURNA (PUESTO 1):</h4>
+            <ul>
+                <li><strong>RESPONSABLE:</strong> Vigilador de Puesto 1, según convenio UPSRA.</li>
+                <li><strong>JUSTIFICACIÓN:</strong> Durante el día hay mayor movimiento de personas y vehículos que durante la noche, por lo que se requiere un vigilador dedicado a realizar rondas de seguridad.</li>
+                <li><strong>FUNCIONES PRINCIPALES:</strong> Realizar rondas de seguridad programadas por todo el edificio, verificar el estado de las instalaciones, controlar el acceso de personal de mantenimiento, supervisar el trabajo de personal tercero.</li>
+                <li><strong>COORDINACIÓN CON PUESTO 0:</strong> El Puesto 1 debe coordinar con el Puesto 0 para situaciones de emergencia o cuando se requiera apoyo adicional.</li>
+                <li><strong>REGISTRO DE RONDAS:</strong> Cada ronda debe registrarse en el libro de novedades con hora de inicio, hora de finalización y observaciones realizadas.</li>
+            </ul>
+
+            <h4>2.2 RONDA NOCTURNA (PUESTO 0):</h4>
+            <ul>
+                <li><strong>RESPONSABLE:</strong> Vigilador de Puesto 0 en modo centinela.</li>
+                <li><strong>FUNCIONES PRINCIPALES:</strong> Control de acceso principal, vigilancia estática del perímetro, monitoreo de cámaras de seguridad, atención de emergencias nocturnas.</li>
+                <li><strong>PROTOCOLO DE CONTROL:</strong> El Puesto 0 debe preguntar a todas las personas si son visitas y si conocen al propietario antes de permitir el acceso.</li>
+                <li><strong>APOYO EN SITUACIONES CRÍTICAS:</strong> El Puesto 1 puede prestar apoyo al Puesto 0 solo si la situación es crítica y requiere intervención inmediata.</li>
+                <li><strong>IMPORTANTE:</strong> Durante la noche NO HAY PUESTO 1 realizando rondas. Solo existe el Puesto 0 en modo centinela.</li>
+            </ul>
+
+            <h3>ARTÍCULO 3: SITUACIONES CRÍTICAS - PROTOCOLOS DE EMERGENCIA</h3>
+            
+            <h4>3.1 INTRUSO ARMADO CON ARMA DE FUEGO:</h4>
+            <ul>
+                <li><strong>PROTOCOLO INMEDIATO:</strong> El vigilador NO DEBE CONFRONTAR al intruso bajo ninguna circunstancia. La prioridad es la seguridad del personal y los residentes.</li>
+                <li><strong>ACTIVACIÓN DE ALARMA:</strong> Activar inmediatamente el botón de pánico o alarma silenciosa sin ser detectado por el intruso.</li>
+                <li><strong>COMUNICACIÓN INMEDIATA:</strong> Contactar inmediatamente a las fuerzas de seguridad llamando al 911. Informar la situación, ubicación exacta y características del intruso.</li>
+                <li><strong>PROTECCIÓN DE RESIDENTES:</strong> Buscar refugio seguro y proteger a los residentes del edificio. Coordinar la evacuación si es necesario.</li>
+                <li><strong>DOCUMENTACIÓN:</strong> Registrar hora exacta del incidente, descripción detallada del intruso, dirección de escape, tipo de arma observada.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 120 - Protocolo de seguridad ante intrusos armados.</li>
+            </ul>
+
+            <h4>3.2 INTRUSO CON ARMA BLANCA:</h4>
+            <ul>
+                <li><strong>DISTANCIA DE SEGURIDAD:</strong> El vigilador debe mantener una distancia mínima de 3 metros del agresor en todo momento.</li>
+                <li><strong>COMUNICACIÓN INMEDIATA:</strong> Alertar a todos los puestos de vigilancia sobre la situación de emergencia.</li>
+                <li><strong>CIERRE DE ACCESOS:</strong> Cerrar inmediatamente todos los portones de ingreso al edificio para evitar que el agresor escape o que entren más personas.</li>
+                <li><strong>EVACUACIÓN DE RESIDENTES:</strong> Coordinar la evacuación de residentes de las áreas afectadas si es necesario para su seguridad.</li>
+                <li><strong>LLAMADA A AUTORIDADES:</strong> Contactar inmediatamente al 911 informando la situación, tipo de arma blanca y características del agresor.</li>
+                <li><strong>REGISTRO DETALLADO:</strong> Documentar tipo de arma blanca, características físicas del agresor, comportamiento observado, hora exacta del incidente.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 121 - Manejo de situaciones con armas blancas.</li>
+            </ul>
+
+            <h4>3.3 INGRESO NO AUTORIZADO A DEPARTAMENTO:</h4>
+            <ul>
+                <li><strong>VERIFICACIÓN PREVIA:</strong> El vigilador debe confirmar la identidad de la persona antes de permitir el acceso a cualquier departamento.</li>
+                <li><strong>PROTOCOLO DE ACOMPAÑAMIENTO:</strong> Según el convenio UPSRA, el vigilador debe acompañar a la visita hasta el departamento del propietario, no solo permitir el acceso.</li>
+                <li><strong>VERIFICACIÓN CON PROPIETARIO:</strong> Antes del acompañamiento, confirmar con el propietario que la visita está autorizada.</li>
+                <li><strong>REGISTRO DE INGRESO:</strong> Documentar hora de ingreso al edificio y hora de llegada al departamento.</li>
+                <li><strong>MONITOREO DURANTE LA PERMANENCIA:</strong> Mantener vigilancia durante la permanencia de la visita en el edificio.</li>
+                <li><strong>CONTROL DE SALIDA:</strong> Verificar y registrar cuando la visita abandona el edificio.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 122 - Control de acceso a departamentos.</li>
+            </ul>
+
+            <h3>ARTÍCULO 4: EMERGENCIAS MÉDICAS - PRIMEROS AUXILIOS</h3>
+            
+            <h4>4.1 VISITA DESMAYADA O CON EMERGENCIA MÉDICA:</h4>
+            <ul>
+                <li><strong>EVALUACIÓN INMEDIATA:</strong> El vigilador debe verificar inmediatamente el estado de consciencia y respiración de la persona afectada.</li>
+                <li><strong>APLICACIÓN DE RCP SI ES NECESARIO:</strong> Si la persona no respira o no tiene pulso, el vigilador debe aplicar reanimación cardiopulmonar (RCP) inmediatamente. Todo el personal de seguridad debe estar capacitado en RCP.</li>
+                <li><strong>LLAMADA DE EMERGENCIA MÉDICA:</strong> Contactar inmediatamente al servicio médico de emergencia llamando al 107. Informar la situación, ubicación exacta y estado de la persona.</li>
+                <li><strong>PROTECCIÓN DE LA VÍA AÉREA:</strong> Mantener la vía aérea libre y colocar a la persona en posición de seguridad mientras llega la ayuda médica.</li>
+                <li><strong>ASISTENCIA A PERSONAS CON MOVILIDAD REDUCIDA:</strong> Si hay residentes con movilidad reducida que necesiten asistencia, el vigilador debe ayudarlos durante la emergencia.</li>
+                <li><strong>CAPACITACIÓN OBLIGATORIA:</strong> Convenio UPSRA Artículo 125 - Capacitación en primeros auxilios obligatoria.</li>
+            </ul>
+
+            <h4>4.2 CAPACITACIÓN MÉDICA OBLIGATORIA:</h4>
+            <ul>
+                <li><strong>RCP BÁSICO:</strong> Todos los vigiladores deben estar certificados en reanimación cardiopulmonar básica antes de comenzar sus funciones.</li>
+                <li><strong>PRIMEROS AUXILIOS:</strong> Capacitación obligatoria en primeros auxilios que debe renovarse cada 6 meses según el convenio UPSRA.</li>
+                <li><strong>MANEJO DE EMERGENCIAS MÉDICAS:</strong> Conocer protocolos específicos para desmayos, convulsiones, heridas, ataques cardíacos, accidentes cerebrovasculares.</li>
+                <li><strong>BOTIQUÍN DE PRIMEROS AUXILIOS:</strong> Mantener el botiquín de primeros auxilios actualizado y conocer el contenido y uso de cada elemento.</li>
+                <li><strong>PROTOCOLOS DE EMERGENCIA MÉDICA:</strong> Conocer los procedimientos específicos para diferentes tipos de emergencias médicas.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 126 - Capacitación médica obligatoria.</li>
+            </ul>
+
+            <h3>ARTÍCULO 5: SITUACIONES EXTERNAS - PROTOCOLOS DE SEGURIDAD</h3>
+            
+            <h4>5.1 ROBOS EXTERNOS (MACETAS, PLANTAS, OBJETOS DEL EDIFICIO):</h4>
+            <ul>
+                <li><strong>PROHIBICIÓN ABSOLUTA:</strong> El vigilador NO DEBE SALIR del edificio para perseguir a personas que están robando objetos externos como macetas, plantas o cualquier elemento del edificio.</li>
+                <li><strong>RIESGO DE SEGURIDAD:</strong> Salir del edificio para perseguir robos externos pone en riesgo la seguridad del edificio y deja desprotegidos a los residentes.</li>
+                <li><strong>DISTRACCIÓN ESTRATÉGICA:</strong> Los robos externos pueden ser una distracción estratégica para que otros intrusos ingresen al edificio mientras el vigilador está fuera de su puesto.</li>
+                <li><strong>PROTOCOLO CORRECTO:</strong> El vigilador debe documentar el incidente en el libro de novedades, llamar a la policía al 911 para reportar el robo, y mantener su posición de vigilancia en el edificio.</li>
+                <li><strong>REGISTRO DEL INCIDENTE:</strong> Registrar hora exacta, descripción de los objetos robados, características de los ladrones si fueron observados, dirección de escape.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 127 - Prohibición de abandonar puesto de vigilancia.</li>
+            </ul>
+
+            <h4>5.2 INCENDIOS EXTERNOS O EMERGENCIAS EN LA VÍA PÚBLICA:</h4>
+            <ul>
+                <li><strong>EVALUACIÓN DE RIESGO:</strong> El vigilador debe determinar si el incendio externo o emergencia en la vía pública representa una amenaza directa para el edificio.</li>
+                <li><strong>PROTECCIÓN PRIMARIA DEL EDIFICIO:</strong> La prioridad es mantener la vigilancia del edificio y proteger a los residentes, no intervenir en emergencias externas.</li>
+                <li><strong>COMUNICACIÓN CON AUTORIDADES:</strong> Si el incendio externo amenaza al edificio, alertar a los bomberos llamando al 100 y a los residentes si es necesario.</li>
+                <li><strong>NO ABANDONAR EL PUESTO:</strong> El vigilador debe mantener su posición de vigilancia en el edificio, no salir a la calle para ayudar con emergencias externas.</li>
+                <li><strong>COORDINACIÓN CON FUERZAS DE SEGURIDAD:</strong> Si las autoridades solicitan colaboración específica, coordinar sin abandonar la seguridad del edificio.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 128 - Manejo de emergencias externas.</li>
+            </ul>
+
+            <h3>ARTÍCULO 6: REGISTROS Y DOCUMENTACIÓN OBLIGATORIA</h3>
+            
+            <h4>6.1 PLANILLAS EXCEL - REGISTROS OBLIGATORIOS:</h4>
+            <ul>
+                <li><strong>ENTRADAS DE VISITAS:</strong> Registrar nombre completo, número de DNI, departamento visitado, hora exacta de entrada, motivo de la visita.</li>
+                <li><strong>SALIDAS DE VISITAS:</strong> Registrar hora exacta de salida y verificación de que la visita abandonó el edificio correctamente.</li>
+                <li><strong>PERSONAL TERCERO:</strong> Registrar empresa, función específica, horario de trabajo, hora de entrada y salida, identificación del personal.</li>
+                <li><strong>VEHÍCULOS:</strong> Registrar patente, marca, modelo, color del vehículo, propietario o conductor, hora de entrada y salida.</li>
+                <li><strong>INCIDENTES DE SEGURIDAD:</strong> Documentar todas las situaciones de riesgo con descripción detallada, hora exacta, testigos si los hay, medidas tomadas.</li>
+                <li><strong>RONDAS DE SEGURIDAD:</strong> Registrar hora de inicio y fin de cada ronda, observaciones realizadas, problemas detectados, acciones tomadas.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 129 - Obligación de documentación.</li>
+            </ul>
+
+            <h4>6.2 LIBRO DE NOVEDADES - REGISTRO DETALLADO:</h4>
+            <ul>
+                <li><strong>PERSONAS SOSPECHOSAS:</strong> Documentar descripción física detallada, comportamiento observado, hora exacta, ubicación donde fue observada, acciones tomadas.</li>
+                <li><strong>EMERGENCIAS:</strong> Detallar tipo de emergencia, actuación específica del vigilador, medidas tomadas, resultado de las acciones, coordinación con autoridades.</li>
+                <li><strong>COMUNICACIONES CON AUTORIDADES:</strong> Registrar todos los contactos con fuerzas de seguridad, hora de la comunicación, motivo, resultado de la comunicación.</li>
+                <li><strong>PROBLEMAS DE MANTENIMIENTO:</strong> Documentar problemas de seguridad como luces que no funcionan, cámaras defectuosas, puertas que no cierran correctamente.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículo 130 - Registro de novedades obligatorio.</li>
+            </ul>
+
+            <h3>ARTÍCULO 7: FUNDAMENTOS LEGALES - CONVENIO UPSRA</h3>
+            
+            <h4>7.1 ARTÍCULOS APLICABLES:</h4>
+            <ul>
+                <li><strong>Artículo 120:</strong> Protocolo de seguridad ante intrusos armados con armas de fuego.</li>
+                <li><strong>Artículo 121:</strong> Manejo de situaciones con armas blancas y objetos contundentes.</li>
+                <li><strong>Artículo 122:</strong> Control de acceso a departamentos y protocolo de acompañamiento.</li>
+                <li><strong>Artículo 125:</strong> Capacitación obligatoria en primeros auxilios y RCP.</li>
+                <li><strong>Artículo 126:</strong> Protocolos de emergencia médica y manejo de crisis.</li>
+                <li><strong>Artículo 127:</strong> Prohibición de abandonar puesto de vigilancia por cualquier motivo.</li>
+                <li><strong>Artículo 128:</strong> Manejo de emergencias externas y coordinación con autoridades.</li>
+                <li><strong>Artículo 129:</strong> Obligación de documentación y registro de todas las actividades.</li>
+                <li><strong>Artículo 130:</strong> Registro de novedades obligatorio en libro específico.</li>
+            </ul>
+
+            <h4>7.2 ADICIONALES Y COMPENSACIONES:</h4>
+            <ul>
+                <li><strong>Adicional por Riesgo:</strong> 15% sobre salario básico por trabajar en condiciones de riesgo.</li>
+                <li><strong>Adicional por Zona:</strong> 10% según la ubicación geográfica del edificio y nivel de peligrosidad de la zona.</li>
+                <li><strong>Adicional por Antigüedad:</strong> 1% por cada año de servicio en la empresa.</li>
+                <li><strong>Compensación por Emergencias:</strong> 50% adicional sobre el salario cuando se actúa en situaciones críticas o emergencias.</li>
+                <li><strong>Adicional Nocturno:</strong> 20% adicional para turnos que se desarrollen entre las 22:00 y las 06:00 horas.</li>
+                <li><strong>Adicional por Días Festivos:</strong> 100% adicional por trabajar en días festivos o feriados nacionales.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 140-145 - Adicionales y compensaciones.</li>
+            </ul>
+
+            <h3>ARTÍCULO 8: SANCIONES ESPECÍFICAS POR INCUMPLIMIENTO</h3>
+            
+            <h4>8.1 FALTAS GRAVÍSIMAS - DESPIDO INMEDIATO:</h4>
+            <ul>
+                <li><strong>ABANDONO DE PUESTO:</strong> Salir del edificio para perseguir robos externos o por cualquier motivo no autorizado.</li>
+                <li><strong>NO ACOMPAÑAR VISITAS:</strong> Incumplir el protocolo de acompañamiento obligatorio establecido en el convenio UPSRA.</li>
+                <li><strong>DORMIR EN TURNO:</strong> Cualquier momento de sueño durante el horario de trabajo, incluso por un minuto.</li>
+                <li><strong>AGRESIÓN A RESIDENTES:</strong> Agresión verbal o física a propietarios, visitas o personal del edificio.</li>
+                <li><strong>FALSIFICACIÓN DE REGISTROS:</strong> Modificar, alterar o falsificar planillas Excel, libro de novedades o cualquier documentación oficial.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 151-155 - Faltas gravísimas.</li>
+            </ul>
+
+            <h4>8.2 FALTAS GRAVES - SUSPENSIÓN SEVERA:</h4>
+            <ul>
+                <li><strong>NO REGISTRAR VISITAS:</strong> Omisión en el registro de entradas y salidas de visitas en planillas Excel.</li>
+                <li><strong>NO REALIZAR RONDAS:</strong> Incumplir el cronograma de rondas de seguridad establecido.</li>
+                <li><strong>NO CAPACITARSE:</strong> Falta a cursos obligatorios de primeros auxilios, RCP o seguridad.</li>
+                <li><strong>NEGLIGENCIA MÉDICA:</strong> No aplicar primeros auxilios o RCP cuando sea necesario y el vigilador esté capacitado.</li>
+                <li><strong>NO COMUNICAR EMERGENCIAS:</strong> No reportar incidentes o emergencias al coordinador o autoridades correspondientes.</li>
+                <li><strong>FUNDAMENTO LEGAL:</strong> Convenio UPSRA Artículos 156-160 - Faltas graves.</li>
+            </ul>
+
+            <h3>ARTÍCULO 9: RESUMEN DE RESPONSABILIDADES CRÍTICAS</h3>
+            
+            <h4>9.1 DEBE HACER:</h4>
+            <ul>
+                <li>Mantener vigilancia constante durante todo el turno de trabajo.</li>
+                <li>Registrar todas las entradas y salidas de visitas y personal tercero en planillas Excel.</li>
+                <li>Acompañar a todas las visitas hasta el departamento del propietario según protocolo obligatorio.</li>
+                <li>Activar protocolos de emergencia inmediatamente ante cualquier situación de riesgo.</li>
+                <li>Documentar todos los incidentes en el libro de novedades con detalles completos.</li>
+                <li>Capacitarse en primeros auxilios y RCP según lo establecido en el convenio UPSRA.</li>
+                <li>Mantener comunicación constante entre puestos de vigilancia.</li>
+                <li>Verificar la identidad de todas las personas antes de permitir el acceso.</li>
+            </ul>
+
+            <h4>9.2 NO DEBE HACER:</h4>
+            <ul>
+                <li>Abandonar el puesto de vigilancia por ningún motivo, especialmente para perseguir robos externos.</li>
+                <li>Salir del edificio para intervenir en situaciones externas como incendios, robos o peleas en la vía pública.</li>
+                <li>Confrontar intrusos armados o personas con armas blancas.</li>
+                <li>Dormir durante el turno de trabajo, incluso por períodos cortos.</li>
+                <li>Permitir acceso a personas sin verificar su identidad o autorización.</li>
+                <li>Revelar información confidencial del edificio o residentes a terceros.</li>
+                <li>Usar teléfono celular durante el turno sin justificación médica.</li>
+                <li>Falsificar o modificar registros oficiales de seguridad.</li>
+            </ul>
+        </section>
+
+        <section>
             <a href="index.html">Volver al índice</a>
         </section>
     </div>
